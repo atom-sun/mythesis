@@ -2,6 +2,9 @@
 
 # latex
 *.aux
+*.fls
+*.fdb_latexmk
+*.log
 
 # Prerequisites
 *.d
