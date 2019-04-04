@@ -4,6 +4,37 @@
 %% ------------  machine learning ------------ %%
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
 
+@article {ml-manybody,
+  author = {Carleo, Giuseppe and Troyer, Matthias},
+  title = {Solving the quantum many-body problem with artificial neural networks},
+  volume = {355},
+  number = {6325},
+  pages = {602--606},
+  year = {2017},
+  doi = {10.1126/science.aag2302},
+  publisher = {American Association for the Advancement of Science},
+  abstract = {Elucidating the behavior of quantum interacting systems of many particles remains one of the biggest challenges in physics. Traditional numerical methods often work well, but some of the most interesting problems leave them stumped. Carleo and Troyer harnessed the power of machine learning to develop a variational approach to the quantum many-body problem (see the Perspective by Hush). The method performed at least as well as state-of-the-art approaches, setting a benchmark for a prototypical two-dimensional problem. With further development, it may well prove a valuable piece in the quantum toolbox.Science, this issue p. 602; see also p. 580The challenge posed by the many-body problem in quantum physics originates from the difficulty of describing the nontrivial correlations encoded in the exponential complexity of the many-body wave function. Here we demonstrate that systematic machine learning of the wave function can reduce this complexity to a tractable computational form for some notable cases of physical interest. We introduce a variational representation of quantum states based on artificial neural networks with a variable number of hidden neurons. A reinforcement-learning scheme we demonstrate is capable of both finding the ground state and describing the unitary time evolution of complex interacting quantum systems. Our approach achieves high accuracy in describing prototypical interacting spins models in one and two dimensions.},
+  issn = {0036-8075},
+  URL = {http://science.sciencemag.org/content/355/6325/602},
+  eprint = {http://science.sciencemag.org/content/355/6325/602.full.pdf},
+  journal = {Science}
+}
+
+@inproceedings{imagenet,
+ author = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E.},
+ title = {ImageNet Classification with Deep Convolutional Neural Networks},
+ booktitle = {Proceedings of the 25th International Conference on Neural Information Processing Systems - Volume 1},
+ series = {NIPS'12},
+ year = {2012},
+ location = {Lake Tahoe, Nevada},
+ pages = {1097--1105},
+ numpages = {9},
+ url = {http://dl.acm.org/citation.cfm?id=2999134.2999257},
+ acmid = {2999257},
+ publisher = {Curran Associates Inc.},
+ address = {USA},
+} 
+
 @article{wanxin-2017,
   title = {Extracting critical exponents by finite-size scaling with convolutional neural networks},
   author = {Li, Zhenyu and Luo, Mingxing and Wan, Xin},
@@ -77,6 +108,21 @@
   publisher = {American Physical Society},
   doi = {10.1103/PhysRevX.8.031086},
   url = {https://link.aps.org/doi/10.1103/PhysRevX.8.031086}
+}
+
+@article{ml-disorder-2018,
+  title = {Learning disordered topological phases by statistical recovery of symmetry},
+  author = {Yoshioka, Nobuyuki and Akagi, Yutaka and Katsura, Hosho},
+  journal = {Phys. Rev. B},
+  volume = {97},
+  issue = {20},
+  pages = {205110},
+  numpages = {9},
+  year = {2018},
+  month = {May},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevB.97.205110},
+  url = {https://link.aps.org/doi/10.1103/PhysRevB.97.205110}
 }
 
 @article{rbm-2017,
@@ -229,6 +275,21 @@ url="https://doi.org/10.1007/s10955-017-1836-5"
   publisher = {American Physical Society},
   doi = {10.1103/PhysRevLett.120.176401},
   url = {https://link.aps.org/doi/10.1103/PhysRevLett.120.176401}
+}
+
+@article{qeml,
+  title = {Quantum-Enhanced Machine Learning},
+  author = {Dunjko, Vedran and Taylor, Jacob M. and Briegel, Hans J.},
+  journal = {Phys. Rev. Lett.},
+  volume = {117},
+  issue = {13},
+  pages = {130501},
+  numpages = {6},
+  year = {2016},
+  month = {Sep},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.117.130501},
+  url = {https://link.aps.org/doi/10.1103/PhysRevLett.117.130501}
 }
 
 @article{active-agent-2014,
@@ -1098,7 +1159,7 @@ url="https://doi.org/10.1007/s10955-017-1836-5"
   url = {https://link.aps.org/doi/10.1103/PhysRevLett.114.213002}
 }
 
-@article{microsope2,
+@article{microscope2,
   title = {Quantum-Gas Microscope for Fermionic Atoms},
   author = {Cheuk, Lawrence W. and Nichols, Matthew A. and Okan, Melih and Gersdorf, Thomas and Ramasesh, Vinay V. and Bakr, Waseem S. and Lompe, Thomas and Zwierlein, Martin W.},
   journal = {Phys. Rev. Lett.},
@@ -1143,6 +1204,58 @@ url="https://doi.org/10.1007/s10955-017-1836-5"
   url = {https://doi.org/10.1038/415039a}
 }
 
+
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+%% ---------------   floquet   --------------- %%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+
+@article {floq-bloch-2013,
+  author = {Wang, Y. H. and Steinberg, H. and Jarillo-Herrero, P. and Gedik, N.},
+  title = {Observation of Floquet-Bloch States on the Surface of a Topological Insulator},
+  volume = {342},
+  number = {6157},
+  pages = {453--457},
+  year = {2013},
+  doi = {10.1126/science.1239834},
+  publisher = {American Association for the Advancement of Science},
+  abstract = {When a periodic perturbation couples strongly to electrons in a solid, replicas of the original electronic levels are predicted to develop at certain energies{\textemdash}the so-called Floquet-Bloch states. Such conditions can be achieved by shining light on a solid, but the effect is challenging to observe. Wang et al. (p. 453) used time- and angle-resolved photoemission spectroscopy to photoexcite Bi2Se3 and observe its dispersion at various delay times. The replicas were seen at expected energy shifts, along with the gaps predicted to occur at the new energy-level crossings caused by the appearance of the replicas. Because Bi2Se3 is a topological insulator, the breaking of the time-reversal symmetry caused by circularly polarized light resulted in the appearance of an energy gap at the Dirac point, indicating an interesting route toward manipulating electronic states in such materials. The unique electronic properties of the surface electrons in a topological insulator are protected by time-reversal symmetry. Circularly polarized light naturally breaks time-reversal symmetry, which may lead to an exotic surface quantum Hall state. Using time- and angle-resolved photoemission spectroscopy, we show that an intense ultrashort midinfrared pulse with energy below the bulk band gap hybridizes with the surface Dirac fermions of a topological insulator to form Floquet-Bloch bands. These photon-dressed surface bands exhibit polarization-dependent band gaps at avoided crossings. Circularly polarized photons induce an additional gap at the Dirac point, which is a signature of broken time-reversal symmetry on the surface. These observations establish the Floquet-Bloch bands in solids and pave the way for optical manipulation of topological quantum states of matter.},
+  issn = {0036-8075},
+  URL = {http://science.sciencemag.org/content/342/6157/453},
+  eprint = {http://science.sciencemag.org/content/342/6157/453.full.pdf},
+  journal = {Science}
+}
+
+@article{floq-edgestate-2013-prx,
+  title = {Anomalous Edge States and the Bulk-Edge Correspondence for Periodically Driven Two-Dimensional Systems},
+  author = {Rudner, Mark S. and Lindner, Netanel H. and Berg, Erez and Levin, Michael},
+  journal = {Phys. Rev. X},
+  volume = {3},
+  issue = {3},
+  pages = {031005},
+  numpages = {15},
+  year = {2013},
+  month = {Jul},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevX.3.031005},
+  url = {https://link.aps.org/doi/10.1103/PhysRevX.3.031005}
+}
+
+@article{floq-ti-2011,
+  title = {Floquet topological insulator in semiconductor quantum wells},
+  author = {Lindner, Netanel H and Refael, Gil and Galitski, Victor},
+  journal = {Nature Physics},
+  volume = {7},
+  number = {6},
+  pages = {490},
+  date = {2011/03/13/online},
+  month = {Mar},
+  year = {2011},
+  publisher = {Nature Publishing Group},
+  doi = {10.1038/nphys1926},
+  url = {https://doi.org/10.1038/nphys1926}
+}
+
 @article{zhengwei-floquet-2014,
   title = {Floquet topological states in shaking optical lattices},
   author = {Zheng, Wei and Zhai, Hui},
@@ -1158,6 +1271,70 @@ url="https://doi.org/10.1007/s10955-017-1836-5"
   url = {https://link.aps.org/doi/10.1103/PhysRevA.89.061603}
 }
 
+@article{oka2009,
+  title = {Photovoltaic Hall effect in graphene},
+  author = {Oka, Takashi and Aoki, Hideo},
+  journal = {Phys. Rev. B},
+  volume = {79},
+  issue = {8},
+  pages = {081406},
+  numpages = {4},
+  year = {2009},
+  month = {Feb},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevB.79.081406},
+  url = {https://link.aps.org/doi/10.1103/PhysRevB.79.081406}
+}
+
+@article{floquet-magnus-2001,
+  doi = {10.1088/0305-4470/34/16/305},
+  url = {https://doi.org/10.1088/0305-4470/34/16/305},
+  year = 2001,
+  month = {apr},
+  publisher = {{IOP} Publishing},
+  volume = {34},
+  number = {16},
+  pages = {3379--3388},
+  author = {F Casas and J A Oteo and J Ros},
+  title = {Floquet theory: exponential perturbative treatment},
+  journal = {Journal of Physics A: Mathematical and General},
+  abstract = {We develop a Magnus expansion well suited for Floquet theory of
+linear ordinary differential equations with periodic
+coefficients. We build up a recursive scheme to obtain the terms
+in the new expansion and give an explicit sufficient condition
+for its convergence. The method and formulae are applied to an
+illustrative example from quantum mechanics.}
+}
+
+@article{highfreq2015,
+  doi = {10.1088/1367-2630/17/9/093039},
+  url = {https://doi.org/10.1088/1367-2630/17/9/093039},
+  year = 2015,
+  month = {sep},
+  publisher = {{IOP} Publishing},
+  volume = {17},
+  number = {9},
+  pages = {093039},
+  author = {Andr{\'{e}} Eckardt and Egidijus Anisimovas},
+  title = {High-frequency approximation for periodically driven quantum systems from a Floquet-space perspective},
+  journal = {New Journal of Physics},
+  abstract = {We derive a systematic high-frequency expansion for the effective Hamiltonian and the micromotion operator of periodically driven quantum systems. Our approach is based on the block diagonalization of the quasienergy operator in the extended Floquet Hilbert space by means of degenerate perturbation theory. The final results are equivalent to those obtained within a different approach (Rahav et al 2003 Phys. Rev. A 68 013820), (Goldman and Dalibard 2014 Phys. Rev. X 4 031027) and can also be related to the Floquet–Magnus expansion (Casas et al 2001 J. Phys. A 34 3379). We discuss that the dependence on the driving phase, which plagues the latter, can lead to artifactual symmetry breaking. The high-frequency approach is illustrated using the example of a periodically driven Hubbard model. Moreover, we discuss the nature of the approximation and its limitations for systems of many interacting particles.}
+}
+
+@article{photon-floq-2013,
+  title = {Photonic Floquet topological insulators},
+  author = {Rechtsman, Mikael C and Zeuner, Julia M and Plotnik, Yonatan and Lumer, Yaakov and Podolsky, Daniel and Dreisow, Felix and Nolte, Stefan and Segev, Mordechai and Szameit, Alexander},
+  journal = {Nature},
+  volume = {496},
+  number = {7444},
+  pages = {196},
+  date = {2013/04/10/online},
+  month = {April},
+  year = {2013},
+  publisher = {Nature Publishing Group},
+  doi = {10.1038/nature12066},
+  url = {https://doi.org/10.1038/nature12066}
+}
 
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
@@ -1421,6 +1598,12 @@ url="https://doi.org/10.1007/BF02650179"
 %% ------------- reviews + books ------------- %%
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
 
+@article{mlrev1903,
+  title={Machine learning and the physical sciences},
+  author={Carleo, Giuseppe and Cirac, Ignacio and Cranmer, Kyle and Daudet, Laurent and Schuld, Maria and Tishby, Naftali and Vogt-Maranto, Leslie and Zdeborov{\'a}, Lenka},
+  journal={arXiv preprint arXiv:1903.10563},
+  year={2019}
+}
 
 @article{qai2017,
   title={Machine learning$\backslash$\& artificial intelligence in the quantum domain},
@@ -1534,6 +1717,21 @@ url="https://doi.org/10.1007/BF02650179"
   url = {https://doi.org/10.1038/nphys3803}
 }
 
+@article{topoclassify2016,
+  title = {Classification of topological quantum matter with symmetries},
+  author = {Chiu, Ching-Kai and Teo, Jeffrey C. Y. and Schnyder, Andreas P. and Ryu, Shinsei},
+  journal = {Rev. Mod. Phys.},
+  volume = {88},
+  issue = {3},
+  pages = {035005},
+  numpages = {63},
+  year = {2016},
+  month = {Aug},
+  publisher = {American Physical Society},
+  doi = {10.1103/RevModPhys.88.035005},
+  url = {https://link.aps.org/doi/10.1103/RevModPhys.88.035005}
+}
+
 @article{topo2010hasan,
   title = {Colloquium: Topological insulators},
   author = {Hasan, M. Z. and Kane, C. L.},
@@ -1597,6 +1795,16 @@ url="https://doi.org/10.1007/BF02650179"
   isbn={9780387310732},
   doi={},
   url={https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf},
+}
+
+@book{topobook,
+  title = {Topological insulators and topological superconductors},
+  author = {Bernevig, B Andrei and Hughes, Taylor L},
+  year = {2013},
+  publisher = {Princeton university press},
+  isbn = {9780691151755},
+  doi = {10.1515/9781400846733},
+  url = {https://doi.org/10.1515/9781400846733}
 }
 
 @book{nagaosa,
