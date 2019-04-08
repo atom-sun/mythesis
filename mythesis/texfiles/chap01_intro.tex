@@ -72,7 +72,7 @@
 
 \section{周期含时驱动的光晶格系统}
 
-一类很有意思的系统是含时驱动的系统，这样的系统过去很难在传统的凝聚态体系中实现，但在光学系统中却很常见。周期含时驱动的系统可以看成广义的动力学研究的一部分，而它们
+一类很有意思的系统是周期含时驱动的系统，这样的系统过去很难在传统的凝聚态体系中实现，但在光学系统中却很常见。周期含时驱动的系统可以看成广义的动力学研究的一部分，而它们
 有一套很好的形式化的理论来描述，也就是 Floquet 理论\cite{floquet2017}。
 
 Floquet 理论对于周期驱动系统给出了形式化的描述，并且对于高频驱动可以给出良好的解析近似结果\cite{highfreq2015}，其方法本质上是微扰论，也称 Floquet-Magnus 展开\cite{floquet-magnus-2001}。由于含时驱动的周期性，体系在时间方向呈现出周期性，能谱也呈现出周期性的结构。能量本身不在是定义良好的量子数标签，此时好的量子数是准能量（quasi-energy），也就是能量模掉整数个驱动频率为单位的能量（$\hbar\omega$），即
@@ -98,7 +98,7 @@ Floquet 理论对于周期驱动系统给出了形式化的描述，并且对于
 
 \end{itemize}
 
-值得注意的是，这些新奇的物态与过程本质上都是由对多体量子系统的周期性相干驱动所诱导的。这样的过程在传统的凝聚态材料中较难实现，但超冷原子气体系统特别是光晶格系统为之提供了很好的实现平台。作者博士期间深入学习了 Floquet 的形式理论（详见第 \ref{sec:floqtheory} 节），并且针对由周期含时驱动的关联隧穿效应作出了相关的理论研究（详见第 \ref{sec:floqhubb} 节）。作者和合作者们发现，在这样的体系中可以存在新奇的铁磁相和相分离结构，其诱因完全由近共振的周期驱动引起，有别于传统凝聚态体系中众所周知的 Stoner 机制（详见第 \ref{sec:floqhubb} 节）。
+值得注意的是，这些新奇的物态与过程本质上都是由对多体量子系统的周期性相干驱动所诱导的。这样的过程在传统的凝聚态材料中较难实现，但超冷原子气体系统特别是光晶格系统为之提供了很好的实现平台。作者博士期间深入学习了 Floquet 的形式理论（详见第 \ref{sec:floq:theory} 节），并且针对由周期含时驱动的关联隧穿效应作出了相关的理论研究（详见第 \ref{sec:floqhubb} 节）。作者和合作者们发现，在这样的体系中可以存在新奇的铁磁相和相分离结构，其诱因完全由近共振的周期驱动引起，有别于传统凝聚态体系中众所周知的 Stoner 机制（详见第 \ref{sec:floqhubb} 节）。
 
 
 
@@ -109,7 +109,7 @@ Floquet 理论对于周期驱动系统给出了形式化的描述，并且对于
 机器学习是一门古老的学科。早在二百年前，勒让德、高斯就发明了最小二乘法（Least Squares），最小二乘法被高斯用来拟合天体的运行轨迹。一百年前，人们就发明了主成分分析法（Principal Component Analysis，PCA）\cite{pearson1901,hotelling1933}，并在农业生产中加以利用\cite{pcabook}。上世纪50年代，人工智能的概念诞生，在随后的半个多世纪里，人工智能相关技术的发展及应用经历了多次高潮和低谷。而作为其中核心的机器学习算法，也在半个多世纪的时间里发展壮大，并逐渐系统化，诞生了诸如玻尔兹曼机、人工神经网络等概念与算法。然而，受限于计算机的算力与数据的缺乏，在很长一段时间里机器学习算法并不能发挥出其巨大作用。近年来，受益于算法的改进与算力的提高，以及大数据的积累，人造智能尤其是机器学习算法在许多方面呈现出爆发式的增长。其中，以深度学习\cite{dl2015}为代表的一系列算法在语音识别、语义翻译、机器视觉等方面取得了巨大的成功，在特定任务上的识别精准度已经超越人类。同时，人工智能产业的发展也初具规模，机器学习技术在金融、安防、交运、电子商务等领域得到初步应用，例如金融防欺诈、智能安防系统、无人驾驶、推荐系统等，都利用到了机器学习的技术。
 
 
-2012年，主要由人造神经网络构成的 ImageNet 在图像识别的比赛中取得突破性成功\cite{imagenet}。2016年初，由 Google DeepMind 开发的 AlphaGo 在与人类顶级棋手进行的围棋对决中以巨大优势战胜人类顶级围棋选手，这使人工智能与机器学习的概念再度成为公众焦点。而机器学习算法在模式识别与强化学习等方面的巨大成功也引起了学术界的广泛兴趣，一方面，有许多学科的科学家们希望能运用机器学习技术，为解决自己学科已有的问题提供更强大的工具，另一方面，机器学习本身的黑匣子也是人们探究的课题。与机器学习相关的交叉学科研究作为新兴的领域方兴未艾，蓬勃发展\cite{mlrev1903}。
+2012年，主要由人造神经网络构成的 ImageNet 在图像识别的比赛中取得突破性成功\cite{imagenet2012}。2016年初，由 Google DeepMind 开发的 AlphaGo 在与人类顶级棋手进行的围棋对决中以巨大优势战胜人类顶级围棋选手，这使人工智能与机器学习的概念再度成为公众焦点。而机器学习算法在模式识别与强化学习等方面的巨大成功也引起了学术界的广泛兴趣，一方面，有许多学科的科学家们希望能运用机器学习技术，为解决自己学科已有的问题提供更强大的工具，另一方面，机器学习本身的黑匣子也是人们探究的课题。与机器学习相关的交叉学科研究作为新兴的领域方兴未艾，蓬勃发展\cite{mlrev1903}。
 
 事实上，早在机器学习火爆之前，科学家们就已经在科研中运用机器学习的技术。例如，利用机器学习技术进行数据分析与处理，帮助寻找基本粒子，如希格斯子，帮助进行天文观测，以及帮助进行肿瘤的分类等。近年来，在机器学习与基础物理学，如凝聚态物理与冷原子物理，相结合的方面的研究日益增多。传统的凝聚态多体系统具有$10^{23}$以上量级的自由度，对于数值模拟是巨大的挑战。而机器学习算法在数据降维等方面具有优势。人们利用机器学习算法进行量子多体数值计算方法的优化等，也试图从交叉学科的角度理解机器学习的黑匣子。此外还有机器学习与量子计算相结合的研究\cite{qml2017,qai2017}，两个领域相辅相成。
 
@@ -119,9 +119,9 @@ Floquet 理论对于周期驱动系统给出了形式化的描述，并且对于
 
 \item 量子多体系统数值算法改进与加速，如利用脊回归加速量子蒙特卡罗算法（Quantum Monte Carlo）\cite{acmc1,acmc2,acmc3,acmc4}，利用推荐系统受限玻尔兹曼机（Restricted Boltzmann Machine，RBM）加速量子蒙卡\cite{acmcwl1,acmcwl2}等。
 
-\item 机器学习识别凝聚态多体系统的相图、序参量，提取临界系数，相变的探测与锚定，相分类等问题\cite{ml-anderson-2014,confusion,mlphase2017-nphys,wangleipca2016,wcpca,mlphase2017-prx,jp1,jp2,jp3,jp4,zhangyiml2017,zpf2017,wanxin-2017,kernel2017,ml-mbl-2017,pca2017a,pca2017b,rbm-2017,unsup-2017,unsup-hubb-2018,discriminative2018,ml-disorder-2018}。其中包括了运用非监督式学习方法\cite{unsup-2017,unsup-hubb-2018}，如主成分分析法\cite{wangleipca2016,wcpca,pca2017a,pca2017b}等，运用监督式学习方法，如全连接神经网络\cite{zhangyiml2017,mlphase2017-prx,ml-mbl-2017}、卷积神经网络\cite{zpf2017,jp1,jp2,jp3,jp4,mlphase2017-nphys,wanxin-2017}、判别式神经网络\cite{discriminative2018}等，运用监督式学习与非监督式学习相结合的方法，如 Evert P. L. van Nieuwenburg 等人在2017年发表的工作\cite{confusion}中创立的“混淆”网络（Confusion），还有诸如受限玻尔兹曼机\cite{rbm-2017}、支持向量机与核方法\cite{kernel2017}等算法。这其中又涵盖了从无序系统\cite{ml-disorder-2018}，如 Anderson 局域化\cite{ml-anderson-2014,jp1,jp2,jp4}、多体局域化\cite{ml-mbl-2017}系统，到 Bose-Hubbard 和 Fermi-Hubbard 模型等玻色子和费米子模型\cite{confusion,rbm-2017,mlphase2017-prx,pca2017b,unsup-hubb-2018}，Ising 模型\cite{jp3,kernel2017,mlphase2017-nphys,wangleipca2016,wcpca,wanxin-2017}、各种晶格上的Heisenberg 模型、XY模型\cite{pca2017a,unsup-2017,wcpca}等自旋模型等一系列传统凝聚态强关联系统的相图和相变研究，以及到拓扑绝缘体的拓扑相分类\cite{zhangyiml2017,zpf2017,jp1,jp2}等。
+\item 机器学习识别凝聚态多体系统的相图、序参量，相变的探测与锚定，相分类，临界指数的提取等问题\cite{ml-anderson-2014,confusion,mlphase2017-nphys,wangleipca2016,wcpca,mlphase2017-prx,jp1,jp2,jp3,jp4,zhangyiml2017,zpf2017,wanxin-2017,kernel2017,ml-mbl-2017,pca2017a,pca2017b,rbm-2017,unsup-2017,unsup-hubb-2018,discriminative2018,ml-disorder-2018}。其中包括了运用非监督式学习方法\cite{unsup-2017,unsup-hubb-2018}，如主成分分析法\cite{wangleipca2016,wcpca,pca2017a,pca2017b}等，运用监督式学习方法，如全连接神经网络\cite{zhangyiml2017,mlphase2017-prx,ml-mbl-2017}、卷积神经网络\cite{zpf2017,jp1,jp2,jp3,jp4,mlphase2017-nphys,wanxin-2017}、判别式神经网络\cite{discriminative2018}等，运用监督式学习与非监督式学习相结合的方法，如 Evert P. L. van Nieuwenburg 等人在2017年发表的工作\cite{confusion}中创立的“混淆”网络（Confusion），还有诸如受限玻尔兹曼机\cite{rbm-2017}、支持向量机与核方法\cite{kernel2017}等算法。这其中又涵盖了从无序系统\cite{ml-disorder-2018}，如 Anderson 局域化\cite{ml-anderson-2014,jp1,jp2,jp4}、多体局域化\cite{ml-mbl-2017}系统，到 Bose-Hubbard 和 Fermi-Hubbard 模型等玻色子和费米子模型\cite{confusion,rbm-2017,mlphase2017-prx,pca2017b,unsup-hubb-2018}，Ising 模型\cite{jp3,kernel2017,mlphase2017-nphys,wangleipca2016,wcpca,wanxin-2017}、各种晶格上的Heisenberg 模型、XY模型\cite{pca2017a,unsup-2017,wcpca}等自旋模型等一系列传统凝聚态强关联系统的相图和相变研究，以及到拓扑绝缘体的拓扑相分类\cite{zhangyiml2017,zpf2017,jp1,jp2}等。
 
-\item 机器学习量子理论，如量子力学薛定谔方程\cite{dlshrodinger2017}、量子多体形式理论\cite{ml-manybody}等。
+\item 机器学习量子理论，如量子力学薛定谔方程\cite{dlshrodinger2017,wyd2018}、量子多体形式理论\cite{ml-manybody}等。
 
 \item 理解机器学习算法的黑匣子\cite{mlanalysis2017lin}，运用物理学的方法与概念，如重整化群\cite{dlrg2013,maprgdl2014,rgml2018}、张量网络、全息对偶原理\cite{yyz2018}等，结合机器学习算法的研究。
 
