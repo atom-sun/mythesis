@@ -90,7 +90,7 @@ H_n = \frac{1}{T}\int_0^TH(t)e^{-\ii n\omega t}dt
 \end{align}
 对角化 $H_F$ 即可得到本征态和本征谱。
 
-但是需要注意到，$H_F$ 是无限延展的（上式矩阵中的省略号标记省略的部分），上式只是一个形式的表述，实际计算中需要对 $H_F$ 进行截断处理。截断到多大是一个需要仔细判断的问题。一般来说，对于我们关心的物理大多保留在一个准能谱带中，称之为第一准能谱带，其他的带可以通过对第一准能谱带做整数倍 $\omega$ 的折叠得到。这点类似于固体物理中其他布里渊区可以通过第一布里渊区折叠整数倍倒格矢 $\vect{G}$ 得到。为了得到第一准能谱带的较好的近似，需要使 $H_F$ 以 $H_0$ 块为基点，向上向下截断到扔掉的部分相对于 $H_0$ 来说是高阶微扰即可。举例说明，假设体系是简单的正弦型的含时依赖，如 $\Delta\cos(\omega t)$，则 $H(t)$ 的分量只有 $H_0$ 和 $H_{\pm1}$，再假设含时部分是振幅较小的高频扰动，也就是说 $H_1$ 的大小相对于 $H_0$ 来说比较小，即 $\Delta\ll H_0$，而频率 $\omega$ 相对于 $H_0$ 来说却很大，即 $H_0\ll\omega$，那么 $H_F$ 可近似截断为
+但是需要注意到，$H_F$ 是无限延展的（上式矩阵中的省略号标记省略的部分），上式只是一个形式的表述，实际计算中需要对 $H_F$ 进行截断处理。截断到多大是一个需要仔细斟酌的问题。一般来说，对于我们关心的物理大多保留在一个准能谱带中，称之为第一准能谱带，其他的带可以通过对第一准能谱带做整数倍 $\omega$ 的折叠得到。这点类似于固体物理中其他布里渊区可以通过第一布里渊区折叠整数倍倒格矢 $\vect{G}$ 得到。为了得到第一准能谱带的较好的近似，需要使 $H_F$ 以 $H_0$ 块为基点，向上向下截断到扔掉的部分相对于 $H_0$ 来说是高阶微扰即可。举例说明，假设体系是简单的正弦型的含时依赖，如 $\Delta\cos(\omega t)$，则 $H(t)$ 的分量只有 $H_0$ 和 $H_{\pm1}$，再假设含时部分是振幅较小的高频扰动，也就是说 $H_1$ 的大小相对于 $H_0$ 来说比较小，即 $\Delta\ll H_0$，而频率 $\omega$ 相对于 $H_0$ 来说却很大，即 $H_0\ll\omega$，那么 $H_F$ 可近似截断为
 \begin{align}
 H_F \simeq \begin{pmatrix}
 H_0 + \omega & \Delta & 0 \\
@@ -420,9 +420,10 @@ L=&\sum_{i,\sigma} i\bar \psi_{i\sigma}\partial_t\psi_{i\sigma}+\sum_{\langle i,
 \end{align}
 带入(\ref{eq:Hmf0})式，平均场哈密顿量显式地写为，
 \begin{align}\label{eq:Hmf}
-    \hat{H}_{\text{mf}} &= \sum_{\langle i,j\rangle,\sigma} \left\{-J_0[(1-n_{A\bar{\sigma}})(1-n_{B\bar{\sigma}})+n_{A\bar{\sigma}}n_{B\bar{\sigma}}] - J_1[(1-n_{A\bar{\sigma}})n_{B\bar{\sigma}}+n_{A\bar{\sigma}}(1-n_{B\bar{\sigma}})]\right\}\hat{c}_{i\sigma}^{A\dagger}\hat{c}_{j\sigma}^B+ \text{H. C. } + \frac{\tilde{U}N}{2}(n_{A\uparrow}n_{A\downarrow} + n_{B\uparrow}n_{B\downarrow}) \notag \\
-        & \  \  + \eta_c \left[c-\frac{(\hat{n}_{A\uparrow}+\hat{n}_{A\downarrow}) - (\hat{n}_{B\uparrow}+\hat{n}_{B\downarrow})}{2}\right] 
-        + \eta_s \left[s-\frac{(\hat{n}_{A\uparrow}-\hat{n}_{A\downarrow}) - (\hat{n}_{B\uparrow}-\hat{n}_{B\downarrow})}{2}\right]
+    \hat{H}_{\text{mf}} &= \sum_{\langle i,j\rangle,\sigma} \left\{-J_0[(1-n_{A\bar{\sigma}})(1-n_{B\bar{\sigma}})+n_{A\bar{\sigma}}n_{B\bar{\sigma}}] - J_1[(1-n_{A\bar{\sigma}})n_{B\bar{\sigma}}+n_{A\bar{\sigma}}(1-n_{B\bar{\sigma}})]\right\}\hat{c}_{i\sigma}^{A\dagger}\hat{c}_{j\sigma}^B+ \text{H. C. } \notag \\
+    & \  \  + \eta_c \left[c-\frac{(\hat{n}_{A\uparrow}+\hat{n}_{A\downarrow}) - (\hat{n}_{B\uparrow}+\hat{n}_{B\downarrow})}{2}\right] 
+    + \eta_s \left[s-\frac{(\hat{n}_{A\uparrow}-\hat{n}_{A\downarrow}) - (\hat{n}_{B\uparrow}-\hat{n}_{B\downarrow})}{2}\right] \notag \\
+    & \  \  + \frac{\tilde{U}N}{2}(n_{A\uparrow}n_{A\downarrow} + n_{B\uparrow}n_{B\downarrow}) 
 \end{align}
 其中 $\hat{c}_{i\sigma}^A$($\hat{c}_{i\sigma}^B$) 是第 $i$ 个元胞属于 $A(B)$ 子格的自旋为 $\sigma$ 的费米子湮灭算符。$\hat{n}_{\mu\sigma} = \frac{1}{N/2}\sum_{i\in\mu}\hat{n}_{i\sigma}$, $\mu = A$ or $B$ 而 $n_{\mu\sigma} = \langle\hat{n}_{\mu\sigma}\rangle$。$\eta_c$ 和 $\eta_s$ 分别是 CDW 和 SDW 的拉格朗日乘子，同样也是最小化得到基态能量的变分序参量之一。
 
@@ -463,30 +464,12 @@ const. = \frac{\tilde{U}N}{2}(1+c^2-s^2) + \frac{1}{2}(\eta_cc+\eta_ss)
 \end{align}
 因此有
 \begin{align}
-\dfrac{\partial const.}{\partial \eta_c} &= Nc \\
-\dfrac{\partial const.}{\partial \eta_s} &= Ns \\
-\dfrac{\partial const.}{\partial c} &= (\tilde{U}c+\eta_c)N \\
-\dfrac{\partial const.}{\partial s} &= (-\tilde{U}s+\eta_s)N 
+\dfrac{\partial const.}{\partial c} &= \tilde{U}Nc+\eta_c \\
+\dfrac{\partial const.}{\partial s} &= -\tilde{U}Ns+\eta_s \\
+\dfrac{\partial const.}{\partial \eta_c} &= c \\
+\dfrac{\partial const.}{\partial \eta_s} &= s 
 \end{align}
 令 $\mathcal{H}(k)$ 表示矩阵部分，有
-\begin{align}
-    & \dfrac{\partial\mathcal{H}(k)}{\partial \eta_c}=\dfrac{1}{2}
-        \begin{pmatrix}
-            -1 & & & \\
-            & 1 & & \\
-            & & 1 & \\
-            & & & -1 
-        \end{pmatrix}
-\end{align}
-\begin{align}
-    & \dfrac{\partial\mathcal{H}(k)}{\partial \eta_s}=\dfrac{1}{2}
-        \begin{pmatrix}
-            -1 & & & \\
-            & 1 & & \\
-            & & -1 & \\
-            & & & 1 
-        \end{pmatrix} 
-\end{align}
 \begin{align}
     & \dfrac{\partial\mathcal{H}(k)}{\partial c}=
         \begin{pmatrix}
@@ -504,6 +487,24 @@ const. = \frac{\tilde{U}N}{2}(1+c^2-s^2) + \frac{1}{2}(\eta_cc+\eta_ss)
             & & 0 & \frac{\partial P_{\downarrow}}{\partial s}Q(k) \\
             & & \frac{\partial P_{\downarrow}}{\partial s}Q(-k) & 0 
         \end{pmatrix}
+\end{align}
+\begin{align}
+    & \dfrac{\partial\mathcal{H}(k)}{\partial \eta_c}=\dfrac{1}{2}
+        \begin{pmatrix}
+            -1 & & & \\
+            & 1 & & \\
+            & & 1 & \\
+            & & & -1 
+        \end{pmatrix}
+\end{align}
+\begin{align}
+    & \dfrac{\partial\mathcal{H}(k)}{\partial \eta_s}=\dfrac{1}{2}
+        \begin{pmatrix}
+            -1 & & & \\
+            & 1 & & \\
+            & & -1 & \\
+            & & & 1 
+        \end{pmatrix} 
 \end{align}
 其中，
 \begin{align}
