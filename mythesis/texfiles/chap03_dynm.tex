@@ -467,7 +467,7 @@ W\hat{c}_{i\sigma}W^{-1} = (-1)^i\hat{c}_{i\sigma}
 \begin{align}
 n = tr(\rho\hat{n})
 \end{align}
-如果我们要证明局域电荷密度的动力学过程与居于自旋密度的动力学过程之间存在对称性，那我们就需要从上述密度算符 $\rho$ 和期望值 $n$ 出发进行证明，这不是一件容易的事情（而且很可能并不存在严格的对称性了）。然而，有一种特殊的情况我们可以证明，那就是无穷高温的情况。一方面
+如果我们要证明局域电荷密度的动力学过程与居于自旋密度的动力学过程之间存在对称性，那我们就需要从上述密度算符 $\rho$ 和期望值 $n$ 出发进行证明，这不是一件容易的事情（而且很可能并不存在严格的对称性了）。然而，有一种特殊的情况我们可以严格证明定理仍然成立，那就是无穷高温的情况。一方面
 \begin{align}
 \mathcal{P}e^{-\beta H(+U)}\mathcal{P}^{-1} = e^{-\beta H(-U)}
 \end{align}
@@ -483,7 +483,7 @@ Se^{-\beta H(-U)}S^{-1} = e^{\beta H(+U)}
 \begin{align}
 e^{-\beta H} = e^{\beta H}
 \end{align}
-因此，在 $\mathcal{P}$ 和 $S$ 的联合变换下，无穷高温的混态系综 $\rho$ 被影射为它自己。而定理其他部分证明不变，因此这种情况下定理依然成立，局域电荷密度的动力学过程和局域自旋密度的动力学过程之间仍然可以相互映射。
+因此，在 $\mathcal{P}$ 和 $S$ 的联合变换下，无穷高温的混态系综 $\rho$ 被影射为它自己。而定理其他部分证明不变。因此对于无穷高温的情况，定理依然成立，局域电荷密度的动力学过程和局域自旋密度的动力学过程之间仍然可以相互映射。
 
 
 
@@ -567,6 +567,25 @@ e^{-\beta H} = e^{\beta H}
 [\hat{H}, \hat{L}_{\alpha}]=0, \quad \alpha=x,y,z
 \end{align}
 
+偏离半满时，$\mu\neq N/2$，容易验证，
+\begin{align}
+[\hat{H}, \hat{S}_{\alpha}] &= 0, \quad \alpha=x,y,z
+\end{align}
+仍成立，而且
+\begin{align}
+[\hat{H}, \hat{L}_{z}] &= 0 
+\end{align}
+但
+\begin{align}
+[\hat{H}, \hat{L}_{\pm}] &\neq 0 
+\end{align}
+即，此时模型仍具有自旋-SU(2)对称性，但不再具有电荷-SU(2)对称性。
+事实上，这样的情况可以映射为相反的 $U$ 下加磁场的情况，即在模型中加入下面一项
+\begin{align}
+h\sum_{j}\hat{c}_{j\uparrow}^{\dagger}\hat{c}_{j\uparrow} - \hat{c}_{j\downarrow}^{\dagger}\hat{c}_{j\downarrow}
+\end{align}
+这种情况下，$S_x, S_y$ 仍是简并的，但二者不再与 $S_z$ 简并\footnote{若出现自旋密度波的话，序参量沿 $S_z$ 方向能量更低。}。对应到到电荷这边就是 (inplane) $L_{\pm}$ 不再与 $L_z$ 简并。在实验中\cite{canted}，人们也观测到了这种情况下的 canted 序。
+
 
 另外，半填充的 Fermi Hubbard 模型还具有粒子空穴对称性。定义如下粒子空穴变换
 \begin{align}
@@ -603,14 +622,9 @@ e^{-\beta H} = e^{\beta H}
 \item $l$ 为奇数时，
 \begin{align}
 [\hat{H}_{\text{eff}}, \hat{S}_{\alpha}] &= 0, \quad \alpha=x,y,z
-[\hat{H}_{\text{eff}}, \hat{L}_{\alpha}] &= 0, \quad \alpha=x,y,z 
 \end{align}
-但
-\begin{align}
-[\hat{H}_{\text{eff}}, \hat{L}_{\alpha}] &= 0, \quad \alpha=x,y,z 
-\end{align}
-不再成立。
-因此模型具有 自旋-SU(2) 对称性，但不具有 电荷-SU(2) 对称性。因此也不具有 SO(4) 对称性。
+因此模型具有 自旋-SU(2) 对称性，
+但不具有 电荷-SU(2) 对称性。故而也不具有 SO(4) 对称性。
 
 引入二分晶格变换 $\hat{S}$ (参考上一节内容)，有
 \begin{align}
