@@ -5,6 +5,8 @@
 *.fls
 *.fdb_latexmk
 *.log
+*.synctex.gz
+*.xdv
 
 # Prerequisites
 *.d
