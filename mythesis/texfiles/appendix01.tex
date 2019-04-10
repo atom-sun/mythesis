@@ -1,7 +1,7 @@
 % \newcommand{\vect}{\boldsymbol}
 % \newcommand{\vect}{\mathbf}
 
-\chapter{二维材料 Chern 数算法}
+\chapter{二维材料 Chern 数算法}\label{sec:chern}
 
 考虑无限大二维材料的布里渊区（Brillioun Zone，简称BZ），其由两个实参数刻画，$\{k_x, k_y\}$，也即准动量$\vect{k}=(k_x, k_y)$。参数空间为 Torus 结构 (以下简称$T^2$)，即 $k_x\in[0, 2\pi]$, $k_y\in[0, 2\pi]$，且 0 与 $2\pi$ 等价。考虑该材料的某一能带，引入其波函数记作 $|u(\vect{k})\rangle$，则陈数（以下称 Chern 数）刻画了一个从该 Brillioun 区（$T^2$）上的到一个球面（以下简称$S^2$）的映射：
 
@@ -20,7 +20,7 @@ A_{\mu}(\vect{k})&=i\langle u(\vect{k})|\partial_{\mu}u(\vect{k})\rangle
 
 \begin{enumerate}
 
-\item 将二维参数空间离散化为 $L\times L$ 个格点\footnote{此为简单起见。离散化成$L\times M$也没有问题。}，格点被标记为 $\vect{k}=(k_x, k_y)$。引入周期性边界条件（$L+1$ 等同于 1）\footnote{严格地说，并不一定要 $H(k_x)=H(k_x+2\pi)$, $H(k_y)=H(k_y+2\pi)$, 只要参数空间的拓扑结构为 $T^2$ 即可。例如，实际计算 Haldane 模型的 Chern 数时，只需要在参数空间中取定蜂巢晶格的倒格子元胞即可，某种取法下 $H(k_x, k_y) = H(k_x + 2\pi, k_y + \pi)$。}，则共有 $L\times L$ 个方块（plaquette）。对于均匀的离散化，每个方块的面积为 $s(\vect{k})=\Delta k_x\Delta k_y$，这里 $\Delta k_x$ 和 $\Delta k_y$ 分别是 $k_x$ 和 $k_y$ 方向相邻格点的距离。
+\item 将二维参数空间离散化为 $L\times L$ 个格点\footnote{此为简单起见。离散化成$L\times M$也没有问题}，格点被标记为 $\vect{k}=(k_x, k_y)$。引入周期性边界条件（$L+1$ 等同于 1）\footnote{严格地说，并不一定要 $H(k_x)=H(k_x+2\pi)$, $H(k_y)=H(k_y+2\pi)$, 只要参数空间的拓扑结构为 $T^2$ 即可。例如，实际计算 Haldane 模型的 Chern 数时，只需要在参数空间中取定蜂巢晶格的倒格子元胞即可，某种取法下 $H(k_x, k_y) = H(k_x + 2\pi, k_y + \pi)$。}，则共有 $L\times L$ 个方块（plaquette）。对于均匀的离散化，每个方块的面积为 $s(\vect{k})=\Delta k_x\Delta k_y$，这里 $\Delta k_x$ 和 $\Delta k_y$ 分别是 $k_x$ 和 $k_y$ 方向相邻格点的距离。
 
 \item 在每个格点 $\vect{k}=(k_x, k_y)$ 上，对角化 Hamiltonian：
 \begin{align}
@@ -135,7 +135,7 @@ $\chi(\vect{k})$ 为一任意相位，则
 \end{theorem}
 
 \begin{proof}
-易验证\footnote{这里为简化记号，不致混淆的情况下以 $(x,y)$ 代记 $(k_x,k_y)$。}：
+易验证\footnote{这里为简化记号，不致混淆的情况下以 $(x,y)$ 代记 $(k_x,k_y)$}：
 \begin{align}
 \langle u(\vect{k}_2)|u(\vect{k}_1)\rangle 
 &= \langle u(x_{i+1},y_j)|u(x_i,y_j)\rangle \\ 
@@ -156,7 +156,7 @@ $\chi(\vect{k})$ 为一任意相位，则
 \left(\dfrac{2\pi}{L_0}\right)^2 \sim \dfrac{\pi}{\theta_{m}}
 \end{align}
 $L$ 比 $L_0$ 大很多时即可认为算法完全有效（完全准确）。
-\footnote{读者可以想一想为什么。}
+\footnote{读者可以想一想为什么}
 \end{proof}
 
 
