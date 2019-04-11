@@ -254,18 +254,18 @@ H_{\text{eff}} = -\tilde{J} \sum_{\substack{\langle i,j\rangle \\ \sigma = \upar
 
 \section{近共振的周期驱动：在光晶格中实现带有关联隧穿效应的 Fermi Hubbard 模型}\label{sec:floq:resona}
 
-上一节讨论了晃动光晶格 Fermi Hubbard 模型在远离共振高频展开（$\hbar\omega\gg J, U$）的情况。对于远离共振高频驱动的情况，其有效静态哈密顿量的最低阶仍为普通的 Fermi Hubbard 模型，只是跃迁系数有所改变，依赖于驱动频率 $\omega$ 和振幅 $A$。但是，当 $\hbar\omega\gg J, U$ 的条件不被满足时，例如 $\hbar\omega\sim U$ 时，上一节的高频展开就不能直接应用了。这种情况我们称之为近共振的驱动。这一节讨论近共振周期驱动的 Fermi Hubbard 模型的有效频闪静态模型。
+上一节讨论了晃动光晶格 Fermi Hubbard 模型在远离共振高频展开（$\hbar\omega\gg J, U$）的情况。对于远离共振高频驱动的情况，其有效静态哈密顿量的最低阶仍为普通的 Fermi Hubbard 模型，只是跃迁系数有所改变，依赖于驱动频率 $\omega$ 和振幅 $A$。但是，当 $\hbar\omega\gg J, U$ 的条件不被满足时，例如 $\hbar\omega\sim U$ 时，上一节的高频展开就不能直接应用了。这种情况我们称之为近共振的驱动。这一节讨论近共振周期驱动的 Fermi Hubbard 模型的频闪有效静态模型。
 
 \subsection{近共振驱动带来的关联效应}
-这里考虑宽泛的近共振驱动，包括相互作用强度 $U$ 与一个或几个驱动频率的能量可比，即
+这里考虑的近共振驱动，包括相互作用强度 $U$ 与一个或几个驱动频率的能量可比，即
 \begin{align}
 U\sim l\hbar\omega
 \end{align}
-$l$ 为一非零整数。这时上一节的高频展开不能直接应用，但并不是完全不能用，需要我们先做一个幺正变换，将模型转动到以合适的能量尺度刻画的坐标系中来看。具体来说，对(\ref{eq:ht1}) 式中的哈密顿量做如下幺正变换。
+$l$ 为一非零整数。这时上一节的高频展开不能直接应用，但并不是不能用\footnote{不能用的情况是体系找不到一个合适的小参数来做微扰展开，即找不到一种有效模型的写法使 $\omega$ 相比于所有能量尺度都是很大的。但这里，$\omega$ 与 $U$ 近共振时，实际上可以通过坐标系的转动使得写出来的有效模型所有能量尺度都远小于 $\omega$ ，除了之前说的 $J$ 外，此时的有效相互作用 $\tilde{U}$ 也比 $\omega$ 小很多。这种变换实际上类似于光学中的旋波近似，对哈密顿量做合适的幺正变换使得高能物理和低能物理有效解藕，那么用来刻画基态的有效模型只需要保留低能自空间就可以了。这里也是一样。}，需要我们先做一个幺正变换，将模型转动到以合适的能量尺度刻画的坐标系中来看。具体来说，对(\ref{eq:ht1}) 式中的哈密顿量做如下幺正变换。
 \begin{align}
 \hat{R}_l(t) = \exp(\ii\sum_jl\omega t\hat{n}_{j\uparrow}\hat{n}_{j\downarrow})
 \end{align}
-\begin{figure}[!htb]
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.8\columnwidth]{chap4_floq/correlated_tunneling_schematic}
 \caption{关联隧穿效应示意图：
@@ -295,7 +295,7 @@ c_{i\uparrow}^{\dagger}c_{j\uparrow}\exp(-\ii\sum_{j}l\omega t\hat{n}_{j\uparrow
 \begin{align}
 \tilde{U}=U-l\hbar\omega
 \end{align}
-而含时矢量势被重整为
+而含时规范势被重整为
 \begin{align}
 \tilde{\mathbf{A}}_{ij,\sigma}(t)&=\mathbf{A}(t)-\frac{l\omega t}{d^2} \mathbf{d_{ij}}((1-\hat n_{i\bar\sigma})\hat n_{j\bar\sigma}-(1-\hat n_{j\bar\sigma})\hat n_{i\bar\sigma}))
 \end{align}
@@ -304,7 +304,7 @@ c_{i\uparrow}^{\dagger}c_{j\uparrow}\exp(-\ii\sum_{j}l\omega t\hat{n}_{j\uparrow
 
 
 \subsection{近共振驱动下的有效静态模型}
-上面的 $R_l(t)$ 只是对含时哈密顿量做了一个幺正变换，体系还是含时的，就可以看出 Peierls 相位上的关联效应。这一节推导其有效静态模型，而有效静态模型下关联效应也更加明显。
+上面的 $R_l(t)$ 只是对含时哈密顿量做了一个幺正变换，体系还是含时的，就已经可以看出规范势的关联效应。这一节推导其有效静态模型，而有效静态模型下关联效应也更加明显。
 
 对于 (\ref{eq:htt}) 式中的哈密顿量 $H(t)$，由于是高频近共振驱动，有 $J, \tilde{U}\ll\hbar\omega$，因此可以对其做高频展开截断以得到有效静态哈密顿量。有效静态哈密顿量的最低阶为 $H(t)$ 的傅立叶零分量，
 \begin{align}
@@ -366,7 +366,7 @@ $\eta_{ij}$ 的定义为，
 \mathcal{Z}=&\int \mathcal D\psi D\bar\psi \exp(i\int dt L)  \\
 L=&\sum_{i,\sigma} i\bar \psi_{i\sigma}\partial_t\psi_{i\sigma}+\sum_{\langle i,j\rangle, \sigma} \left(J_0a_{ij\bar{\sigma}}(\bar\psi \psi) + J_1b_{ij\bar{\sigma}}^l(\bar\psi\psi)\right)\bar \psi_{i\sigma}\psi_{j\sigma} \notag \\&- \tilde{U}\sum_{i}\bar\psi_{i\uparrow}\psi_{i\uparrow}\bar\psi_{i\downarrow}\psi_{i\downarrow} \  .
 \end{align}
-这里 $\psi$ 代表费米场算符，$a_{ij\bar{\sigma}}$ 和 $b_{ij\bar{\sigma}}^l$ 是由 $\hat a_{ij\bar{\sigma}}$ 和 $\hat b_{ij\bar{\sigma}}^l$ 替换为场算符。注意到，现在的哈密顿量的动能项是六费米子算符项，传统的基于 Hubbard-Stratonovich 变换的直接解偶得到平均场哈密顿量（那是对于四费米子算符哈密顿量）的方式将不能采用，这里我们采用继承了 Hubbard-Stratonovich 变换的精神的另一种方法。具体来说，对上式路径积分插入 $\delta$-函数来引入辅助玻色场：
+这里 $\psi$ 代表费米场算符，$a_{ij\bar{\sigma}}$ 和 $b_{ij\bar{\sigma}}^l$ 是由 $\hat a_{ij\bar{\sigma}}$ 和 $\hat b_{ij\bar{\sigma}}^l$ 替换为场算符。注意到，现在的哈密顿量的动能项是六费米子算符项，传统的基于 Hubbard-Stratonovich 变换的直接解藕得到平均场哈密顿量（那是对于四费米子算符哈密顿量）的方式将不能采用，这里我们采用继承了 Hubbard-Stratonovich 变换的精神的另一种方法。具体来说，对上式路径积分插入 $\delta$-函数来引入辅助玻色场：
 \begin{align}
 \mathcal{Z}=&\int \mathcal D\psi D\bar\psi Dn \prod_{i\sigma}\delta(n_{i,\sigma}-\bar\psi_{i,\sigma}\psi_{i,\sigma})\exp(i\int dt L)\\
 L=&\sum_{i,\sigma} i\bar \psi_{i\sigma}\partial_t\psi_{i\sigma}+\sum_{\langle i,j\rangle, \sigma} \left(J_0a_{ij\bar{\sigma}}(n) + J_1b_{ij\bar{\sigma}}^l(n)\right)\bar \psi_{i\sigma}\psi_{j\sigma}  \notag \\&- \tilde{U}\sum_{i}n_{i\uparrow}n_{i\downarrow} \  .
@@ -540,30 +540,39 @@ const. = \frac{\tilde{U}N}{2}(1+c^2-s^2) + \frac{1}{2}(\eta_cc+\eta_ss)
 图 \ref{fig:floqhubb:phasediagram} 中 1号红色双向箭头，图 \ref{fig:floqhubb:orderparameter} 中间曲线，与
 图 \ref{fig:floqhubb:kinetic} 中蓝色实线的行为。}
 
-对于一级相变、二级相变、和相共存的情况，我们分别给出三个代表性例子，分别取 $J_1/J_0=1.5$, $J_1/J_0=1.0$, $J_1/J_0=-2.0$，画出序参量的值随 $\tilde{U}/J_0$ 变化的情况，见图 \ref{fig:floqhubb:orderparameter} 三种颜色的曲线，以及图 \ref{fig:floqhubb:phasediagram} 中对应颜色的双向箭头。 具体来说，$J_1/J_0=1.5$ 对应一级相变的情况，见图 \ref{fig:floqhubb:phasediagram} 1号红色双向箭头标示，以及图 \ref{fig:floqhubb:orderparameter} 中间红色曲线的行为；$J_1/J_0=1.0$ 对应二级相变的情况，见图 \ref{fig:floqhubb:phasediagram} 2号青色双向箭头标示，以及图 \ref{fig:floqhubb:orderparameter} 下面青色曲线的行为；$J_1/J_0=-2.0$ 对应穿过相共存区域的情况，见图 \ref{fig:floqhubb:phasediagram} 3号蓝色双向箭头标示，以及图 \ref{fig:floqhubb:orderparameter} 中间蓝色曲线的行为。
-
-\begin{figure}
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.9\columnwidth]{floqhubb/order_parameter}
-\caption{对于图 \ref{fig:floqhubb:phasediagram} 中三条双向箭头标记曲线上序参量的计算。三种情况分别对应于：（1，中，M，红色）$J_1/J_0=1.5$；（2，下，L，青色）$J_1/J_0=1.0$；（3，上，U，蓝色）$J_1/J_0=02.0$。其中实线表示 SDW 的序参量曲线，虚线表示 CDW 的序参量曲线。可以看到，中间的红色曲线实线和虚线部分的值在 $\tilde{U}=0$ 处均出现有限大的跳变，代表这种情况下是一级相变。下面的青色曲线的值在 $\tilde{U}=0$ 处连续过渡到 0，代表这是二级相变，这种情况也对应着通常的 Fermi Hubbard 模型，由于半填充时费米面嵌套效应的存在，无限小的相互作用就可以诱导体系出现序\cite{nagaosa}。上面的蓝色曲线中出现以 $\tilde{U}=0$ 为中心的一段 CDW（虚线） 和 SDW（实线）序参量值均不为0的区域，代表这里是 CDW+SDW 的共存相。（取自\inlinecite{floqhubb}）}
+\caption{对于图 \ref{fig:floqhubb:phasediagram} 中三条双向箭头标记曲线上序参量的计算。三种情况分别对应于：（1，中，M，红色）$J_1/J_0=1.5$；（2，下，L，青色）$J_1/J_0=1.0$；（3，上，U，蓝色）$J_1/J_0=-2.0$。其中实线表示 SDW 的序参量曲线，虚线表示 CDW 的序参量曲线。可以看到，中间的红色曲线实线和虚线部分的值在 $\tilde{U}=0$ 处均出现有限大的跳变，代表这种情况下是一级相变。下面的青色曲线的值在 $\tilde{U}=0$ 处连续过渡到 0，代表这是二级相变，这种情况也对应着通常的 Fermi Hubbard 模型，由于半填充时费米面嵌套效应的存在，无限小的相互作用就可以诱导体系出现序\cite{nagaosa}。上面的蓝色曲线中出现以 $\tilde{U}=0$ 为中心的一段 CDW（虚线） 和 SDW（实线）序参量值均不为0的区域，代表这里是 CDW+SDW 的共存相。（取自\inlinecite{floqhubb}）}
 \label{fig:floqhubb:orderparameter}
 \end{figure}
+
+对于一级相变、二级相变、和相共存的情况，我们分别给出三个代表性例子，分别取 $J_1/J_0=1.5$, $J_1/J_0=1.0$, $J_1/J_0=-2.0$，画出序参量的值随 $\tilde{U}/J_0$ 变化的情况，见图 \ref{fig:floqhubb:orderparameter} 三种颜色的曲线，以及图 \ref{fig:floqhubb:phasediagram} 中对应颜色的双向箭头。 具体来说，$J_1/J_0=1.5$ 对应一级相变的情况，见图 \ref{fig:floqhubb:phasediagram} 1号红色双向箭头标示，以及图 \ref{fig:floqhubb:orderparameter} 中间红色曲线的行为；$J_1/J_0=1.0$ 对应二级相变的情况，见图 \ref{fig:floqhubb:phasediagram} 2号青色双向箭头标示，以及图 \ref{fig:floqhubb:orderparameter} 下面青色曲线的行为；$J_1/J_0=-2.0$ 对应穿过相共存区域的情况，见图 \ref{fig:floqhubb:phasediagram} 3号蓝色双向箭头标示，以及图 \ref{fig:floqhubb:orderparameter} 中间蓝色曲线的行为。
+
 
 相图中最新奇的部分在于中间的铁磁相（FM）和相分离（PS）区域。通过图 \ref{fig:floqhubb:phasediagram} 可看出，铁磁相和相分离发生在小相互作用$\tilde{U}/J_0\lesssim1$、且 $J_1<J_0$ 的区域。引起这两个新奇的相的机制值得探讨。
 
 
 \subsection{关联隧穿引发铁磁相与相分离的机制}
-在图 \ref{fig:floqhubb:phasediagram} 的平均场相图中，在小相互作用，小 $J_1$ 区域出现了铁磁相和相分离结构。对于这两个新奇的相，我们通过几种角度来理解其出现的机制。
+在图 \ref{fig:floqhubb:phasediagram} 的平均场相图中，在小相互作用，小 $J_1$ 区域出现了铁磁相和相分离结构。对于这两个新奇的相，我们从几种角度来理解其出现的机制。
 
-首先，对平均场自洽方程组(\ref{eq:selfconsist})的数值求解显示出铁磁相和相分离。如图 \ref{fig:floqhubb:seperation} 所示，在铁磁相和相分离的区域中，对 \ref{sec:floq:pathint} 节中的元胞扩大化（情况二）的数值迭代求解显示，体系的基态能量随着元胞扩大化的 $L$ 的增大而单调降低。这也就意味着，体系趋向于越来越大的 $L$，最终会形成磁畴和密度畴\footnote{畴，domain}。对于排斥相互作用的情况，即 $\tilde{U}>0$ 时，$c=0$，而$s\neq0$，体系会形成自旋密度波的畴，也就是铁磁态；而对于吸引相互作用的情况，即 $\tilde{U}<0$，$s=0$，而 $c\neq=0$，体系会形成电荷密度波的畴，也就是相分离。
-\footnote{参见图 \ref{fig:floq:cdwsdw}（右）示意图，形成自旋密度波磁畴时，相同（不同）颜色的区域具有相同（不同）的 $s_{\uparrow}-s_{\downarrow}$，而形成电荷密度波密度畴时，则为 $n=n_{\uparrow}+n_{\downarrow}$。}
-
-\begin{figure}[!htb]
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.9\columnwidth]{floqhubb/phase_seperation}
 \caption{平均场基态能量随元胞扩大化参数 $L$ 的变化。对于铁磁相和相分离区域，我们这里取一组代表性的参数，$J_1=0$, $\tilde{U}/|J_0|=-0.2$，数值迭代求解自洽方程组(\ref{eq:selfconsist})，得到元胞扩大化到$L=2,3,4,5$时的平均场基态能量。蓝色的水平线为自由（序参量为0）情况下的能量，$L=1$时只有该自由解。可见随着 $L$ 增大，平均场基态能量单调下降，体系趋向于形成大的磁畴或密度畴（domain）——即铁磁态（排斥相互作用）或相分离（吸音相互作用）。（取自\inlinecite{floqhubb}）}
 \label{fig:floqhubb:seperation}
 \end{figure}
+
+首先，对平均场自洽方程组(\ref{eq:selfconsist})的数值求解显示出铁磁相和相分离。如图 \ref{fig:floqhubb:seperation} 所示，在铁磁相和相分离的区域中，对 \ref{sec:floq:pathint} 节中的元胞扩大化（情况二）的数值迭代求解显示，体系的基态能量随着元胞扩大化的 $L$ 的增大而单调降低。这也就意味着，体系趋向于越来越大的 $L$，最终会形成磁畴和密度畴\footnote{畴，domain}。对于排斥相互作用的情况，即 $\tilde{U}>0$ 时，$c=0$，而$s\neq0$，体系会形成自旋密度波的畴，也就是铁磁态；而对于吸引相互作用的情况，即 $\tilde{U}<0$，$s=0$，而 $c\neq=0$，体系会形成电荷密度波的畴，也就是相分离。
+\footnote{参见图 \ref{fig:floq:cdwsdw}（右）示意图，形成自旋密度波磁畴时，相同（不同）颜色的区域具有相同（不同）的 $s_{\uparrow}-s_{\downarrow}$，而形成电荷密度波密度畴时，则为 $n=n_{\uparrow}+n_{\downarrow}$。}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=1.\columnwidth]{floqhubb/kinetic_energy}
+\caption{$\tilde{U}=0$ 时体系能量作为平均粒子密度密度（左）或平均自旋密度（右）的函数行为。此时，由于相互作用为0，体系的能量等于其跃迁动能。蓝色实现为 $J_1/J_0=-0.8$ 时的情况，此时体系基态能量在左右各有一个极小值点，中间的点为极大值点，是不稳定平衡点，该点位于相图 \ref{fig:floqhubb:phasediagram} PS$\leftrightarrow$FM相变边界上。灰色虚线为 $J_1/J_0=-1.8$ 时的情况，可见体系基态能量在中间有一个最小值，是稳定平衡点，该点位于相图 \ref{fig:floqhubb:phasediagram} 中 CDW$\leftrightarrow$SDW相变边界上。（取自\inlinecite{floqhubb}）}
+\label{fig:floqhubb:kinetic}
+\end{figure}
+
 
 事实上，这里的铁磁相和相分离的出现是由于哈密顿量动能相中的关联隧穿效应，这可以从如下事实看出。我们考虑元胞扩大化后，畴的内部和相临的畴之间的跃迁系数：
 \footnote{也就是图 \ref{fig:floq:cdwsdw}中相同颜色内，与相临的不同颜色之间}
@@ -571,19 +580,13 @@ const. = \frac{\tilde{U}N}{2}(1+c^2-s^2) + \frac{1}{2}(\eta_cc+\eta_ss)
     J^{\text{intra}}_{\text{eff},\sigma} &= \frac{1}{2} \left(J_0[1+(c\mp s)^2]+J_1[1-(c\mp s)^2]\right), \\
     J^{\text{inter}}_{\text{eff},\sigma} &= \frac{1}{2} \left(J_0[1-(c\mp s)^2]+J_1[1+(c\mp s)^2]\right),
 \end{align}
-这里 $J^{\text{intra}}_{\text{eff},\sigma}$ 表示畴内$\sigma$-自旋的跃迁系数，而 $J^{\text{inter}}_{\text{eff},\sigma}$ 表示相临畴之间的$\sigma$-自旋的跃迁系数。可以看出，$|J_1|<|J_0|$ 时，$|J^{\text{intra}}_{\text{eff},\sigma}|$ 一直大于 $|J^{\text{inter}}_{\text{eff},\sigma}|$，$|J^{\text{intra}}_{\text{eff},\sigma}|\geq|J^{\text{inter}}_{\text{eff},\sigma}|$ 恒成立，即畴内跃迁系数较畴跃迁系数更大。当相互作用 $\tilde{U}$ 较小时，体系的行为主要有跃迁相主导，而由于畴内跃迁系数较畴间跃迁系数更大，体系倾向于形成大的元胞，以增加畴内跃迁，减少畴间跃迁。
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=1.\columnwidth]{floqhubb/kinetic_energy}
-\caption{$\tilde{U}=0$ 时体系能量作为平均粒子密度密度（左）或平均自旋密度（右）的函数行为。此时，由于相互作用为0，体系的能量等于其跃迁动能。蓝色实现为 $J_1/J_0=-0.8$ 时的情况，此时体系基态能量在左右各有一个极小值点，中间的点为极大值点，是不稳定平衡点，该点位于相图 \ref{fig:floqhubb:phasediagram} PS$\leftrightarrow$FM相变边界上。灰色虚线为 $J_1/J_0=-1.8$ 时的情况，可见体系基态能量在中间有一个最小值，是稳定平衡点，该点位于相图 \ref{fig:floqhubb:phasediagram} 中 CDW$\leftrightarrow$SDW相变边界上。（取自\inlinecite{floqhubb}）}
-\label{fig:floqhubb:kinetic}
-\end{figure}
-
-作为一种极限情况，我们来考虑没有相互作用时的情况。此时 $\tilde{U}=0$，模型完全有第一项动能项主导。之前的数值迭代求解都约束在半填充、自旋平衡的情况下来做，这里我们放开这两个约束，计算出体系能量（动能）根据平均粒子数密度 $n$ 和 平均自旋密度 $s$ 变化的行为，见图 \ref{fig:floqhubb:kinetic}。由图 \ref{fig:floqhubb:kinetic} 可见，$|J_1|>|J_0|$ 时，体系基态能量在 $n=1$ 或 $s=0$ 处均为一个极小值点，而 $|J_1|<|J_0|$ 时，体系基态能量在 $n=1$ 或 $s=0$ 处均为一个极大值点，而在其两侧有两个对称的极小值点。这也就说明，当体系加一点微扰相互作用时，后者倾向于形成两个极小值点的叠加的基态，即形成俩种不同粒子密度或自旋密度的畴。这从另一个角度解释了铁磁相和相分离结构的行为。
+这里 $J^{\text{intra}}_{\text{eff},\sigma}$ 表示畴内$\sigma$-自旋的跃迁系数，而 $J^{\text{inter}}_{\text{eff},\sigma}$ 表示相临畴之间的$\sigma$-自旋的跃迁系数。可以看出，$|J_1|<|J_0|$ 时，$|J^{\text{intra}}_{\text{eff},\sigma}|$ 一直大于 $|J^{\text{inter}}_{\text{eff},\sigma}|$，$|J^{\text{intra}}_{\text{eff},\sigma}|\geq|J^{\text{inter}}_{\text{eff},\sigma}|$ 恒成立，即畴内跃迁系数较畴跃迁系数更大。当相互作用 $\tilde{U}$ 较小时，体系的行为主要有跃迁项主导，而由于畴内跃迁系数较畴间跃迁系数更大，体系倾向于形成大的元胞，以增加畴内跃迁，减少畴间跃迁。
 
 
-从以上的分析可以看出，这里的铁磁相和相分离的出现是由于哈密顿量动能相中的关联隧穿效应，且发生于有效相互作用很小的区域，有别于非传统 Stoner 机制中由大相互作用诱发的铁磁。而关联隧穿效应则来自于近共振的高频驱动。因此这种新奇的铁磁相和相分离的产生机制其实是近共振的高频驱动。需要说明的是，由于我们所关注的物理集中在较小相互作用区域，由于费米面的嵌套效应，使得平均场近似的方法相对可靠。而且，鉴于实验上已经实现了类似的哈密顿量\cite{correlated-tunnel-expr-2018-shaking}，这样的铁磁相可以期待实验检验。事实上，通过调节驱动频率 $\omega$ 和 振幅 $A$，有多种不唯一的方式来实现相图中的 $\tilde{U}/|J_0|\lesssim1$，$|J_1/J_0|<1$ 的区域。
+作为一种极限情况，我们来考虑没有相互作用时的情况。此时 $\tilde{U}=0$，模型完全有第一项动能项主导。之前的数值迭代求解都约束在半填充、自旋平衡的情况下来做，这里我们放开这两个约束，计算出体系能量（动能）根据平均粒子数密度 $n$ 和 平均自旋密度 $s$ 变化的行为，见图 \ref{fig:floqhubb:kinetic}。由图 \ref{fig:floqhubb:kinetic} 可见，$|J_1|>|J_0|$ 时，体系基态能量在 $n=1$ 或 $s=0$ 处均为一个极小值点，而 $|J_1|<|J_0|$ 时，体系基态能量在 $n=1$ 或 $s=0$ 处均为一个极大值点，而在其两侧有两个对称的极小值点。这也就说明，当体系加一点微扰相互作用时，后者倾向于落在左右两个极小值点上，形成具有不同电荷密度或自旋密度的畴。这从另一个角度解释了铁磁相和相分离结构的行为。
+
+
+从以上的分析可以看出，这里的铁磁相和相分离的出现是由于哈密顿量动能项中的关联隧穿效应，且发生于有效相互作用很小的区域，有别于传统 Stoner 机制中由较大相互作用诱发的铁磁。而关联隧穿效应则来自于近共振的高频驱动。因此这种新奇的铁磁相和相分离的产生机制其实是近共振的高频驱动。需要说明的是，由于我们所关注的物理集中在较小相互作用区域，由于费米面的嵌套效应，使得平均场近似的方法相对可靠。而且，鉴于实验上已经实现了类似的哈密顿量\cite{correlated-tunnel-expr-2018-shaking}，这样的铁磁相可以期待实验检验。事实上，通过调节驱动频率 $\omega$ 和 振幅 $A$，有多种不唯一的方式来实现相图中的 $\tilde{U}/|J_0|\lesssim1$，$|J_1/J_0|<1$ 的区域。
 
 
 

@@ -22,7 +22,7 @@
 \hat{H}_I=U\sum_{j}\hat{n}_j(\hat{n}_j-1)/2
 \end{align}
 这其中 $U$ 代表了格点上相互作用的强度。
-单粒子哈密顿量部分 $\hat{H}_0$ 可能会存在对称性。我们发现，当 $\hat{H}_0$ 具有某些满足一定条件的对称性时，这类 Hubbard 系统衍生出一种动力学对称性，即在排斥相互作用（$+U$）时的动力学演化和在吸引相互作用（$-U$）时的动力学演化具有某种对称性。这种衍生的动力学对称性受单粒子哈密顿量 $\hat{H}_0$ 的对称性的保护（支持），我们也称之为对称性保护的动力学对称性\cite{dynsymm}。下面这个定理表达了这种动力学对称性。
+单粒子哈密顿量部分 $\hat{H}_0$ 可能会存在对称性。我们发现，当 $\hat{H}_0$ 具有某些满足一定条件的对称性时，这类 Hubbard 系统衍生出一种动力学对称性，即在排斥相互作用（$+U$）时的动力学演化和在吸引相互作用（$-U$）时的动力学演化具有某种对称性。这种衍生的动力学对称性受单粒子哈密顿量 $\hat{H}_0$ 的对称性的保护（支持），我们也称之为受对称性保护的动力学对称性\cite{dynsymm}。下面这个定理表达了这种动力学对称性。
 \begin{theorem}\label{thm:dynsymm}
 对于如 $\hat{H} = \hat{H}_0 + \hat{H}_I$ 形式的哈密顿量，我们考虑某个初态 $|\psi_i\rangle$ 在其主导下的幺正演化 $|\psi(t)\rangle = e^{\ii\hat{H}t}|\psi_i\rangle$，并且考虑某个可观测量 $\hat{O}$ 在该态下的期望值随时间的演化 $\langle\hat{O}(t)\rangle$。若存在一个幺正算符 $\hat{W}$，使得对$\hat{S}=\hat{R}\hat{W}$，$\hat{R}$ 为（反幺正的）时间反演算符，有
 \begin{align}
@@ -124,7 +124,7 @@ Sn_lS = n_l
 \begin{align}
 \langle n_l(t)\rangle_{+U} = \langle n_l(t)\rangle_{-U}
 \end{align}
-我们对 $2\times15$ 个格点的周期性边界条件的体系进行了数值验证。进行严格对角化（Exact Diagonalization，ED）计算，得到几个局域密度观测量在一段时间内的演化，如图 \ref{fig:dynm:fhsed} 所示。
+我们对 $2\times15$ 个格点的周期性边界条件的体系进行了数值验证。经过严格对角化（Exact Diagonalization，ED）计算，得到几个局域密度观测量在一段时间内的演化，如图 \ref{fig:dynm:fhsed} 所示。
 \begin{figure}[!htb]
 \begin{subfigure}{.5\textwidth}
 \includegraphics[width=1.\columnwidth]{chap3_dynm/fig_fh1.pdf}
@@ -274,7 +274,7 @@ H=&-\sum_jJ_X(e^{-\ii\phi/2}a^{\dagger}_{j+1}a_j+e^{\ii\phi/2}b^{\dagger}_{j+1}b
 \item $p$ 是奇数，$q$ 是偶数，且 $q/2$ 是奇数。
 这时，上式的 $\hat{W}$ 还是满足模型的对称性的。但此时，$\hat{\mathcal{I}}$ 在 $\hat{S}$ 下是奇对称，且只有 $|\Psi_0\rangle_{\text{uniform}}$ 在其下不变，$|\Psi_0\rangle_{\text{CDW}}$ 在其变换下不再具有不变性。因此，这种情况下，$\hat{\mathcal{I}}$ 在 $|\Psi_0\rangle_{\text{uniform}}$ 幺正演化下的期望值具有 $+U/-U$ 对称性，且为奇对称，而在 $|\Psi_0\rangle_{\text{CDW}}$ 幺正演化下的期望值不再具有 $+U/-U$ 对称性。见图 \ref{fig:dynm:aa}(d)(e)。
 
-\item $q$ 是奇数。这种情况下无法找到满足定理 \ref{thm:dynsymm} 所述的 $\hat{S}$。非平衡可观测量的演化不具有 $+U/-U$ 对称性。
+\item $q$ 是奇数。这种情况下无法找到满足定理 \ref{thm:dynsymm} 所述的 $\hat{S}$。非平衡可观测量 $\mathcal{I}$ 的含时演化不具有 $+U/-U$ 对称性。
 \end{enumerate}
 
 
@@ -320,7 +320,7 @@ Fermi Hubbard 模型中的电荷输运与自旋输运问题是许多凝聚态物
 \end{align}
 
 \begin{lemma}\label{lemma1}
-对于半填充的二分 Fermi Hubbard 模型，上述粒子空穴变换将 $+U$ 的模型映射为 $-U$ 的模型，以及反之。
+对于半填充的二分 Fermi Hubbard 模型，上述粒子空穴变换将 $+U$ 的模型映射为 $-U$ 的模型，反之亦然。
 \begin{align}
 \mathcal{P}: H(+U) \leftrightarrow H(-U)
 \end{align}
@@ -451,7 +451,7 @@ W\hat{c}_{i\sigma}W^{-1} = (-1)^i\hat{c}_{i\sigma}
 
 
 \subsection{偏离半满和更一般的观测量的推广}
-上面为了叙述与证明的简便，假设了体系处于半满，并且只考虑了局域电荷密度观测量和局域自旋密度观测量的动力学演化行为。事实上，上述定理的半填充的约束完全可以放开，对观测量的定义也可以更广泛。。在文章\inlinecite{diffusion} 中，我们对定理做了更一般的表述。而证明的步骤仍是利用粒子空穴变换+受对称性保护的动力学对称性两步。参考图 \ref{fig:diffusion:results} 的证明示意图。
+上面为了叙述与证明的简便，假设了体系处于半满，并且只考虑了局域电荷密度观测量和局域自旋密度观测量的动力学演化行为。事实上，上述定理的半填充的约束完全可以放开，对观测量的定义也可以更广泛。。在文章\inlinecite{diffusion} 中，我们对定理做了更一般的表述。而证明的步骤仍是利用粒子空穴变换+受对称性保护的动力学对称性两步走。参考图 \ref{fig:diffusion:results} 的证明示意图。
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.0\columnwidth]{diffusion/results}
@@ -467,7 +467,7 @@ W\hat{c}_{i\sigma}W^{-1} = (-1)^i\hat{c}_{i\sigma}
 \begin{align}
 n = tr(\rho\hat{n})
 \end{align}
-如果我们要证明局域电荷密度的动力学过程与居于自旋密度的动力学过程之间存在对称性，那我们就需要从上述密度算符 $\rho$ 和期望值 $n$ 出发进行证明，这不是一件容易的事情（而且很可能并不存在严格的对称性了）。然而，有一种特殊的情况我们可以严格证明定理仍然成立，那就是无穷高温的情况。一方面
+如果我们要证明局域电荷密度的动力学过程与局域自旋密度的动力学过程之间存在对称性，那我们就需要从上述密度算符 $\rho$ 和期望值 $n$ 出发进行证明，这不是一件容易的事情，甚至可能无法证明（而且很可能并不存在严格的对称性了）。然而，有一种特殊的情况我们可以严格证明定理仍然成立，那就是无穷高温的情况。一方面
 \begin{align}
 \mathcal{P}e^{-\beta H(+U)}\mathcal{P}^{-1} = e^{-\beta H(-U)}
 \end{align}
@@ -580,14 +580,14 @@ e^{-\beta H} = e^{\beta H}
 [\hat{H}, \hat{L}_{\pm}] &\neq 0 
 \end{align}
 即，此时模型仍具有自旋-SU(2)对称性，但不再具有电荷-SU(2)对称性。
-事实上，这样的情况可以映射为相反的 $U$ 下加磁场的情况，即在模型中加入下面一项
+事实上，这样的情况可以映射为 $U$ 相反的模型下加磁场的情况，即在模型中加入下面一项
 \begin{align}
 h\sum_{j}\hat{c}_{j\uparrow}^{\dagger}\hat{c}_{j\uparrow} - \hat{c}_{j\downarrow}^{\dagger}\hat{c}_{j\downarrow}
 \end{align}
-这种情况下，$S_x, S_y$ 仍是简并的，但二者不再与 $S_z$ 简并\footnote{若出现自旋密度波的话，序参量沿 $S_z$ 方向能量更低。}。对应到到电荷这边就是 (inplane) $L_{\pm}$ 不再与 $L_z$ 简并。在实验中\cite{canted}，人们也观测到了这种情况下的 canted 序。
+这种情况下，$S_x, S_y$ 仍是简并的，但二者不再与 $S_z$ 简并\footnote{若出现自旋密度波的话，序参量沿 $S_z$ 方向能量更低。}。对应到到电荷这边就是 (inplane) $L_{\pm}$ 不再与 $L_z$ 简并。在实验中，人们也观测到了这种情况下的 canted 序\cite{canted}。
 
 
-另外，半填充的 Fermi Hubbard 模型还具有粒子空穴对称性。定义如下粒子空穴变换
+另外，半填充的 Fermi Hubbard 模型还具有粒子空穴对称性。粒子空穴变换定义如下
 \begin{align}
 \hat{C}: \hat{c}_{i\sigma} \rightarrow (-1)^i\hat{c}_{i\sigma}^{\dagger}
 \end{align}
@@ -612,6 +612,7 @@ h\sum_{j}\hat{c}_{j\uparrow}^{\dagger}\hat{c}_{j\uparrow} - \hat{c}_{j\downarrow
 \begin{align}
 [\hat{H}_{\text{eff}}, \hat{S}_{\alpha}] &= 0, \quad \alpha=x,y,z \\
 [\hat{H}_{\text{eff}}, \hat{L}_{\alpha}] &= 0, \quad \alpha=x,y,z 
+\label{eq:HeffL}
 \end{align}
 因此模型具有 SO(4) 对称性。
 \begin{align}
@@ -624,7 +625,7 @@ h\sum_{j}\hat{c}_{j\uparrow}^{\dagger}\hat{c}_{j\uparrow} - \hat{c}_{j\downarrow
 [\hat{H}_{\text{eff}}, \hat{S}_{\alpha}] &= 0, \quad \alpha=x,y,z
 \end{align}
 因此模型具有 自旋-SU(2) 对称性，
-但不具有 电荷-SU(2) 对称性。故而也不具有 SO(4) 对称性。
+但 (\ref{eq:HeffL}) 式不再成立，因此不具有 电荷-SU(2) 对称性。故而也不具有 SO(4) 对称性。
 
 引入二分晶格变换 $\hat{S}$ (参考上一节内容)，有
 \begin{align}

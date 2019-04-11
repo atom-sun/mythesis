@@ -1,8 +1,8 @@
 \chapter{光晶格中系统的拓扑电子输运} \label{chap:chargepump}
 
 本章，我们将讨论光晶格中拓扑物态的相关问题，着重讨论光晶格中的拓扑电子输运的话题。
-首先，我们在 \ref{sec:adiabevolgeneral} 小节建立绝热演化的一般形式理论，给出周期性演化的绝热极限（\ref{sec:adiabatic} 节）下的条件，并针对单带情况（\ref{sec:adiab:single}）和多带情况（\ref{sec:adiab:multi}）分别推导出其绝热周期幺正演化的形式；对于前者，其绝热周期幺正演化带来 Berry 相角，而对于后者，其绝热周期要睁演化带来非阿贝尔 Berry 联络。这种情况下，不止对角元是重要的，非对角元也是重要的。
-在第 \ref{sec:topocp} 节，我们将讨论绝热周期电子输运的问题，并讨论其与拓扑物态的关系；我们推导出在一维模型中，量子化的绝热周期电子输运与一维绕数（winding number）和二维陈数（Chern number）的等价关系，这也就是 Thouless 拓扑输运过程\cite{thouless1983}；作为一个例子，我们将介绍 经典的 SSH 模型\cite{ssh1979}\footnote{与之类似的是 Majorana 的 Kitaev 链模型\cite{kitaev2001}}，和基于该模型推广的 Rice-Mele 拓扑输运过程\cite{ricemele1982}。在 \ref{sec:creutz} 小节，我们介绍我们提出的 Creutz 梯\cite{creutz1999}上拓扑电子泵的模型\cite{creutz}。我们给出了该模型的完整的拓扑相图，并发现了一种新奇的拓扑输运过程，在这种过程中，电子的周期输运以偶数为单位，即，每个周期只能有2或者2的倍数的电荷被传输。这并不是简单的将周期乘以2——或简单的将模型进行双份备份——所导致的偶数基数的拓扑输运过程，而是由模型的内禀性质所决定，区别于前面提到的 Rice-Mele 过程。对于这个发现，我们给出了解析的推导，和数值模拟的验证。通过对含时薛定谔方程的演化进行数值模拟计算，我们发现在绝热极限下电子的输运过程确实具有完美的量子化平台；同时我们也计算了不满足绝热条件的情况下电子的输运过程，以进行对比。
+首先，我们在 \ref{sec:adiabevolgeneral} 小节建立绝热演化的一般形式理论，给出周期性演化的绝热极限（\ref{sec:adiabatic} 节）下的条件，并针对单带情况（\ref{sec:adiab:single}）和多带情况（\ref{sec:adiab:multi}）分别推导出其绝热周期幺正演化的形式；对于前者，其绝热周期幺正演化带来 Berry 相角，而对于后者，其绝热周期幺正演化带来非阿贝尔 Berry 联络。这种情况下，不止对角元是重要的，非对角元也是重要的。
+在第 \ref{sec:topocp} 节，我们将讨论周期绝热电子输运的问题，并讨论其与拓扑物态的关系；我们推导出在一维模型中，量子化的周期绝热电子输运与某种一维绕数（winding number）和二维陈数（Chern number）的等价关系，这也就是 Thouless 拓扑输运过程\cite{thouless1983}；作为一个例子，我们将介绍 经典的 SSH 模型\cite{ssh1979}\footnote{与之类似的是 Majorana 的 Kitaev 链模型\cite{kitaev2001}}，和基于该模型推广的 Rice-Mele 拓扑输运过程\cite{ricemele1982}。在 \ref{sec:creutz} 小节，我们介绍我们提出的 Creutz 梯\cite{creutz1999}上拓扑电子泵的模型\cite{creutz}。我们给出了该模型的完整的拓扑相图，并发现了一种新奇的拓扑输运过程，在这种过程中，电子的周期输运以偶数为单位，即，每个周期只能有2或者2的倍数的电荷被传输。这并不是简单的将周期乘以2——或简单的将模型进行双份备份——所导致的偶数为基数的拓扑输运过程，而是由模型的内禀性质所决定，区别于前面提到的 Rice-Mele 过程。对于这个发现，我们给出了解析的推导，和数值的检验。通过对含时薛定谔方程的演化进行数值模拟计算，我们发现在绝热极限下电子的输运过程确实具有完美的量子化平台；同时我们也计算了不满足绝热条件的情况下电子的输运过程，以进行对比。
 
 
 
@@ -16,7 +16,7 @@ U(t_0,t)=\mathcal{T}e^{-\ii\int_{t_0}^t H(t')dt'}
 \end{align}
 这里 $\mathcal{T}$ 为时序算符，其精确的含义如下，
 \begin{align}\label{def:unitary}
-U(t_0, t)&=\mathcal{T}e^{-\ii\int_{t_0}^{t} H(t')dt'}\\
+U(t_0, t)&=\mathcal{T}e^{-\ii\int_{t_0}^{t} H(t')dt'} \nonumber\\
 &= \lim_{\mathclap{\substack{N\rightarrow\infty\\\Delta t\rightarrow0}}}\exp\Big[-\ii H(t_{N-1})\Delta t\Big]\exp\Big[-\ii H(t_{N-2})\Delta t\Big]\cdots\exp\Big[-\ii H(t_0)\Delta t\Big]\\
 &= \lim_{\mathclap{\substack{N\rightarrow\infty\\\Delta t\rightarrow0}}}\prod_{j=0}^{N-1}\exp\Big[-\ii H(t_j)\Delta t\Big]
 \end{align}
@@ -182,7 +182,7 @@ H(t) = H(t+T)
 \begin{align}
 |n(T)\rangle=|n(0)\rangle \quad (=|n\rangle)
 \end{align}
-$|n\rangle$ 为选定的某种规范。由此可看出，(\ref{eq:ut-adiab-single-details}) 式最后为 $|n\rangle$ 态的投影算符，而前面的两个因子中，第一项为 环路演化的 Berry 相角\cite{niu2010}，第二项只是一个能量因子含时积分的幺正相因子。即，
+$|n\rangle$ 为选定的某种规范。由此可看出，(\ref{eq:ut-adiab-single-details}) 式最后为 $|n\rangle$ 态的投影算符，而前面的两个因子中，第一项为 环路演化的 Berry 相角\cite{niu2010}，第二项只是一个瞬时本征能量积分而来的幺正相因子。即，
 \begin{align}
 U_n(T) &= e^{\ii\gamma}e^{-\ii\int_0^TE_n(t)dt}|n\rangle\langle n|\\
 \gamma &=\int_0^T\ii\langle n(t)|\partial_tn(t)\rangle dt
@@ -196,9 +196,9 @@ U_n(T) &= e^{\ii\gamma}e^{-\ii\int_0^TE_n(t)dt}|n\rangle\langle n|\\
 
 \subsection{多带模型}\label{sec:adiab:multi}
 
-对于更一般的情况，我们下面考虑多带模型。我们考虑 $l$ 个填充的能带上的体系的演化。对于这种情况，绝热条件要求最高的填充的带之上有带隙，且驱动频率的能量尺度远小于带隙能量。
+对于更一般的情况，我们下面考虑多带模型。我们考虑 $l$ 个填充的能带上的体系的演化。对于这种情况，绝热条件要求最高的填充带之上有带隙，且驱动频率的能量尺度远小于带隙能量。
 
-类似于单带情况下的推导，这里我们将 $\sum_n|n(t_j)\rangle\langle n(t_j)|$ 这一系列瞬时投影算符插入 $U(t)$ 展开的每个时间间隔中间，参见(\ref{def:unitary}) 式。更一般的，我们计算如下矩阵元：
+类似于单带情况下的推导，这里我们将 $\sum_n|n(t_j)\rangle\langle n(t_j)|$ 这一系列填充能带的瞬时投影算符插入 $U(T)$ 展开为  (\ref{def:unitary}) 式中的每个时间间隔中间。更一般的，我们计算如下矩阵元：
 \begin{align}
 [\mathscr{U}(t_{j+1},t_j)]_{mn}=&\langle m(t_{j+1})|\exp\Big[-\ii\Delta tH(t_j)\Big]|n(t_j)\rangle\\
 =& \langle m(t_{j+1})|1-\ii\Delta tH(t_j)|n(t_j)\rangle\\
@@ -232,16 +232,16 @@ U_n(T) &= e^{\ii\gamma}e^{-\ii\int_0^TE_n(t)dt}|n\rangle\langle n|\\
 \begin{align}
 \mathscr{U}(t_{j+1},t_j)=\sum_{m,n}\bigg|m(t_{j+1})\bigg\rangle \big[\mathscr{U}(t_{j+1},t_j)\big]_{mn} \bigg\langle n(t_j)\bigg|
 \end{align}
-从右向左以此作用。事实上，从 (\ref{eqn.umn}) 式可以清楚地看出，该矩阵可以被标示为
+从右向左依次作用。事实上，从 (\ref{eqn.umn}) 式可以清楚地看出，该矩阵可以被表示为
 \begin{align}
 [\mathscr{U}(t_{j+1},t_j)]_{mn}&=\mathscr{U}_1+\mathscr{U}_2=\delta_{mn}-\ii\Delta t\bigg(\delta_{mn}E_{n}(t_j)-\ii\langle m(t_j)|\partial_tn(t_j)\rangle\bigg)\\
-&=\bigg(\mathbb{1}-\ii\Delta t\Big[\mathcal{E}(t_j)-\mathcal{A}(t_j)\Big]\bigg)_{mn}\\
+&=\bigg(\mathbb{I}-\ii\Delta t\Big[\mathcal{E}(t_j)-\mathcal{A}(t_j)\Big]\bigg)_{mn}\\
 &= \text{MExp}\bigg(-\ii\Delta t\Big[\mathcal{E}(t_j)-\mathcal{A}(t_j)\Big]\bigg)_{mn}
 \end{align}
 其中，
 \begin{itemize}
-\item $\text{MExp}$ 指的是矩阵指数；
-\item $\mathcal{E}(t_j)$ 是在 $t_j$ 时刻的顺势哈密顿量对角化后的能量（对角矩阵）；
+\item $\text{MExp}$ 指的是矩阵的指数；
+\item $\mathcal{E}(t_j)$ 是在 $t_j$ 时刻的瞬时哈密顿量对角化后的能量（对角矩阵）；
 \item $\mathcal{A}(t_j)$ 就是所谓的 定义在 $l$-带流形上的 \textit{非阿贝尔} Berry 联络，其矩阵元为 $\mathcal{A}_{mn}=\ii\langle m|\partial_tn\rangle$。
 \end{itemize}
 
@@ -295,12 +295,12 @@ n &= \int_0^Tj(t)dt \\
 & = \frac{1}{2\pi}\int_0^T\int_{\text{BZ}}dtdq \ii\left[\left\langle\dfrac{\partial u(\vect{q},t)}{\partial t}\bigg|\dfrac{\partial u(\vect{q},t)}{\partial\vect{q}}\right\rangle - \left\langle\dfrac{\partial u(\vect{q},t)}{\partial\vect{q}}\bigg|\dfrac{\partial u(\vect{q},t)}{\partial t}\right\rangle\right] \\ 
 & = \frac{1}{2\pi}\int_0^T\int_{\text{BZ}}dtdq F_{\vect{q}t}\label{Chern}
 \end{align}
-这里，$F_{\mu\nu}$ 是二维参数空间的 Berry 曲率，此处参数空间即 $(\vect{q}, t)$ 空间。上面最后一行实际上给出了以 $(\vect{q}, t)$ 为参数空间的 Berry 曲率在全空间的积分，称为陈数（Chern number）。\footnote{二维材料 Chern 数算法详见附录} 注意到参数空间的拓扑结构为 Torus（以下简称 $T^2$），事实上对于双带系统该积分刻画了一个从 Torus 向球面（$S^2$）的映射，因此这个积分后的常数为整数。
+这里，$F_{\mu\nu}$ 是二维参数空间的 Berry 曲率，此处参数空间即 $(\vect{q}, t)$ 空间。上面最后一行实际上给出了以 $(\vect{q}, t)$ 为参数空间的 Berry 曲率在全空间的积分，称为陈数（Chern number）。\footnote{二维材料 Chern 数算法详见附录} 注意到参数空间的拓扑结构为 Torus（$T^2$），事实上对于二维体系该积分刻画了一个从 参数空间的Torus 向球面（$S^2$）的映射，因此这个积分后的常数为整数。
 
 
 因此，上述一维晶格上的绝热电子输运过程实际上跟二维拓扑材料的刻画有着密切关系，其一个周期的电子输运等于将时间 $t$ 延展为一个参数方向的二维材料的 Chern 数。这个数是一个量子化的整数，因此上述过程也称为拓扑电子输运。值得注意的是，在以上简化版的推导中，绝热极限的条件已经隐含在里面，更具体和详细的讨论见 David J. Thouless 1983 年的文章\inlinecite{thouless1983}。此外，上述电子输运与Chern数的关系还有另一种推导方式是利用能带上波函数的极化（Polarization）来推导，可参考\inlinecite{topobook} 和 \inlinecite{resta1994}。
 
-另一个值得注意的事实是，上述一维晶格的绝热演化过程也可以联系到一维材料的拓扑数上。一个用来刻画一维材料的拓扑数是绕数（winding number），简单来说就是一个 U(1) 的参数空间到另一个\textit{不能收缩的} U(1) 参数空间的映射\footnote{这种刻画与数学中的同伦群有关}。这里一维绕数被引入为\cite{kitagawa2010}
+另一个值得注意的事实是，上述一维晶格的绝热演化过程也可以联系到一维材料的拓扑数上。一个用来刻画一维材料的拓扑数是绕数（winding number），简单来说就是一个 U(1) 的参数空间到另一个\textit{不能收缩的} U(1) 参数空间的映射\footnote{这种刻画与数学中的同伦群有关}。这里一维绕数被引入为\cite{kitagawa2010,topoclassify2016}
 \begin{align}
 \nu_1=\dfrac{1}{2\pi}\int_{-\pi}^{\pi}dq Tr[U_q(T)^{-1}\ii\partial_qU_q(T)]\label{wind}
 \end{align}
@@ -362,7 +362,7 @@ H(t) &=\sum_j-(J+\delta\sin(\omega t))a_j^{\dagger}b_j-(J-\delta\sin(\omega t))a
 \mathcal{H}(q,t)
 &=-2J\cos(\frac{qa}{2})\sigma_x-2\delta\sin(\omega t)\sin(\frac{qa}{2})\sigma_y+\Delta\cos(\omega t)\sigma_z
 \end{align}
-容易计算\footnote{参见附录\ref{sec:chern}章}，该模型 $(q,t)$ 空间 Chern 数为$\pm 1$。\footnote{上下两个band分别为+1，-1，或反之，依赖于定义。} 因此，该模型下应该有周期性的绝热拓扑电子输运。对此，在实验\inlinecite{charge-pump-expr-2016-de,charge-pump-expr-2016-jp}中有所验证，通过利用光晶格对Rice-Mele模型进行量子模拟，确实看到了周期性量子化的冷原子气体云的输运。
+容易计算\footnote{参见附录\ref{sec:chern}章}，该模型 $(q,t)$ 空间 Chern 数为$\pm 1$。\footnote{上下两个band分别为+1，-1，或反之，依赖于定义。} 因此，该模型下应该有周期性的绝热拓扑电子输运。对此，在实验\inlinecite{charge-pump-expr-2016-de,charge-pump-expr-2016-jp}中有所验证，通过利用光晶格对Rice-Mele模型进行量子模拟，确实看到了冷原子气体云的周期性量子化的输运。
 
 \begin{figure}[!htb]
 \centering
@@ -372,20 +372,20 @@ H(t) &=\sum_j-(J+\delta\sin(\omega t))a_j^{\dagger}b_j-(J-\delta\sin(\omega t))a
 \begin{subfigure}{.48\textwidth}
 \includegraphics[width=1.\columnwidth]{chap2_topo/rmte_pbc_1}
 \end{subfigure}
-\caption{Rice-Mele 模型一个典型的非平庸路径演化下开边界条件、周期性边界条件下的能谱。（左）12个格点的开边界条件；（右）周期性边界条件。模型参数：$\delta/J=-0.85$, $\Delta/J=0.5$。}
+\caption{Rice-Mele 模型一个典型的非平凡路径演化下开边界条件、周期性边界条件下的能谱。（左）12个格点的开边界条件；（右）周期性边界条件。模型参数：$\delta/J=-0.85$, $\Delta/J=0.5$。}
 \label{fig:rmterg}
 \end{figure}
-对该模型我们画出其沿非平庸路径演化下，分别在开边界条件、周期性边界条件下的能谱，见图 \ref{fig:rmterg} 所示。
+对该模型我们画出其沿非平凡路径演化下，分别在开边界条件、周期性边界条件下的能谱，见图 \ref{fig:rmterg} 所示。
 从图 \ref{fig:rmterg} （左）可看到，能带中有边界态的存在\footnote{根据 Bulk Edge Correspondence，这也是应该的。}。它们沿着开放的边界\footnote{在此处，时间维度取为周期性，开放的维度即是一维晶格的维度}手征地运动，这就是电荷输运（Charge Pumping）的过程。
-\footnote{这样就是经典的 Laughlin's Gauge Argument 所说的事情，可参考\inlinecite{laughlin1981}。这篇文献是作者早期接触到的最经典的几篇文献之一，短小精悍，论述和计算都很简单，但极度不平庸。Laughlin 用非常简单的计算展示了 Quantum Hall 体系中最不平庸的事实，其物理根源与 TKNN 等是一样的。虽然 Laughlin 所讨论的是 Quantum Hall 体系，但实际上和作者这儿演示的是一回事。所有的 Topological Charge Pumping 本质上都是一样的，都是 twisted boundary conditions。}
+\footnote{这样就是经典的 Laughlin's Gauge Argument 所说的事情，可参考\inlinecite{laughlin1981}。这篇文献是作者早期接触到的最经典的几篇文献之一，短小精悍，论述和计算都很简单，但极度不平凡。Laughlin 用非常简单的计算展示了 Quantum Hall 体系中最不平庸的事实，其物理根源与 TKNN 等是一样的。虽然 Laughlin 所讨论的是 Quantum Hall 体系，但实际上和作者这儿演示的是同一回事。所有的 Topological Charge Pumping 本质上都是一样的，都是 twisted boundary conditions。}
 
 
 \begin{figure}[!htb]
 \centering
-\begin{subfigure}{.45\textwidth}
+\begin{subfigure}{.4\textwidth}
 \includegraphics[width=1.\columnwidth]{chap2_topo/tRM_6_evol}
 \end{subfigure}
-\begin{subfigure}{.45\textwidth}
+\begin{subfigure}{.55\textwidth}
 \includegraphics[width=1.\columnwidth]{chap2_topo/tRM_6_eqt}
 \end{subfigure}\\
 \begin{subfigure}{.45\textwidth}
@@ -394,11 +394,11 @@ H(t) &=\sum_j-(J+\delta\sin(\omega t))a_j^{\dagger}b_j-(J-\delta\sin(\omega t))a
 \begin{subfigure}{.45\textwidth}
 \includegraphics[width=1.\columnwidth]{chap2_topo/tRM_6_bf2}
 \end{subfigure}
-\caption{Rice-Mele 一个典型的非平庸路径。上栏：左为路径示意图，右为能带结构。下栏：上下两个能带的 Berry 曲率场。模型参数：$\delta/J=-0.85$, $\Delta/J=1.5$。}
+\caption{Rice-Mele 一个典型的非平庸路径。上栏：左为路径在 $(\delta, \Delta)$-参数空间的示意图，右为能带结构。下栏：上下两个能带的 Berry 曲率场。模型参数：$\delta/J=-0.85$, $\Delta/J=1.5$。}
 \label{fig:rmtberry}
 \end{figure}
 
-我们还对一个典型的非平庸演化路径计算了上下两个能带的离散化到 $100\times100$ 的 Berry 曲率场，其积分之后就是两个能带的 Chern 数，分别得 $\pm1$。参见图 \ref{fig:rmtberry}。
+我们还对一个代表性的非平凡的演化路径计算了上下两个能带的离散化到 $100\times100$ 的 Berry 曲率场，参见图 \ref{fig:rmtberry} 所示。其积分之后就是两个能带的 Chern 数，分别得 $\pm1$。
 
 
 
@@ -409,7 +409,7 @@ H(t) &=\sum_j-(J+\delta\sin(\omega t))a_j^{\dagger}b_j-(J-\delta\sin(\omega t))a
 \nonumber\\
 &+ J_D \hat{a}_j^\dag \hat{b}_{j+1}+J_D \hat{b}_j^\dag \hat{a}_{j+1} +\textrm{H.c.}]
 \end{align}
-该模型在特定参数下存在局域化的解，由于 Peierls 相角干涉的原因，局域化在某一对（纵向）格点上的粒子无法跃迁到其他格点\cite{creutz1999}。这让我们联想到 SSH 上类似的情况：SSH 模型中，特定参数下局域化的边界态波函数，当 $J_{\text{out}}\ll J_{\text{in}}$ 时，边界态波函数向体态里延伸的成分非常少（见 \inlinecite{kitaev2001} 中给出的解析解），当极端情况下 $J_{\text{out}}=0$, $J_{\text{in}}=1$ 时，波函数完全局域化在（一对）格点上，无法传播。这启发我们，在 Creutz 模型中也可能存在非平庸的拓扑电子输运的过程。
+该模型在特定参数下存在局域化的解，由于 Peierls 相角干涉的原因，局域化在某一对（纵向）格点上的粒子无法跃迁到其他格点\cite{creutz1999}。这让我们联想到 SSH 上类似的情况：SSH 模型中，特定参数下局域化的边界态波函数，当 $J_{\text{out}}\ll J_{\text{in}}$ 时，边界态波函数向体态里延伸的成分非常少（见 \inlinecite{kitaev2001} 中给出的解析解），当极端情况下 $J_{\text{out}}=0$, $J_{\text{in}}=1$ 时，波函数完全局域化在（最外的，或内部的一对）格点上，无法传播。这启发我们，在 Creutz 模型中也可能存在非平庸的拓扑电子输运的过程。
 
 我们提出以下推广的 Creutz 模型。模型哈密顿量写作，
 \begin{align}
@@ -430,13 +430,13 @@ H(t) &=\sum_j-(J+\delta\sin(\omega t))a_j^{\dagger}b_j-(J-\delta\sin(\omega t))a
 H(k)=-\begin{pmatrix} 2 J_X \cos(ka-\theta)& 2 J_D\cos(ka)+J_Y e^{-\ii\phi}\\
 2 J_D\cos(ka)+J_Y e^{\ii\phi}& 2 J_X \cos(ka+\theta)\end{pmatrix}
 \end{align}
-以上哈密顿量一般的形式具有 $\sigma_x$, $\sigma_y$, $\sigma_z$ 三个分量，可以预期存在合适的时间依赖路径，使得扩展的 $(k,t)$-二维参数空间具有非零 Chern 数，意即该 $(k,t)$ 向球面的映射能\textit{同向}覆盖一次或几次球面。而根据上一节的结论，非零 Chern 数意味着周期绝热拓扑电子输运的过程。
+以上哈密顿量的一般形式具有 $\sigma_x$, $\sigma_y$, $\sigma_z$ 三个分量，可以预期参数空间存在非平凡的路径，使得扩展的 $(k,t)$-二维参数空间具有非零 Chern 数，这也意味着找到这样的参数路径并使之具有时间依赖，将有非平凡的托普电子输运过程。意即，这种情况下由 $(k,t)$ 向球面的映射能\textit{同向}覆盖一次或几次球面。而根据上一节的结论，非零 Chern 数意味着其周期性绝热电子输运过程的拓扑非平庸。
 
-事实上，我们可以对上述模型的拓扑结构进行全面的分析。对于一维模型，一个可以用来刻画其拓扑结构的量是 Zak 相角\cite{zak1989}，实际上是一种能带中的 Berry 相角。Zak 相角本身并不特殊，但选定规范后，Zak 相角的差是一个绝对的数，可以用来区分平庸和非平庸的物态和过程。这方面的实验见\inlinecite{zak-expr-2013}。对于该 Creutz 梯模型，我们给出其参数空间的完整相图，见图 \ref{fig:creutz:topophase} 所示。参数空间中的实线和虚线代表相边界的地方，也就是体系发生简并的地方。因此这些线也叫简并线（degeneracy lines）。在参数空间中穿过实线或虚线时，体系的能隙会关闭再打开，并且发生能带反转（band inversion）\cite{topobook}。围绕这样的简并线形成的参数环路，其含时依赖可以给出拓扑电子输运的行为。
+事实上，我们可以对上述模型的拓扑结构进行全面的分析。对于一维模型，一个可以用来刻画其拓扑结构的量是 Zak 相角\cite{zak1989}，这实际上是一种能带中的 Berry 相角。Zak 相角本身并不特殊，但选定规范后，Zak 相角的差是一个绝对的数，可以用来区分平庸和非平庸的物态和过程。这方面的实验见\inlinecite{zak-expr-2013}。对于该 Creutz 梯模型，我们给出其参数空间的完整相图，见图 \ref{fig:creutz:topophase} 所示。参数空间中的实线和虚线代表相边界的地方，也就是体系发生简并的地方。因此这些线也叫简并线（degeneracy lines）。在参数空间中穿过实线或虚线时，体系的能隙会关闭再打开，并且发生能带反转（band inversion）\cite{topobook}。围绕这样的简并线形成的参数环路，其含时依赖可以给出拓扑电子输运的行为。
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.\columnwidth]{creutz/fig2}
-\caption{Creutz 模型完整拓扑相图。(a) 在 $\phi=0,\pm\pi$ 的平面内，$(J_D, \theta)$ 参数空间的拓扑相图，为 (b) 中之一截面；实线和虚线为相边界，都是体系发生简并的地方（因此也叫 degeneracy lines），在参数空间中穿过实线或虚线，体系发生能隙关闭再打开，并发生能带反转（band inversion）；区别在于：实线上的点，能带有两个地方简并，将有两个能隙关闭再打开的情况，并且发生两次（同向的）band inversion，这也是模型中围绕其的非平庸周期演化路径能够发生内禀的以偶数单位拓扑电子输运的根源（见图\ref{fig:creutz:chargepumps}）；而虚线上的点，能带只有一个地方简并，发生一次能隙关闭再打开，一次能带反转，围绕其的非平庸路径就是上一节提到的 Rice-Mele 型拓扑电子输运；(a) 中的三幅插图标记了不同区域能带和能隙关闭的情况；(b) 模型在 $(J_D, \theta, \phi)$ 空间的完整的拓扑相图；(c) 围绕上述提到的两种 degeneracy lines 几种典型的周期含时演化环路：$\gamma_1$ 具有内禀为偶数单位的新奇拓扑输运，$\gamma_2$ 为普通单位为1的拓扑电子输运（Rice-Mele 型），$\gamma_3$ 为基于 $\gamma_1$ 人为构造的路径，具有单位为4的拓扑电子输运。又上插图展示了几种情况下的 $Zak$ 相角\cite{creutz}。（取自\inlinecite{creutz}）}
+\caption{Creutz 模型完整拓扑相图。(a) 在 $\phi=0,\pm\pi$ 的平面内，$(J_D, \theta)$ 参数空间的拓扑相图，为 (b) 中之一截面；实线和虚线为相边界，都是体系发生简并的地方（因此也叫 degeneracy lines），在参数空间中穿过实线或虚线，体系发生能隙关闭再打开，并发生能带反转（band inversion）；区别在于：实线上的点，能带有两个地方简并，将有两个能隙关闭再打开的情况，并且发生两次（同向的）band inversion，这也是模型中围绕其的非平庸周期演化路径能够发生内禀的以偶数单位拓扑电子输运的根源（见图\ref{fig:creutz:chargepumps}）；而虚线上的点，能带只有一个地方简并，发生一次能隙关闭再打开，一次能带反转，围绕其的非平庸路径就是上一节提到的 Rice-Mele 型拓扑电子输运；(a) 中的三幅插图标记了不同区域能带和能隙关闭的情况；(b) 模型在 $(J_D, \theta, \phi)$ 空间的完整的拓扑相图；(c) 围绕上述提到的两种 degeneracy lines 几种典型的周期含时演化环路：$\gamma_1$ 具有内禀为偶数单位的新奇拓扑输运，$\gamma_2$ 为普通单位为1的拓扑电子输运（Rice-Mele 型），$\gamma_3$ 为基于 $\gamma_1$ 人为构造的路径，具有单位为4的拓扑电子输运。右上角插图展示了 (a) 中几种情况下的 $Zak$ 相角\cite{creutz}。（取自\inlinecite{creutz}）}
 \label{fig:creutz:topophase}
 \end{figure}
 
@@ -447,14 +447,14 @@ H(k)=-\begin{pmatrix} 2 J_X \cos(ka-\theta)& 2 J_D\cos(ka)+J_Y e^{-\ii\phi}\\
 \footnote{见图 \ref{fig:creutz:topophase} (a) 右下插图。}，
 穿过其上的点只有一个能隙关闭再打开的行为，只发生一次能带反转，因此围绕其路径 Chern 数为1，拓扑电子输运就是 以1为单位的Rice-Mele 型输运。
 
-图 \ref{fig:creutz:topophase} (b) 给出了三维 $(J_D, \theta, \phi)$ 参数全空间的拓扑相图。图 \ref{fig:creutz:topophase} (a) 展示了其 $\phi=0,\pm\pi$ 时，$(J_D, \theta)$-平面内的情况，几个不同区间和相边界上的能带和能隙关闭情况在插图中给出。相应的，几个区域的 Zak 角在 图 \ref{fig:creutz:topophase} 又上插图中给出示意。图 \ref{fig:creutz:topophase} (c) 画出了几种典型的参数空间闭合环路的示意图，若使体系沿着这些环路具有含时依赖，将会发生拓扑电子输运的行为。其物理根源在上一节中有讨论。其中，$\gamma_1$ 环路的拓扑电子输运以2为单位的，$\gamma_2$ 的以1为单位，而 $\gamma_3$ 相当于两个 $\gamma_1$ 叠加，以 $4$ 为单位。
+图 \ref{fig:creutz:topophase} (b) 给出了三维 $(J_D, \theta, \phi)$ 参数全空间的拓扑相图。图 \ref{fig:creutz:topophase} (a) 展示了其 $\phi=0,\pm\pi$ 时，$(J_D, \theta)$-平面内的情况，几个不同区间和相边界上的能带和能隙关闭情况在插图中给出。相应的，几个区域的 Zak 角在 图 \ref{fig:creutz:topophase} 右上角的插图中给出示意。图 \ref{fig:creutz:topophase} (c) 画出了几种典型的参数空间闭合环路的示意图，若使体系沿着这些环路具有含时依赖，将会发生拓扑电子输运的行为。其物理根源在上一节中有讨论。其中，$\gamma_1$ 环路的拓扑电子输运以2为单位的，$\gamma_2$ 的以1为单位，而 $\gamma_3$ 相当于两个 $\gamma_1$ 叠加，以 $4$ 为单位。
 \footnote{注意，$\gamma_3$ 所绕的方向相反，但并没有抵消掉却是叠加上效果，原因是两条 degeneracy lines 发生的 band inversion 方向恰好相反。因此其相当于两个 $\gamma_1$ 叠加。}
 
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=1.\columnwidth]{creutz/fig3}
-\caption{Creutz 模型中的拓扑电子输运过程。对于我们发现的内禀偶数为输运单位的新奇拓扑输运现象，我们进行了选取一个典型的路径进行了数值模拟的检验。(a) 含时演化的参数空间，$(\phi, \theta)$-平面，以及其上的Zak相角，黑色带箭头圆圈标记周期含时环路；(b) $(k,t)$ 参数空间的能带结构示意图（上），和基带的 Berry 曲率场（下）； (c) 数值模拟含时薛定谔方程的演化的结果，蓝色曲线代表\textit{流}（current）的数值模拟结果（参照左侧蓝色纵坐标），红色曲线为电子输运（或Center-of-Mass）的数值模拟结果（参照右侧红色纵坐标）；电子输运为流的积分。可以看出，每个单位周期 $T$，体系输运 $2$ 单位的粒子，而且结果相当得量子化，肉眼可见的精度可以认定为整数。(c)中左上角的插图对比了在相同模型参数下，绝热演化（粗实线）和不绝热演化（细虚线）两种情况的电子输运，对比绝热条件下的高度量子化，非绝热条件下电子的输运不再量子化。这是由于非绝热的驱动下会有将基带电子激发到高带的过程。模型参数：$J_Y/J_X=2$, $J_D/J_X=1.8$, $\hbar\omega/J_x=0.1$（绝热情况），$6.0$（非绝热情况）。（取自\inlinecite{creutz}）}
+\caption{Creutz 模型中的拓扑电子输运过程。对于我们发现的内禀偶数为输运单位的新奇拓扑输运现象，我们进行了选取一个典型的路径进行了数值模拟的检验。(a) 含时演化的参数空间，$(\phi, \theta)$-平面，以及其上的Zak相角，黑色带箭头圆圈标记周期含时环路；(b) $(k,t)$ 参数空间的能带结构示意图（上），和基带的 Berry 曲率场（下）； (c) 数值模拟含时薛定谔方程的演化的结果，蓝色曲线代表\textit{流}（current，$j(t)T$）的数值模拟结果（参照左侧蓝色纵坐标），红色曲线为电子输运（或Center-of-Mass，$\Delta n(t)$）的数值模拟结果（参照右侧红色纵坐标）；电子输运为流的积分。可以看出，每个单位周期 $T$，体系输运 $2$ 单位的粒子，而且结果相当得量子化，肉眼可见的精度可以认定为整数。(c)中左上角的插图对比了在相同模型参数下，绝热演化（粗实线）和不绝热演化（细虚线）两种情况的电子输运，对比绝热条件下的高度量子化，非绝热条件下电子的输运不再量子化。这是由于非绝热的驱动下会将基带电子激发到高带。模型参数：$J_Y/J_X=2$, $J_D/J_X=1.8$, $\hbar\omega/J_x=0.1$（绝热情况），$6.0$（非绝热情况）。（取自\inlinecite{creutz}）}
 \label{fig:creutz:chargepumps}
 \end{figure}
 
@@ -464,13 +464,13 @@ H(k)=-\begin{pmatrix} 2 J_X \cos(ka-\theta)& 2 J_D\cos(ka)+J_Y e^{-\ii\phi}\\
 \theta(t) &= \cos(\omega t)
 \end{align}
 其中 $\omega$ 为驱动频率，绝热条件要求 $\hbar\omega\ll J_X, J_Y, J_D$。在该组选定的参数下 $(\phi, \theta)$-平面内的 Zak 相角可以计算出来\cite{creutz}，如图 \ref{fig:creutz:chargepumps} (a) 所示。对于现在该组参数下的含时模型，我们解析计算了其能带结构，如图 \ref{fig:creutz:chargepumps} (b) 上部所示。我们也计算了每个能带的 Berry 曲率场和 Chern 数，基带的 Berry 曲率场如图 \ref{fig:creutz:chargepumps} (b) 下部所示。这里用到了 Takahiro Fukui 等人在 2005 年的提出的二维材料的 Chern 数算法\inlinecite{chern2005}，详见附录 \ref{sec:chern} 所述
-\footnote{在附录 \ref{sec:chern} 中，我们详细讨论了该算法的性质，以及证明了相关的三个定理。这三个定理展示了该算法的有效性，以及量子化、规范不变等性质。我们还开发了分别基于 python3 语言 和 Wolfram Mathematica 语言的专门的程序包，开源地址见\inlinecite{repo-chern}。 }。 Chern 数为 Berry 曲率场的积分，该基带的 Chern 数为2。\footnote{对于这个简单的两能带模型，其 Chern 数本身解析可算。数值方法作为一种检验，与解析方法结果吻合。}
+\footnote{在附录 \ref{sec:chern} 中，我们详细讨论了该算法的性质，以及证明了相关的三个定理。这三个定理展示了该算法的有效性，以及量子化、规范不变等性质。我们还开发了分别基于 python3 语言 和 Wolfram Mathematica 语言的专门的程序包，开源地址见\inlinecite{repo-chern}。 }。 Chern 数为 Berry 曲率场的积分，该基带的 Chern 数为2。\footnote{对于这个简单的两能带模型，其 Chern 数本身很容易解析计算。数值方法作为一种检验，与解析方法结果吻合。}
 
 Chern 数为2意味着该路径支持单位为2个电子的周期绝热拓扑电子输运过程。为检验，我们对该组参数下的绝热电子输运过程进行了数值模拟，驱动频率取作
 \begin{align}
 \hbar\omega/J_X = 0.1
 \end{align}
-通过数值模拟含时薛定谔方程的演化，我们计算出体系的\textit{流}（$j$）和 电子输运（$\Delta n$）随时间变化的值，如图 \ref{fig:creutz:chargepumps} (c) 所示。蓝色曲线表示流的值 $j(t)T$，参照左侧蓝色纵坐标；红色曲线表示电子输运的值 $\Delta n(t)$，参照右侧红色总坐标。电子输运为流的积分。
+通过数值模拟含时薛定谔方程的演化，我们计算出体系的\textit{流}（$j$）和 电子输运（$\Delta n$）随时间变化的值，如图 \ref{fig:creutz:chargepumps} (c) 所示。蓝色曲线表示流的值 $j(t)T$，参照左侧蓝色纵坐标；红色曲线表示电子输运的值 $\Delta n(t)$，参照右侧红色纵坐标。体系总的电子输运实为流的积分。
 \begin{align}
 \Delta n(t) = \int_0^t j(t')dt'
 \end{align}
@@ -479,7 +479,7 @@ Chern 数为2意味着该路径支持单位为2个电子的周期绝热拓扑电
 \begin{align}
 \hbar\omega/J_X = 6.0
 \end{align}
-数值模拟结果图 \ref{fig:creutz:chargepumps} (c) 左上角插图中的细虚线。与绝热情况下的电子输运对比可见，此时的输运已不再量子化，单位周期输运不再具有整数平台。该频率下前面提到的绝热条件将不被满足，存在从基带到高带的激发过程。
+数值模拟结果图 \ref{fig:creutz:chargepumps} (c) 左上角插图中的细虚线。与绝热情况下的电子输运对比可见，此时的输运已不再量子化，单位周期输运不再具有为整数的量子化平台。该频率下前面提到的绝热条件将不被满足，存在从基带到高带的激发。
 
 
 
