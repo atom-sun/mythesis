@@ -1,8 +1,8 @@
 \chapter{光晶格中系统的拓扑电子输运} \label{chap:chargepump}
 
 本章，我们将讨论光晶格中拓扑物态的相关问题，着重讨论光晶格中的拓扑电子输运的话题。
-首先，我们在 \ref{sec:adiabevolgeneral} 小节建立绝热演化的一般形式理论，给出周期性演化的绝热极限（\ref{sec:adiabatic} 节）下的条件，并针对单带情况（\ref{sec:adiab:single}）和多带情况（\ref{sec:adiab:multi}）分别推导出其绝热周期幺正演化的形式；对于前者，其绝热周期幺正演化带来 Berry 相角，而对于后者，其绝热周期要睁演化带来非阿贝尔 Berry 连接。这种情况下，不止对角元是重要的，非对角元也是重要的。
-在第 \ref{sec:topocp} 节，我们将讨论绝热周期电子输运的问题，并讨论其与拓扑物态的关系；我们推导出在一维模型中，量子化的绝热周期电子输运与一维绕数（winding number）和二维陈数（Chern number）的等价关系，这也就是 Thouless 拓扑输运过程\cite{thouless1983}；作为一个例子，我们将介绍 经典的 SSH 模型\cite{ssh1979}（也即 Kitaev 链模型\cite{kitaev2001}），和基于该模型推广的 Rice-Mele 拓扑输运过程\cite{ricemele1982}。在 \ref{sec:creutz} 小节，我们介绍我们提出的 Creutz 梯\cite{creutz1999}上拓扑电子泵的模型\cite{creutz}。我们给出了该模型的完整的拓扑相图，并发现了一种新奇的拓扑输运过程，在这种过程中，电子的周期暑运以偶数为单位，即，每个周期只能2或者2的倍数的电荷被传输。这并不是简单的将周期乘2——或简单的将模型进行双份备份——所导致的偶数基数的拓扑输运过程，而是由模型的内禀性质所决定，区别于前面提到的 Rice-Mele 过程。对我们的发现，我们给出了解析的推导，和数值模拟的验证。通过对含时薛定谔方程的演化进行数值模拟计算，我们发现在绝热极限下电子的输运过程确实具有完美的量子化平台；同时我们也计算了不满足绝热条件下的过程中的电子输运以进行对比。
+首先，我们在 \ref{sec:adiabevolgeneral} 小节建立绝热演化的一般形式理论，给出周期性演化的绝热极限（\ref{sec:adiabatic} 节）下的条件，并针对单带情况（\ref{sec:adiab:single}）和多带情况（\ref{sec:adiab:multi}）分别推导出其绝热周期幺正演化的形式；对于前者，其绝热周期幺正演化带来 Berry 相角，而对于后者，其绝热周期要睁演化带来非阿贝尔 Berry 联络。这种情况下，不止对角元是重要的，非对角元也是重要的。
+在第 \ref{sec:topocp} 节，我们将讨论绝热周期电子输运的问题，并讨论其与拓扑物态的关系；我们推导出在一维模型中，量子化的绝热周期电子输运与一维绕数（winding number）和二维陈数（Chern number）的等价关系，这也就是 Thouless 拓扑输运过程\cite{thouless1983}；作为一个例子，我们将介绍 经典的 SSH 模型\cite{ssh1979}\footnote{与之类似的是 Majorana 的 Kitaev 链模型\cite{kitaev2001}}，和基于该模型推广的 Rice-Mele 拓扑输运过程\cite{ricemele1982}。在 \ref{sec:creutz} 小节，我们介绍我们提出的 Creutz 梯\cite{creutz1999}上拓扑电子泵的模型\cite{creutz}。我们给出了该模型的完整的拓扑相图，并发现了一种新奇的拓扑输运过程，在这种过程中，电子的周期输运以偶数为单位，即，每个周期只能有2或者2的倍数的电荷被传输。这并不是简单的将周期乘以2——或简单的将模型进行双份备份——所导致的偶数基数的拓扑输运过程，而是由模型的内禀性质所决定，区别于前面提到的 Rice-Mele 过程。对于这个发现，我们给出了解析的推导，和数值模拟的验证。通过对含时薛定谔方程的演化进行数值模拟计算，我们发现在绝热极限下电子的输运过程确实具有完美的量子化平台；同时我们也计算了不满足绝热条件的情况下电子的输运过程，以进行对比。
 
 
 
@@ -10,7 +10,7 @@
 
 \section{绝热演化通论}\label{sec:adiabevolgeneral}
 
-对于一个量子力学系统，系统从一个初态的演化完全决定于以下引入的幺正演化算符\footnote{在本文中，省略的地方默认取自然单位 $\hbar=1$。}
+对于一个量子力学系统，系统从一个初态开始的演化完全决定于以下引入的幺正演化算符\footnote{在本文中，省略的地方默认取自然单位 $\hbar=1$。}
 \begin{align}
 U(t_0,t)=\mathcal{T}e^{-\ii\int_{t_0}^t H(t')dt'}
 \end{align}
@@ -29,16 +29,16 @@ N\Delta t &= t-t_0
 \begin{align}
 H(t)\equiv H_0
 \end{align}
-则有
+因此有
 \begin{align*}
 U(t_0,t)=\exp[-\ii H_0(t-t_0)]
 \end{align*}
 
-若哈密顿量含时，则一般来说幺正演化算符不能做这样的简化，体系演化需由上面的 (\ref{def:unitary}) 式进行一般地刻画。然而对于一类特殊的含时体系，即周期含时的体系，其以周期为单位的幺正演化可以被继续简化。在这种情况下，有两个极限值得考虑：高频极限与绝热极限。前者是指，相比于体系的典型能量尺度，体系含时依赖的周期极短、频率极高，故称高频极限；而后者是指，相比于体系的典型能量尺度，体系含时依赖的周期极长、频率极低，体系“绝热”地处在每时每刻的瞬时本征态上，故称绝热极限。对于高频极限，这不是我们这一章关注的内容，将放到第 \ref{chap:floq} 章的第 \ref{sec:highfreq} 小节进行讨论。对于绝热极限，我们将在下面进行具体讨论，并把上面提到的“体系含时依赖的周期极长、频率极低，体系‘绝热’地处在每时每刻的瞬时本征态上”这句话进行定量刻画。
+若哈密顿量含时，则一般来说幺正演化算符不能做这样的简化，体系演化需通过上面的 (\ref{def:unitary}) 式进行一般的推演。然而对于一类特殊的含时体系，即周期含时的体系，其以周期为单位的幺正演化可以被继续简化。在这种情况下，有两个极限值得考虑：高频极限与绝热极限。前者是指，相比于体系的典型能量尺度，体系含时依赖的周期极短、频率极高，故称高频极限；而后者是指，相比于体系的典型能量尺度，体系含时依赖的周期极长、频率极低，体系“绝热”地处在每时每刻的瞬时本征态上，故称绝热极限。对于高频极限，这不是我们这一章关注的内容，将放到第 \ref{chap:floq} 章的第 \ref{sec:highfreq} 小节进行讨论。对于绝热极限，我们将在下面进行具体讨论，并把上面提到的“体系含时依赖的周期极长、频率极低，体系‘绝热’地处在每时每刻的瞬时本征态上”这句话进行定量刻画。
 
 \subsection{绝热极限}\label{sec:adiabatic}
-上面提到，绝热极限是指体系含时依赖周期极长的极限，这是相对于体系所处的典型能量尺度来说的，也就是说，在绝热极限下体系每时每刻都处在$H(t)$的瞬时本征态上。下面我们对这个条件进行定量地刻画。
-\footnote{以下推导可以参考众多典型的量子力学教科书，如\inlinecite{shankar,sakurai}。}
+上面提到，绝热极限是指体系含时依赖周期极长的极限，这是相对于体系所处的典型能量尺度来说的，也就是说，在绝热极限下体系每时每刻都处在$H(t)$的瞬时本征态上。下面我们对这个条件进行具体的表述。
+\footnote{以下推导可以参考众多经典的量子力学教科书，如\inlinecite{shankar,sakurai}。}
 
 对于含时体系的哈密顿量 $H(t)$，在任意时刻 $t$，体系都有如下瞬时本征态
 \begin{align}
@@ -58,7 +58,7 @@ $E_n$ 为瞬时本征态的本征能量。所有的 $\{|n(t)\rangle\}$ 构成了
 \begin{align}
 \ii\hbar\partial_t|\psi(t)\rangle=H(t)|\psi(t)\rangle
 \end{align}
-带入 (\ref{eq.psi}) 式可得，
+将 (\ref{eq.psi}) 式带入可得，等式左边为
 \begin{align}
 \text{left} 
 =& \ii\hbar\sum_n[(\dot{a}_n(t)+a_n(t)\ii\partial_t\theta_n(t))e^{\ii\theta_n(t)}+a_n(t)e^{\ii\theta_n(t)}\partial_t]|n(t)\rangle\\
@@ -66,6 +66,7 @@ $E_n$ 为瞬时本征态的本征能量。所有的 $\{|n(t)\rangle\}$ 构成了
     & +\sum_{n}E_n(t)a_n(t)e^{\ii\theta_n(t)}|n(t)\rangle\\
     & +\ii\hbar\sum_na_{n}(t)e^{\ii\theta_n(t)}\partial_t|n(t)\rangle
 \end{align}
+等式右边为
 \begin{align}
 \text{right} &= \sum_{n}E_n(t)a_n(t)e^{\ii\theta_n(t)}|n(t)\rangle
 \end{align}
@@ -73,7 +74,6 @@ $E_n$ 为瞬时本征态的本征能量。所有的 $\{|n(t)\rangle\}$ 构成了
 \begin{align}
 \sum_n\dot{a}_n(t)e^{\ii\theta_n(t)}|n(t)\rangle+a_{n}(t)e^{\ii\theta_n(t)}\partial_t|n(t)\rangle=0
 \end{align}
-
 将 $\langle m(t)|$ 从左边作用上去，得到
 \begin{align}
 \langle m(t)|\sum_n\dot{a}_n(t)e^{\ii\theta_n(t)}|n(t)\rangle+a_{n}(t)e^{\ii\theta_n(t)}\partial_t|n(t)\rangle=0
@@ -81,7 +81,6 @@ $E_n$ 为瞬时本征态的本征能量。所有的 $\{|n(t)\rangle\}$ 构成了
 \begin{align}
 \therefore \dot{a}_m(t)=-\sum_na_{n}(t)e^{\ii[\theta_n(t)-\theta_m(t)]}\langle m(t)|\partial_tn(t)\rangle
 \end{align}
-
 注意到，对于 $m\neq n$ 的情况，有
 \begin{align}
 \partial_t\langle m(t)|H(t)|n(t)\rangle
@@ -167,14 +166,15 @@ U_n(T)&=\mathcal{T}e^{-\ii\int_{0}^T H(t')dt'}\\
 \begin{align}
 N\rightarrow\infty, \quad\Delta t\rightarrow0
 \end{align}
-将其带回原始，因此可得
-\begin{align}\label{eq:ut-adiab-single-details}
+将其带回原式，可得
+\begin{align}
 U_n(T)&=\lim_{\mathclap{\substack{N\rightarrow\infty\\\Delta t\rightarrow0}}}|n(t_{N-1})\rangle e^{-\ii E_n(t_{N-1})\Delta t}e^{-\langle n(t_{N-1})|\partial_tn(t_{N-1})\rangle\Delta t}\cdots e^{-\ii E_n(t_0)\Delta t}e^{-\langle n(t_0)|\partial_tn(t_0)\rangle\Delta t}\langle n(t_0)|\\
 &= \lim_{\mathclap{\substack{N\rightarrow\infty\\\Delta t\rightarrow0}}}\prod_{j=0}^{N-1}\exp\bigg[-\ii E_n(t_j)\Delta t\bigg]\exp\bigg[-\langle n(t_j)|\partial_tn(t_j)\rangle\Delta t\bigg]|n(t_{N-1})\rangle\langle n(t_0)|\\
 &= \exp\bigg[-\int_0^T\langle n(t)|\partial_tn(t)\rangle dt\bigg]\exp\bigg[-\ii\int_0^TE_n(t)dt\bigg]|n(T)\rangle\langle n(0)|
+\label{eq:ut-adiab-single-details}
 \end{align}
 
-事实上，由于模型的含时周期性，有
+事实上，由于模型的周期性的含时依赖，有
 \begin{align}
 H(t) = H(t+T)
 \end{align}
@@ -182,13 +182,13 @@ H(t) = H(t+T)
 \begin{align}
 |n(T)\rangle=|n(0)\rangle \quad (=|n\rangle)
 \end{align}
-$|n\rangle$ 为选定的某种规范。由此可看出，上式最后为 $|n\rangle$ 态的投影算符，而前面的两个因子中，第一项为 环路演化的 Berry 相角\cite{niu2010}，第二项只是一个能量因子含时积分的幺正相因子。即，
-\begin{align*}
+$|n\rangle$ 为选定的某种规范。由此可看出，(\ref{eq:ut-adiab-single-details}) 式最后为 $|n\rangle$ 态的投影算符，而前面的两个因子中，第一项为 环路演化的 Berry 相角\cite{niu2010}，第二项只是一个能量因子含时积分的幺正相因子。即，
+\begin{align}
 U_n(T) &= e^{\ii\gamma}e^{-\ii\int_0^TE_n(t)dt}|n\rangle\langle n|\\
 \gamma &=\int_0^T\ii\langle n(t)|\partial_tn(t)\rangle dt
-\end{align*}
-需要注意的是，Berry 相角与规范选取无关
-\footnote{事实上，从上式看出已经可以看出这点了。将 $|n(t)\rangle$ 换一个任意的规范，带进去结果不变。参考\inlinecite{niu2010}}。
+\end{align}
+需要注意的是，Berry 相角与规范选取无关。
+\footnote{事实上，从上式看出已经可以看出这点了。将 $|n(t)\rangle$ 换一个任意的规范，带进去结果不变。参考\inlinecite{niu2010}}
 
 这样我们就得到了单带模型的绝热周期幺正演化。
 
@@ -242,7 +242,7 @@ U_n(T) &= e^{\ii\gamma}e^{-\ii\int_0^TE_n(t)dt}|n\rangle\langle n|\\
 \begin{itemize}
 \item $\text{MExp}$ 指的是矩阵指数；
 \item $\mathcal{E}(t_j)$ 是在 $t_j$ 时刻的顺势哈密顿量对角化后的能量（对角矩阵）；
-\item $\mathcal{A}(t_j)$ 就是所谓的 定义在 $l$-带流形上的 \textit{非阿贝尔} Berry 链接，其矩阵元为 $\mathcal{A}_{mn}=\ii\langle m|\partial_tn\rangle$。
+\item $\mathcal{A}(t_j)$ 就是所谓的 定义在 $l$-带流形上的 \textit{非阿贝尔} Berry 联络，其矩阵元为 $\mathcal{A}_{mn}=\ii\langle m|\partial_tn\rangle$。
 \end{itemize}
 
 基于以上种种，得到多带情况下的周期幺正演化算符为
@@ -253,7 +253,7 @@ U(t_f;t_0)=\mathcal{T}\exp\bigg(-\ii\int_{t_0}^{t_f}\mathcal{E}(t)-\mathcal{A}(t
 \begin{align}
 U(T)=\mathcal{T}\exp\bigg(-\ii\int_{0}^{T}\mathcal{E}(t)-\mathcal{A}(t)dt\bigg)
 \end{align}
-可以看出，演化算符的形式，在能量瞬时本征态的基矢下，能量的信息仅包含在对角元中，而非阿贝尔 Berry 连接的信息既包含在对角元中，也包含在非对角元中。相比于单带模型绝热周期幺正演化简单为一个数，和考虑平衡态一类问题时仅仅对矩阵求迹，对于多带模型下的绝热幺正周期演化，非对角元信息是非平庸的，不能被丢掉。
+可以看出，演化算符的形式，在能量瞬时本征态的基矢下，能量的信息仅包含在对角元中，而非阿贝尔 Berry 联络的信息既包含在对角元中，也包含在非对角元中。相比于单带模型绝热周期幺正演化简单为一个数，和考虑平衡态一类问题时仅仅对矩阵求迹，对于多带模型下的绝热幺正周期演化，非对角元信息是非平庸的，不能被丢掉。
 
 
 
@@ -261,7 +261,7 @@ U(T)=\mathcal{T}\exp\bigg(-\ii\int_{0}^{T}\mathcal{E}(t)-\mathcal{A}(t)dt\bigg)
 
 
 \section{绝热周期电子输运与拓扑物态}\label{sec:topocp}
-对于晶格中的某一个能带，$\vect{q}$准动量的流算符由下式给出
+对于晶格中的某一个能带，$\vect{q}$准动量的流密度由下式给出
 \begin{align}
 j(\vect{q}, t) &= \left\langle u(\vect{q}, t)\left|\dfrac{\partial H(\vect{q}, t)}{\partial\vect{q}} \right|u(\vect{q}, t)\right\rangle
 % &= \dfrac{\partial \mathcal{E}(\vect{q}, t)}{\partial\vect{q}} 
@@ -298,7 +298,7 @@ n &= \int_0^Tj(t)dt \\
 这里，$F_{\mu\nu}$ 是二维参数空间的 Berry 曲率，此处参数空间即 $(\vect{q}, t)$ 空间。上面最后一行实际上给出了以 $(\vect{q}, t)$ 为参数空间的 Berry 曲率在全空间的积分，称为陈数（Chern number）。\footnote{二维材料 Chern 数算法详见附录} 注意到参数空间的拓扑结构为 Torus（以下简称 $T^2$），事实上对于双带系统该积分刻画了一个从 Torus 向球面（$S^2$）的映射，因此这个积分后的常数为整数。
 
 
-因此，上述一维晶格上的绝热电子输运过程实际上跟二维拓扑材料的刻画有着密切关系，其一个周期的电子输运等于将时间 $t$ 延展为一个参数方向的二维材料的 Chern 数。这个数是一个量子化的整数，因此上述过程也称为拓扑电子输运。值得注意的是，在以上简化版的推导中，绝热极限的条件已经隐含在里面，更具体和详细的讨论见 David J. Thouless 1983 年的文章\inlinecite{thouless1983}。此外，上述电子输运与Chern数的关系还有另一种推导方式是利用能带上波函数的极化（Polarization）推导，可参考\inlinecite{topobook} 和 \inlinecite{resta1994}。
+因此，上述一维晶格上的绝热电子输运过程实际上跟二维拓扑材料的刻画有着密切关系，其一个周期的电子输运等于将时间 $t$ 延展为一个参数方向的二维材料的 Chern 数。这个数是一个量子化的整数，因此上述过程也称为拓扑电子输运。值得注意的是，在以上简化版的推导中，绝热极限的条件已经隐含在里面，更具体和详细的讨论见 David J. Thouless 1983 年的文章\inlinecite{thouless1983}。此外，上述电子输运与Chern数的关系还有另一种推导方式是利用能带上波函数的极化（Polarization）来推导，可参考\inlinecite{topobook} 和 \inlinecite{resta1994}。
 
 另一个值得注意的事实是，上述一维晶格的绝热演化过程也可以联系到一维材料的拓扑数上。一个用来刻画一维材料的拓扑数是绕数（winding number），简单来说就是一个 U(1) 的参数空间到另一个\textit{不能收缩的} U(1) 参数空间的映射\footnote{这种刻画与数学中的同伦群有关}。这里一维绕数被引入为\cite{kitagawa2010}
 \begin{align}
@@ -324,7 +324,7 @@ U(q,T)^{-1}\ii\partial_qU(q,T)=-\partial_q\gamma(q)+\int_0^T\partial_qE_n(q,t)dt
 \end{align}
 这就证明了绝热周期电子输运等于上述定义的绕数。
 
-类似的，我们还可以考虑高维的电子输运和高维的拓扑数，例如，如下的三维绕数
+类似的，我们还可以考虑高维的电子输运过程和高维的拓扑数，例如，如下的三维绕数
 \begin{align}
 \nu_3=\int\dfrac{d^3q}{24\pi}\varepsilon^{\alpha\beta\gamma}Tr[(U_{\vect{q}}^{-1}\partial_{\vect{q_{\alpha}}}U_{\vect{q}})(U_{\vect{k}}^{-1}\partial_{\vect{q_{\beta}}}U_{\vect{q}})(U_{\vect{q}}^{-1}\partial_{\vect{q_{\gamma}}}U_{\vect{q}})]
 \end{align}
