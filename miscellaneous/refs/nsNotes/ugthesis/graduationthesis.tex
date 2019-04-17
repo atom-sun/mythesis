@@ -1,0 +1,839 @@
+\documentclass[a4paper,fleqn，tbtags]{article}
+\usepackage{float}
+\usepackage{amssymb}             %因为\because 所以\therefore
+\usepackage{amsmath}
+\usepackage{CJK}
+\usepackage{cite}
+\usepackage{CJKfntef}
+\usepackage{geometry}
+\usepackage{type1cm}%字号pt
+\geometry{left=2.5 cm,right=2 cm,top=2.7cm,bottom=3.3cm} %页边距
+\usepackage{indentfirst}
+\usepackage{bm}
+\def\sub{\renewcommand{\theequation}{\theparentequation{}-\arabic{equation}}}
+\usepackage{graphicx,psfrag}
+\usepackage{yhmath}              % 圆弧括号\wideparen{ABC}
+\usepackage{mathrsfs}            %花体字\mathcal{}\mathscr{}
+\DeclareMathSizes{12}{12}{8.3}{5}  %字号  {文档中字号} {普通公式字号} {一级上下标}{二级上下标}
+ \usepackage[center,pagestyles]{titlesec}
+\linespread{1.25}%  行距
+\newcommand{\xiaochu}{\fontsize{30pt}{40pt}\selectfont}    % 小初, 1.5倍行距
+\newcommand{\timing}{\fontsize{28pt}{32pt}\selectfont}    % 一号, 倍行距
+\newcommand{\yihao}{\fontsize{26pt}{36pt}\selectfont}    % 一号, 1.4倍行距
+\newcommand{\erhao}{\fontsize{22pt}{28pt}\selectfont}    % 二号, 1.25倍行距
+\newcommand{\xiaoer}{\fontsize{18pt}{18pt}\selectfont}    % 小二, 单倍行距
+\newcommand{\sanhao}{\fontsize{16pt}{23.5pt}\selectfont}    % 三号, 1.5倍行距
+\newcommand{\xiaosan}{\fontsize{15pt}{22pt}\selectfont}    % 小三, 1.5倍行距
+\newcommand{\sihao}{\fontsize{14pt}{14pt}\selectfont}    % 四号, 1倍行距
+\newcommand{\banxiaosi}{\fontsize{13pt}{19.5pt}\selectfont}    % 半小四, 1.5倍行距
+\newcommand{\xiaosier}{\fontsize{12pt}{24pt}\selectfont}    % 小四, 2倍行距
+\newcommand{\xiaosiyw}{\fontsize{12pt}{18pt}\selectfont}    % 小四, 1.5倍行距
+\newcommand{\xiaosiydw}{\fontsize{12pt}{15pt}\selectfont}    % 小四, 1.25倍行距
+\newcommand{\xiaosiyi}{\fontsize{12pt}{12pt}\selectfont}    % 小四, 1倍行距
+\newcommand{\dawuhao}{\fontsize{11pt}{11pt}\selectfont}    % 大五号, 单倍行距
+\newcommand{\wuhao}{\fontsize{10.5pt}{14pt}\selectfont}    % 五号, 单倍行距
+\newcommand{\ershi}{\fontsize{20pt}{25pt}\selectfont}
+\titleformat{\section}{\centering\sanhao\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\sihao\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\xiaosiyi\bfseries}{\thesubsubsection}{1em}{}
+\usepackage{fancyhdr}
+\begin{CJK*}{GBK}{song}
+\newsavebox{\headpic}
+\sbox{\headpic}{\includegraphics[height=0.98cm]{yemei.eps}}
+%\cfoot{\wuhao 第\thepage 页  }
+   %\lfoot{From: K. Grant}  \rfoot{\thepage}
+\newcommand{\upcite}[1]{\textsuperscript {\cite{#1}}}
+ \renewcommand{\headrulewidth}{0.5pt}  %\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\tablename}{\wuhao 表 }
+\renewcommand{\figurename}{\wuhao  图}
+\renewcommand{\refname}{\CJKfamily{hei} \sanhao 参考文献}         % 对图表中的Fig进行中文翻译变为图
+\renewcommand{\contentsname}{\CJKfamily{hei} \sanhao 目录}           % 对Contents进行汉化为目录
+\renewcommand\listfigurename{\CJKfamily{hei}\sanhao 插图目录} % 对List of Figures进行汉化为插图目录
+\renewcommand\listtablename{\CJKfamily{hei}\sanhao 表格目录}  % 对List of Tables进行汉化表格目录
+ \setlength\parindent{2em}%段前空两格
+ \newcommand{\bocaption}{%
+\setlength{\abovecaptionskip}{1.2pt}%
+\setlength{\belowcaptionskip}{-5pt}%
+\caption}
+\author{}
+\title{\timing \bf
+{\CJKfamily{hei} 中国人民大学本科学生毕业论文\\~\\ 具有自旋轨道耦合的三分量费米气体 } }
+\begin{document}
+%\maketitle
+\headheight 11.5pt % 页眉高
+\pagestyle{fancy}
+\chead{\usebox{\headpic}}
+\rhead{}\lhead{}
+\fancyfoot[C]{ }
+{\xiaosiydw \begin{flushright}RUC-BK-071301-2011201368 \end{flushright}
+
+\begin{center}{\timing \bf{\CJKfamily{hei} 中国人民大学本科学生毕业论文\\~\\ 具有自旋轨道耦合的三分量费米气体 }~\\~ \\~    \\~ \\~\\~\\  }\end{center}
+
+
+{\ershi \CJKfamily{hei}\bf
+\begin{CJKfilltwosides}{40mm}
+~~~~~~~~~~~~作~~~~~~~~者：\underline{~~~~~~~~~钟毓~~~~~~~~~}\\
+
+~~~~~~~~~~~~学~~~~~~~~院：\underline{~~~~~~~~理学院{\tiny~}~~~~~~~}\\
+
+~~~~~~~~~~~~专~~~~~~~~业：\underline{~~~~~~{\tiny~}材料物理{\tiny~}~~~~~~}\\
+
+~~~~~~~~~~~~年~~~~~~~~级：\underline{~~~~~~~{\tiny~}2011级{\tiny~}~~~~~~~}\\
+
+~~~~~~~~~~~~学~~~~~~~~号：\underline{~~~{\Huge~}2011201368{\Huge~}~~~}\\
+
+~~~~~~~~~~~~指导教师：\underline{~~~~~~~~~~~~~~~~~~~~~~~{\tiny~}}\\
+
+~~~~~~~~~~~~论文成绩：\underline{~~~~~~~~~~~~~~~~~~~~~~~{\tiny~}}\\
+
+~~~~~~~~~~~~日~~~~~~~~期：\underline{~~~~~~~~~~~~~~~~~~~~~~~{\tiny~}}\\
+%\underline{\Huge~}a\underline{\tiny~}
+\end{CJKfilltwosides}}
+
+
+
+\newpage
+\setlength{\parskip}{0.25\baselineskip}%段间距
+\pagenumbering{Roman}\fancyfoot[C]{ \thepage}
+
+
+
+\begin{center} {\CJKfamily{hei} \sanhao \bf 摘要  } \end{center}
+ \addcontentsline{toc}{section}{\CJKfamily{hei}\bf 摘要 }
+
+
+{\xiaosiyw
+
+自旋轨道耦合（SOC）量子气体的实现在冷原子物理领域开辟了新的道路，也带来了大量新的物理问题。对于两分量与三分量费米气体，特别是两分量费米气体，其两体束缚态问题已有大量讨论，这仍是当下的研究热点。
+
+  我们对三维空间中，存在磁场时的三分量（编号为1、2、3）费米子的两体束缚态进行了研究，其中在分量1、2间存在Rashba SOC，分量2、3间存在s-波相互作用。我们发现，在s-波散射长度为负，即共振的BCS边可以形成两体束缚态，这在加SOC和磁场前无法实现。而无相互作用时的色散关系中显示了SOC与磁场导致的态密度上升。我们还讨论了最深的束缚态对应的质心动量以及对应的磁场强度与耦合强度之间的关系。这些结果表明SOC与磁场的存在导致了态密度的上升，从而辅助了两体束缚态的形成。
+
+
+~\\
+ ~\\{\bf 关键词: }冷原子~~~~两体束缚态~~~自旋轨道耦合~~~~三分量费米气体%~~~少体问题
+ }
+\newpage
+ \begin{center} {\sanhao \bf   Abstract  } \end{center}
+{ \xiaosier
+
+ Realization of spin-orbit coupled (SOC) quantum gases opens a new avenue in cold atom physics, and also brings out a lot of new physical problems. The bound states of two-component and three-component fermions, especially the two-component one, have been extensively discussed before, and they are also hot topics nowadays.
+
+   We study the two-body bound states of three-component (numbered as 1, 2, and 3) fermions with magnetic field in three-dimensional space, where there are Rashba SOC between component 1, 2 and s-wave interaction between component 2, 3. We find that in this system two atoms can form bound states with some negative s-wave scattering, i.e., on the BCS side of the resonance, which can't be achieved without SOC and magnetic. The dispersion without interaction show the rise of the density of states caused by SOC and magnetic field. We also discuss the value of the center-of-mass momentum and the relation between the magnetic strength and SOC strength that the deepest two-body bound states correspond to. These results  suggest that the presence of SOC and magnetic field contributes to the form of two-body bound states by giving rise to the density of states.
+
+
+  ~\\{\bf Keywords: } Cold atom~~~Two body bound state~~~Spin-Orbit Coupling~~~Three-Component Fermi Gases%~~~Few-body problems
+
+
+ }
+
+
+
+
+ \addcontentsline{toc}{section}{\CJKfamily{hei}\bf  Abstract }
+\newpage
+\fancyfoot[C]{ }
+
+\tableofcontents
+\newpage
+\listoffigures
+\listoftables
+\newpage
+\pagenumbering{arabic}\fancyfoot[C]{  第\thepage 页 }
+\setlength{\parskip}{0.22\baselineskip}
+{  \section{\CJKfamily{hei}引言}}
+ \subsection{\CJKfamily{hei}研究背景}
+ \subsubsection{\CJKfamily{hei}两体束缚态}
+冷原子系统是近年来物理研究前沿领域的一个热点，这主要源于其拥有纯净且易于操控的优点。 在这些宇宙中最冷的体系中，温度可以低到$10^{-9}~$K。 在如此低的温度下，体系的所有特性，比如粒子数、粒子间相互作用、甚至维度都可在实验室中精确调节，从而为实现量子模拟提供了一个非常好的的平台。例如：可以用电子在光晶格中的运动模拟其在固体中的运动；可以模拟凝聚态中的多体强关联体系，甚至发现凝聚态中所没有意识到的新物质相。
+
+超冷原子气体的原子密度在$10^{12} ~\rm{cm}^{-3}$量级，远远小于固体的$10^{17}~\rm {cm}^{-3}$量级。在极其稀薄的冷原子系统中，3个原子或更多原子形成一个体系的几率很小，因此两体过程显得尤为重要。而且两体问题的研究是建立一个多体相互作用模型的基本依据，对多体系统的性质有重要的启示作用。它的求解是实现散射共振，制备强关联多体系统的必经手段，同时对实验上控制原子损失率和保持原子气体的稳定性都有重要的现实意义。
+
+
+在三维的无自旋轨道耦合的费米系统中，单个量子态的粒子占据数受到泡利不相容原理的限制，其BCS（Bardeen-Cooper-Schrieffer，John Bardeen、Leon Neil Cooper、John Robert Schrieffer共同发现的超导理论） 区域的低能态密度很小，无法形成两体束缚态， 两体束缚态仅在BEC（玻色-爱因斯坦凝聚）区域存在。从BCS 到BEC，其束缚逐渐加深，这在两体层面上体现了BCS 到BEC 的过渡。
+
+维度的改变会使态密度发生变化，从而影响两体束缚态的形成。两体束缚态在低维时一直存在，而在高维却并非如此。一维态密度 $\rho(E)\varpropto1/\sqrt{E}$(E为能量)， 二维态密度不依赖于 $E$ , 三维态密度 $\rho(E)\varpropto \sqrt{E}$，故在低能态区域，低维的情况态密度更高，更容易形成两体束缚态。除了降维，我们还可以通过自旋轨道耦合改变态密度。
+
+  \subsubsection{\CJKfamily{hei}自旋轨道耦合}
+
+  自旋轨道耦合（spin-orbit coupling, SOC）将粒子的两个内禀属性——自旋及轨道运动，有机地联系在一起，导致凝聚态物理和原子分子物理中许多重要的宏观和微观物理效应。近年来，具有SOC的超冷原子气体的研究取得了飞速发展。
+
+  一般的，原子自旋轨道耦合的哈密顿量$H_{SOC}\propto{\bf\bm{\sigma}\cdot l}={\bf\bm{\sigma}\cdot (r\times k)}$ （其中$\bm{\sigma}$ 为泡利矩阵，${\bf l}$为角动量，${\bf r}$为相对于原点的位移，${\bf k}$为波矢）。而在凝聚态物理中，空间具有平移对称性，故讨论${\bf r}$的意义不大，故将SOC的哈密顿量写为$H_{SOC}\propto{\bf \bm{\sigma}\cdot k }$ ，其分量形式为
+        \begin{equation}
+     \begin{aligned}
+ H_{SOC}=\alpha_x \sigma_x k_x +\alpha_y \sigma_y k_y +\alpha_z \sigma_z k_z
+      \end{aligned}
+    \end{equation}
+不同的系数$\alpha_i(i=x,y,z)$对应不同类型的SOC（表1），本文中的SOC为Rashba类型。
+\begin{table}[H]\centering
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{8pt}
+\renewcommand\arraystretch{1.16}
+\caption{\wuhao 不同类型的SOC}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ {\wuhao 系数}& {\wuhao SOC类型}& {\wuhao SOC哈密顿量} \\
+\hline
+ $\alpha_x=\alpha_y=\alpha_z$& {\wuhao 3D isotropic SOC}&$ \alpha {\bf \bm{\sigma}\cdot k }$\\
+\hline
+$\alpha_x=\alpha_y,\alpha_z=0$& ~~{\wuhao Rashba SOC}& ~~$\alpha(\sigma_x k_x +\sigma_y k_y)$~~\\
+\hline
+~~$\alpha_x=-\alpha_y,\alpha_z=0$~~&~~{\wuhao Dresselhaus SOC}~~& ~~$\alpha(\sigma_x k_x -\sigma_y k_y)$~~\\
+\hline
+$\alpha_y=\alpha_z=0$& {\wuhao 1D SOC}& $\alpha\sigma_x k_x$  \\
+ & Equal R-D SOC&\\
+\hline
+\end{tabular}
+\end{table}
+
+ % SOC与原子间的相互作用之间的相互影响导致了许多有趣的现象。
+在凝聚态物理中，当电子具有很强的SOC或置于电场或磁场中时，会发生许多有趣的现象。SOC在电子系统中的作用已在凝聚态物理中有大量的探讨，在当今这仍然是重要的主题，例如近年发现的拓扑绝缘体。然而在冷原子系统中，中性原子既不具备电磁场耦合也没有SOC。在超精细结构基础上，基于Berry相位的影响及其非阿贝尔泛化，通过控制激光和原子间的相互作用，我们可以生成一个人工外部阿贝尔或非阿贝尔规范势耦合到中性原子上。其重要应用之一是在简并原子气体中建立一个有效的SOC。近各向同性SOC极大地提高了颗粒间的相互作用的影响，即使是在弱相互作用机制下。这是因为一个各向同性或接近各向同性的的Rashba SOC显著地改变了单粒子哈密顿量的低能态。
+%2012 年，我国山西大学由张靖领导的实验小组\cite{d}和美国麻省理工学院Zwierlein领导的实验小组\cite{d} 先后在费米气体中实现了SOC。
+
+%简并原子气体中的SOC产生了之前从未考虑过的新的物理，这主要是由于SOC与原子气体的独特性质之间的相互作用。对玻色原子，物理学中从未探索过具有自旋轨道耦合的相互作用玻色子的系统。对费米原子，在过去的十余年里，Feshbach 共振技术实现了强如费米能级的相互作用，这展示出很多有趣的物理，共振物理与SOC之间的相互作用必然引发广泛的关注。
+
+
+
+ 2009 年，美国国家标准局（NIST）由Spielman领导的实验小组首次在冷原子系统中实现了模拟规范场\upcite{spia}。 在该实验中，两个反向传播的拉曼激光束将${}^{87}$Rb 的$|F,m_F\rangle=|1,-1\rangle$ 态与$|1,0\rangle$态耦合，$|1,0\rangle$态与$|1,0\rangle$态耦合（如图1(a)(b)所示），哈密顿量为
+\begin{equation}
+H =
+\left( \begin{array}{cccccc}
+ \frac{k_x^2}{2m}+\epsilon_{1}&\frac{\Omega}{2}e^{i2k_ox} &0\\
+ \frac{\Omega}{2}e^{-i2k_ox} &  \frac{k_x^2}{2m}&\frac{\Omega}{2}e^{i2k_ox} \\
+  0&\frac{\Omega}{2}e^{-i2k_ox}& \frac{k_x^2}{2m}-\epsilon_{2}
+\end{array} \right)
+\end{equation}
+其中$k_0=2\pi/\lambda$，$\lambda$为两束激光的波长。$2k_0$是双光子过程中的动量转移。$\epsilon_{1}=\Delta_1+\delta_\omega+\Delta_2$$\epsilon_{2}=\Delta_1+\delta_\omega-\Delta_2$。 $\Delta_1$表示线性塞曼能， $\delta_\omega$ 表示两个拉曼激光的频率差， $\Delta_2$是二次塞曼能。
+
+对波函数做幺正变换$\Phi=U\Psi$,其中
+ \begin{equation}
+U=
+\left( \begin{array}{cccccc}
+ e^{-i2k_ox} &0&0\\
+0& 1&0 \\
+  0&0&  e^{i2k_ox}
+\end{array} \right)
+\end{equation}
+有效哈密顿量变为
+\begin{equation}
+H_{eff}=UHU^\dag=
+\left( \begin{array}{cccccc}
+ \frac{(k_x+ k_0)^2}{2m}+\epsilon_{1}&\frac{\Omega}{2}  &0\\
+ \frac{\Omega}{2} &  \frac{k_x^2}{2m}&\frac{\Omega}{2}  \\
+  0&\frac{\Omega}{2} & \frac{(k_x- k_0)^2}{2m}-\epsilon_{2}
+\end{array} \right)
+\end{equation}
+当$\epsilon_{1}$和$\epsilon_{1}$都很大时，$H_{eff}$的单粒子能量色散如图1(c)所示，这展示了在有限的$k_x$ 的单粒子能量的最小值。在这个体系中，低能物理由一个单一的修饰态控制，描述为$\frac{1}{2m}(k_x-A_x)^2$，其中$A_x$是一个常数。这导致了一个均匀矢量场。
+
+在后续的实验中\upcite{spib}，Spielman小组将沿$\hat{y}$方向的塞曼磁场梯度应用于本系统中。在这种情况下，$A_x$ 成为$y$ 的函数。它引起一个非零的合成磁场$B_z=-\partial_yA_x\neq0$。他们观察到一个临界磁场，磁场高于此临界值时，BEC中会产生许多旋涡。在另一个实验中\upcite{spic}，他们让$A_x$具有时间依赖性从而产生了一个非零的电场$E_x=-\partial_tA_x\neq0$。他们观察到，在电场的一个脉冲后，BEC发生集体振荡。
+   \begin{figure}\centering
+   \setlength{\abovecaptionskip}{5pt}
+\setlength{\belowcaptionskip}{1pt}
+\includegraphics[width=0.75\textwidth]{Nist.eps}
+ \caption{\wuhao Nist实验原理图及色散关系 }
+\end{figure}
+通过调整塞曼能量和激光频率，也可以达到$\Delta_1+\delta_\omega\approx\Delta_2$，因此$\epsilon_2\approx0$，而$\epsilon_1\approx2\Delta_2$仍然很大。2011年，Spielman小组首次在玻色系统中模拟了SOC\upcite{spid}，从而成功地实现这一体系。如图1(d)所示，在低能近似下色散关系曲线有两个能量极小值，分别由$|1,-1\rangle$ 态和$|1,0\rangle$态主导。因此，我们可以通过保留这两个态来推断出低能有效哈密顿量，将哈密顿量重写为
+\begin{equation}
+H =
+\left( \begin{array}{cccccc}
+ \frac{k_x^2}{2m}+\frac{h}{2} &\frac{\Omega}{2}e^{i2k_ox}  \\
+   \frac{\Omega}{2}e^{-i2k_ox}& \frac{k_x^2}{2m}-\frac{h}{2}
+\end{array} \right)
+\end{equation}
+其中$h=\epsilon_2$.相似的，对波函数作幺正变换
+\begin{equation}
+U=
+\left( \begin{array}{cccccc}
+ e^{-i2k_ox} &0 \\
+  0& e^{i2k_ox}
+\end{array} \right)
+\end{equation}
+描述SOC的有效哈密顿量
+\begin{equation}
+H_{SO}=UHU^\dag=
+\left( \begin{array}{cccccc}
+ \frac{(k_x+2k_0)^2}{2m}+\frac{h}{2}&\frac{\Omega}{2}  \\
+ \frac{\Omega}{2} & \frac{(k_x-2k_0)^2}{2m}-\frac{h}{2}
+\end{array} \right)
+=\frac{1}{2m}(k_x+k_0\sigma_z)^2+ \frac{\Omega}{2}\sigma_x+\frac{h}{2}\sigma_z
+\end{equation}
+作一个伪自选旋转$\sigma_x\to -\sigma_z$$\sigma_z\to -\sigma_x$后，以上的哈密顿量等效于
+\begin{equation}
+H_{SO}=\frac{1}{2m}(k_x+k_0\sigma_x)^2-\frac{\Omega}{2}\sigma_z+\frac{h}{2}\sigma_x\label{spil}
+\end{equation}
+
+第一项可以看作是与Rashba SOC和Dresselhaus SOC的等权叠加。由于矢量势$A_x=-k_0\sigma_z$与标量势$\Phi= \frac{\Omega}{2}\sigma_x+\frac{h}{2}\sigma_z$不对易，故可将公式(\ref{spil})的哈密顿量视作一个人工非阿贝尔规范场的哈密顿量。\upcite{HuiZhai}
+
+% 磁场，电场
+
+2012 年，我国山西大学由张靖领导的实验小组\upcite{d}和美国麻省理工学院Zwierlein领导的实验小组\upcite{e} 先后在费米气体中实现了SOC。SOC在超冷原子气体中的实现为量子少体问题的研究提出了新的挑战。这源于SOC所导致的两大效应：一是它将具有不同轨道角动量的散射通道耦合在一起，使得通常的分波散射方法不再适用；二是它有效地改变了低能态空间及态密度，因此需要对低能空间的散射作重新考量。这两大效应必将会对少体系统的性质产生重要影响，而目前SOC的冷原子系统中少体物理的研究还几乎处于空白，许多未知问题亟待研究解决。
+
+\subsubsection{\CJKfamily{hei}两分量与三分量的研究进展}
+  近年来，具有SOC的自旋两分量或三分量费米子的两体问题引起不少研究者的兴趣，他们对此进行了研究并取得重要进展，其中关于两分量费米子的研究较多。在此各举一例。
+
+   \begin{figure}[H]\centering
+\includegraphics[width=0.59\textwidth]{113.eps}
+ \bocaption{\wuhao  两分量费米子的两体束缚能  }
+\end{figure}
+
+  2011年，印度科技大学的Jayantha P. Vyasanakere和Vijay B. Shenoy对三维单通道模型中，在一个均匀的非阿贝尔规范场存在的情况下，通过接触吸引（以散射长度为特征）相互作用的两分量费米子进行了研究。\upcite{yd} 产生Rashba SOC 相互作用的规范场由三个耦合参数（$\lambda_x,\lambda_y,\lambda_z$）描述。他们对极长（EP，$\lambda_x=\lambda_y=0,\lambda_z=\lambda$），极扁（EO，$\lambda_x=\lambda_y=\lambda/\sqrt{2},\lambda_z=0$），球形（ES，$\lambda_x=\lambda_y=\lambda_z=\lambda/\sqrt{3}$）以及一般的情况（前三者的两体束缚能与散射长度的关系见图2）进行了讨论。对于一般的规范场结构，束缚态的形成所需的临界散射长度是负的，即，移到共振的“BCS边”。换句话说，规范场的存在降低了临界的吸引强度。有趣的是，对具有较高对称性结构（例如极扁结构、球形结构）的体系，在任何散射长度，不管负的散射长度有多么小时，都存在两体束缚态。值得注意的是，这样的结构得到的束缚态波函数有类似于液体${}^3$He 的向列型自旋结构。此项研究表明，BCS-BEC 过渡受到非阿贝尔规范场极大的影响。
+
+
+2014年，中国科学院物理研究所研究员崔晓玲和研究生周黎红，与中国科学技术大学的易为教授合作，针对SOC的三分量超冷费米气体进行了研究。\upcite{yiwei}他们将少量杂质原子加入到一个无相互作用，自旋为1/2 并带有SOC 的费米气体中，且杂质原子只与后者的一个自旋分量有相互作用。这一体系很容易在有Feshbach 共振的冷原子的混合气体（例如锂和钾）中实现。对这样一个三组分费米原子系统，由于SOC与自旋选择作用之间的相互影响，一个自然的结果就是原子间有限动量的配对，即FF态。这种FF态的配对机制与传统的配对机制有显著区别，它并不依赖于不同自旋分量费米面的不匹配，而主要取决于SOC的存在以及相互作用的特殊性。
+%$\frac{1}{2}$
+
+他们从最基本的两体束缚态出发，通过计算发现其基态确实具有非零的质心动量；在考虑自旋1/2原子形成费米海的情况下，发现通过调节SOC及相互作用强度，束缚态会出现两类有限动量配对态间的竞争；这一结果也导致多体系统中两类FF超流态间的一级相变。这些系统的研究表明，FF配对是这一系统内禀的配对机制，且对于所有的态，无论是两体分子态、极化子态，还是多体超流态，配对现象都在很大的参数区间内存在。与此相反，对于传统的无自旋-轨道耦合的超导体系，FF态只在一个很窄的相互作用和磁场参数区间才出现。这些系统的理论研究可以由当前的冷原子实验直接进行验证，为实验上有效地制备和探测这种奇异的有限动量超导配对机制提供了便捷条件。
+
+
+ \subsection{\CJKfamily{hei}本文的工作}
+
+在本文中，我们对三维空间中，有相互作用且带有Rashba SOC的自旋三分量费米气体进行了研究。与此前两分量费米子再加上杂质原子形成的三分量自旋不同，此体系不含杂质，自旋的三个分量分别是5/2、7/2、9/2 （例如${}^6$Li 和${}^{40}K$的冷原子气体）。我们计算了该系统的两体束缚能，讨论了质心系动量、磁场和耦合常数对两体束缚态深度的影响，并研究了无相互作用时的色散关系。我们发现在BCS区域（即散射长度为负的区域）可以获得两体束缚态，验证了SOC 和外加磁场的存在会使态密度上升，从而并辅助两体束缚态的形成。
+%$\frac{5}{2}$ 、$\frac{7}{2}$ 、$\frac{9}{2}$
+{\center  \section{\CJKfamily{hei}计算过程及结果}}
+ \subsection{\CJKfamily{hei}哈密顿量}
+
+
+
+
+  我们考虑带有Rashba自旋轨道耦合的三分量费米气体，将其3个自旋分量分别编号为1、2、3，其中在分量1 与分量2 之间存在自旋轨道耦合，分量2 与分量3之间存在s-波相互作用。该体系的哈密顿量为$H = H_0 + H_{SOC} + H_{int}$ ，其中 \begin{subequations} \sub
+    \begin{equation}
+     \begin{aligned}
+ H_0=\sum_{
+{\bf k},\sigma=(1,2,3)}\epsilon_{{\bf k},\sigma}c_{{\bf k},\sigma}^{\dag}c_{{\bf k},\sigma}
+      \end{aligned}
+    \end{equation}
+    为自由粒子哈密顿量，其中~ $c_{{\bf k},\sigma}^{\dag}$（$c_{{\bf k},\sigma}$）表示质心系波矢为${\bf k}$、 自旋为$\sigma$ 的费米子的产生（湮没）算符，$\epsilon_{\bm{k},1}=\frac{\hbar^2k^2}{2m}+h,\epsilon_{k,2}=\frac{\hbar^2k^2}{2m},
+    \epsilon_{k,3}=\frac{\hbar^2k^2}{2m}-h$，
+    $m$为原子质量，$h$代表外加磁场；
+    \begin{equation}
+     \begin{aligned}
+ H_{SOC}=&\alpha_{1,2}\sum_{\bf {{\bf k}}}\big(k_x c_ {{\bf k},1}^\dag c_ {{\bf k},2}+k_x c_ {{\bf k},2}^\dag c_ {{\bf k},1}\big)
+      \end{aligned}
+    \end{equation}
+代表自旋轨道耦合，其中$\alpha_{1,2}$为耦合常数；
+   \begin{equation}
+     \begin{aligned}
+  H_{int}=&\frac{U_{2,3}}{\mathcal{V}}\sum_{\bf {{\bf k}}, {\bf k}’,q}c_ {{\bf k}+ \frac{{\bf q}}{2},2}^{\dag}c_{-{\bf k}+ \frac{{\bf q}}{2},3}^{\dag}
+c_{- {\bf k}’+ \frac{{\bf q}}{2},3}c_ {{\bf k}'+ \frac{{\bf q}}{2},2}
+      \end{aligned}
+    \end{equation}
+   为原子间的s-波相互作用，其中${\bf q}$为质心波矢，$U_{2,3}$为相互作用常数，$\mathcal{V}$为量子化体积。
+    \end{subequations}
+
+波函数：
+   \begin{equation}
+     \begin{aligned}
+|\Psi\rangle_{{\bf q}}={\sum_{\bf {{\bf k}}}}'\sum_{\sigma,\sigma'=(1,2,3)} \eta_ {{\bf k},{\bf q}}^{\sigma\sigma'}
+c_ {{\bf k}+ \frac{{\bf q}}{2},\sigma}^{\dag}c_{-{\bf k}+ \frac{{\bf q}}{2},\sigma'}^{\dag}|0\rangle
+      \end{aligned}
+    \end{equation}
+其中$\eta_ {{\bf k},{\bf q}}^{\sigma\sigma'}$  为叠加系数，${\sum_{{\bf k}}}'$表示对${\bf k}$半空间求和。
+
+ \subsection{\CJKfamily{hei}两体束缚能计算}
+ \subsubsection{\CJKfamily{hei}束缚能与散射长度的关系}
+    %
+    \par 将哈密顿量的三项分别作用于波函数$|\Psi\rangle_{{\bf q}}$，得：
+\begin{subequations}\sub\begin{equation}
+     \begin{aligned}
+H_0|\Psi\rangle_{{\bf q}}={\sum_{{\bf k} }}'\sum_{\sigma,\sigma'=(1,2,3)}(\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},\sigma}+\epsilon_{-{\bf k}+ \frac{{\bf q}}{2},\sigma'})
+ \eta_ {{\bf k},{\bf q}}^{\sigma\sigma'}
+c_ {{\bf k}+ \frac{{\bf q}}{2},\sigma}^{\dag}c_{-{\bf k}+ \frac{{\bf q}}{2},\sigma'}^{\dag}|0\rangle
+      \end{aligned}
+    \end{equation}
+   %2
+        \begin{equation}
+     \begin{aligned}
+H_{soc}|\Psi\rangle_{{\bf q}}=&{\sum_{\bf {{\bf k}}}}'\!\sum_{\sigma=(1,2,3)}
+ \!\alpha_{1,2}\big[(k_x+ \frac{q_x}{2})  \eta_ {{\bf k},{\bf q}}^{2,\sigma}c_ {{\bf k}+ \frac{{\bf q}}{2},1}^{\dag}c_{-{\bf k}+ \frac{{\bf q}}{2},\sigma}^{\dag}
++(k_x+ \frac{q_x}{2}) \eta_ {{\bf k},{\bf q}}^{1,\sigma}c_ {{\bf k}+ \frac{{\bf q}}{2},2}^{\dag}c_{-{\bf k}+ \frac{{\bf q}}{2},\sigma}^{\dag}\\
+&+(-k_x+ \frac{q_x}{2})  \eta_ {{\bf k},{\bf q}}^{\sigma,2}c_ {{\bf k}+ \frac{{\bf q}}{2},\sigma}^{\dag}c_{-{\bf k}+ \frac{{\bf q}}{2},1}^{\dag}+
+(-k_x+ \frac{q_x}{2})  \eta_ {{\bf k},{\bf q}}^{\sigma,1}c_ {{\bf k}+ \frac{{\bf q}}{2},\sigma}^{\dag}c_{-{\bf k}+ \frac{{\bf q}}{2},2}^{\dag}
+\big] |0\rangle
+ \end{aligned}
+    \end{equation}
+ %3
+   \begin{equation}
+     \begin{aligned}
+ H_{int}|\Psi\rangle_{{\bf q}}= &\frac{U_{2,3}}{\mathcal{V}}
+\big[{\sum_{\bf {{\bf k}}'}}'(\eta_ {{\bf k}',{\bf q}}^{2,3}-\eta_ {{\bf k}',{\bf q}}^{3,2})\big]\sum_{\bf {{\bf k}}}c_ {{\bf k}+ \frac{{\bf q}}{2},2}^{\dag}
+ c_{-{\bf k}+ \frac{{\bf q}}{2},3}^{\dag} |0\rangle
+ \\=& \frac{U_{2,3}}{\mathcal{V}}
+ \big[{\sum_{\bf {{\bf k}}'}}'(\eta_ {{\bf k}',{\bf q}}^{2,3}-\eta_ {{\bf k}',{\bf q}}^{3,2})\big]{\sum_{\bf {{\bf k}}}}'(c_ {{\bf k}+ \frac{{\bf q}}{2},2}^{\dag}
+ c_{-{\bf k}+ \frac{{\bf q}}{2},3}^{\dag}-c_ {{\bf k}+ \frac{{\bf q}}{2},3}^{\dag}
+ c_{-{\bf k}+ \frac{{\bf q}}{2},2}^{\dag} ) |0\rangle
+      \end{aligned}
+    \end{equation}
+
+
+    \end{subequations}
+
+薛定谔方程$H|\psi\rangle_{{\bf q}}=E_{{\bf q}}|\psi\rangle_{{\bf q}}$给出9个方程：
+    \begin{subequations}
+           \sub
+%11
+   \begin{equation}
+     \begin{aligned}
+\big[E_{{\bf q}}-2\epsilon_{-{\bf k}+ \frac{{\bf q}}{2},1}\big] \eta_ {{\bf k},{\bf q}}^{1,1}
+=\alpha_{1,2}(-k_x+ \frac{q_x}{2})  \eta_ {{\bf k},{\bf q}}^{1,2}+\alpha_{1,2}(k_x+ \frac{q_x}{2}) \eta_ {{\bf k},{\bf q}}^{2,1}\label{a1}
+      \end{aligned}
+    \end{equation}
+    %22
+   \begin{equation}
+     \begin{aligned}
+\big[E_{{\bf q}}-2\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},2} \big] \eta_ {{\bf k},{\bf q}}^{2,2}
+=\alpha_{1,2}(-k_x+ \frac{q_x}{2})  \eta_ {{\bf k},{\bf q}}^{2,1}+\alpha_{1,2}(k_x+ \frac{q_x}{2}) \eta_ {{\bf k},{\bf q}}^{1,2}\label{a2}
+      \end{aligned}
+    \end{equation}
+    %33
+    \begin{equation}
+     \begin{aligned}
+ \big[E_{{\bf q}}-2\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},3} \big] \eta_ {{\bf k},{\bf q}}^{3,3}=0\label{a3}
+      \end{aligned}
+    \end{equation}
+    %12
+     \begin{equation}
+     \begin{aligned}
+\big[E_{{\bf q}}-(\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},1}+\epsilon_{-{\bf k}+ \frac{{\bf q}}{2},2})\big] \eta_ {{\bf k},{\bf q}}^{1,2}
+=\alpha_{1,2}(-k_x+ \frac{q_x}{2})  \eta_ {{\bf k},{\bf q}}^{1,1}+\alpha_{1,2}(k_x+ \frac{q_x}{2}) \eta_ {{\bf k},{\bf q}}^{2,2}\label{a4}
+      \end{aligned}
+    \end{equation}
+        %21
+     \begin{equation}
+     \begin{aligned}
+\big[E_{{\bf q}}-(\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},2}+\epsilon_{-{\bf k}+ \frac{{\bf q}}{2},1})\big] \eta_ {{\bf k},{\bf q}}^{2,1}
+=\alpha_{1,2}(-k_x+ \frac{q_x}{2})  \eta_ {{\bf k},{\bf q}}^{2,2}+\alpha_{1,2}(k_x+ \frac{q_x}{2}) \eta_ {{\bf k},{\bf q}}^{1,1}\label{a5}
+      \end{aligned}
+    \end{equation}
+%13
+           \begin{equation}
+     \begin{aligned}
+\big[E_{{\bf q}}-(\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},1}+\epsilon_{-{\bf k}+ \frac{{\bf q}}{2},3})\big] \eta_ {{\bf k},{\bf q}}^{1,3}
+=\alpha_{1,2}(k_x+ \frac{q_x}{2})  \eta_ {{\bf k},{\bf q}}^{2,3}\label{a6}
+      \end{aligned}
+    \end{equation}
+ %31
+         \begin{equation}
+     \begin{aligned}
+\big[E_{{\bf q}}-(\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},3}+\epsilon_{-{\bf k}+ \frac{{\bf q}}{2},1})\big] \eta_ {{\bf k},{\bf q}}^{3,1}
+=\alpha_{1,2}(-k_x+ \frac{q_x}{2})  \eta_ {{\bf k},{\bf q}}^{3,2}\label{a7}
+      \end{aligned}
+    \end{equation}
+   %23
+\begin{equation}
+     \begin{aligned}
+&&\big[E_{{\bf q}}-(\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},2}+\epsilon_{-{\bf k}+ \frac{{\bf q}}{2},3})\big] \eta_ {{\bf k},{\bf q}}^{2,3}
+=&\alpha_{1,2}(k_x+ \frac{q_x}{2}) \eta_ {{\bf k},{\bf q}}^{1,3}+\frac{U_{2,3}}{\mathcal{V}}
+ {\sum_{{\bf k} '}}'(\eta_ {{\bf k}',{\bf q}}^{2,3}-\eta_ {{\bf k}',{\bf q}}^{3,2})\label{a8}
+\end{aligned}
+\end{equation}
+\begin{equation}
+     \begin{aligned}
+&&\big[E_{{\bf q}}-(\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},3}+\epsilon_{-{\bf k}+ \frac{{\bf q}}{2},2})\big] \eta_ {{\bf k},{\bf q}}^{3,2}
+=&\alpha_{1,2}(-k_x+ \frac{q_x}{2})  \eta_ {{\bf k},{\bf q}}^{3,1}-\frac{U_{2,3}}{\mathcal{V}}
+ {\sum_{{\bf k} '}}'(\eta_ {{\bf k}',{\bf q}}^{2,3}-\eta_ {{\bf k}',{\bf q}}^{3,2})\label{a9}
+\end{aligned}
+\end{equation}
+    \end{subequations}
+由(\ref{a1})$\sim$(\ref{a5})可解得$\eta_ {{\bf k},{\bf q}}^{1,1}=\eta_ {{\bf k},{\bf q}}^{2,2}=\eta_ {{\bf k},{\bf q}}^{3,3}=\eta_ {{\bf k},{\bf q}}^{1,2}=\eta_ {{\bf k},{\bf q}}^{2,1}=0$。
+
+    下由(\ref{a6})$\sim$(\ref{a9})推导两体束缚能表达式。将(\ref{a6}),(\ref{a7})分别代入(\ref{a8})，(\ref{a9})，以消去$\eta_ {{\bf k},{\bf q}}^{1,3},\eta_ {{\bf k},{\bf q}}^{3,1}$
+    \begin{subequations}
+           \sub
+   \begin{equation}
+     \begin{aligned}
+ \big[E_{{\bf q}}-(\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},2}+\epsilon_{-{\bf k}+ \frac{{\bf q}}{2},3})-\frac{\alpha_{1,2}^2(k_x +q_x/2)^2 }{E_{{\bf q}}-(\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},1}+\epsilon_{-{\bf k}+ \frac{{\bf q}}{2},3})}\big] \eta_ {{\bf k},{\bf q}}^{2,3}
+= \frac{U_{2,3}}{\mathcal{V}} {\sum_{\bf {{\bf k}}'}}'(\eta_ {{\bf k}',{\bf q}}^{2,3}-\eta_ {{\bf k}',{\bf q}}^{3,2})\label{b1}
+\end{aligned}
+\end{equation}
+\begin{equation}
+     \begin{aligned}
+ \big[E_{{\bf q}}-(\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},3}+\epsilon_{-{\bf k}+ \frac{{\bf q}}{2},2})-\frac{\alpha_{1,2}^2(k_x -q_x/2)^2 }{E_{{\bf q}}-(\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},1}+\epsilon_{-{\bf k}+ \frac{{\bf q}}{2},3})}\big] \eta_ {{\bf k},{\bf q}}^{3,2}
+=  -\frac{U_{2,3}}{\mathcal{V}}{\sum_{\bf {{\bf k}}'}}'(\eta_ {{\bf k}',{\bf q}}^{2,3}-\eta_ {{\bf k}',{\bf q}}^{3,2})\label{b2}
+\end{aligned}
+\end{equation}
+
+    \end{subequations}
+(\ref{b1})+(\ref{b1})、(\ref{b1})-(\ref{b1})，分别得到以下两式
+    \begin{subequations}
+           \sub
+\begin{equation}
+     \begin{aligned}
+\big[\!E_{{\bf q}}\!-\!\epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2},2}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2},3}\!-\!\frac{\alpha_{1,2}^2(k^2_x \!+\!q^2_x /4)  }{E_{{\bf q}}\!-\! \epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2},1}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2}\!,3}}\!\big](\! \eta_ {{\bf k},{\bf q}}^{2,3}\!+\! \eta_ {{\bf k},{\bf q}}^{3\!,2})\!=\!\frac{\alpha_{1,2}^2k_x q_x}{2(E_{{\bf q}}\!-\!\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},1}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2},3})}( \eta_ {{\bf k},{\bf q}}^{2,3}\!-\! \eta_ {{\bf k},{\bf q}}^{3\!,2}\!)\label{c1}
+\end{aligned}
+\end{equation}
+   \begin{equation}
+     \begin{aligned}
+\big[E_{{\bf q}}\!-\!\epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2},2}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2},3}\!-\!\frac{\alpha_{1,2}^2(k^2_x \!+\!q^2_x /4)  }{E_{{\bf q}}\!-\! \epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2},1}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2},3}}\big]( \eta_ {{\bf k},{\bf q}}^{2,3}\!-\! \eta_ {{\bf k},{\bf q}}^{3,2})=&\frac{\alpha_{1,2}^2k_x q_x   }{2(E_{{\bf q}}\!-\!\epsilon_ {{\bf k}+ \frac{{\bf q}}{2},1}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2},3})}( \eta_ {{\bf k},{\bf q}}^{2,3}\!+\! \eta_ {{\bf k},{\bf q}}^{3,2})
+\\&+2\frac{U_{2,3}}{\mathcal{V}}{\sum_{\bf {{\bf k}}'}}'(\eta_ {{\bf k}',{\bf q}}^{2,3}-\eta_ {{\bf k}',q}^{3,2})\label{c2}
+\end{aligned}
+\end{equation}
+    \end{subequations}
+  将(\ref{c1})代入(\ref{c2})，整理得；
+%中间一部见后
+\begin{equation}
+     \begin{aligned}
+& \!\frac{{\sum_{{\bf k} '}}'\!(\eta_ {{\bf k}'\!, q}^{2\!,3}\!-\!\eta_ {{\bf k}',q}^{3,2})}{\!E_{{\bf q}}\!-\!\epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2},2}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2}\!,3} -
+ \!\frac{\alpha_{1\!,2}^2}{\!E_{{\bf q}}\!-\!\epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2},1}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2}\!,3}}
+ [k_x^2\!+\!\frac{q_x^2}{4}\!
+ +\!\frac {k_x^2\!q_x^2}{(\!E_{{\bf q}}\!-\!\epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2},1}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2}\!,3} )(E_{{\bf q}}\!-\!\epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2}\!,2}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2}\!,3})\!/\!\alpha_{1\!,2}^2\!-\!k_x^2 \!-\! q_x^2\!/\!4}] }
+ \\&=\frac{\mathcal{V}}{2U_{2,3}}(\eta_ {{\bf k},{\bf q}}^{2,3}\!-\!\eta_ {{\bf k},{\bf q}}^{3,2})
+\end{aligned}
+    \end{equation}
+    等式两边对${\bf k}$半空间求和：
+ \begin{equation}
+     \begin{aligned}
+ &{\sum_{\bf {{\bf k}}}}'\!\frac{{\sum_{{\bf k} '}}'\!(\!\eta_ {{\bf k}'\!, q}^{2\!,3}\!-\!\eta_ {{\bf k}',q}^{3,2})\!}{\!E_{{\bf q}}\!-\!\epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2},2}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2}\!,3} -
+ \!\frac{\alpha_{1\!,2}^2}{\!E_{{\bf q}}\!-\!\epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2},1}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2}\!,3}}
+ [k_x^2\!+\!\frac{q_x^2}{4}\!
+ +\!\frac {k_x^2\!q_x^2}{(\!E_{{\bf q}}\!-\!\epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2},1}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2}\!,3} )(E_{{\bf q}}\!-\!\epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2}\!,2}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2}\!,3})\!/\!\alpha_{1\!,2}^2\!-\!k_x^2 \!-\! q_x^2\!/\!4}] }
+ \\&=\frac{\mathcal{V}}{2U_{2\!,3}}{\sum_{{\bf k} }}'(\eta_ {{\bf k},{\bf q}}^{2\!,3}\!-\!\eta_ {{\bf k}\!,{\bf q}}^{3\!,2})
+\end{aligned}
+    \end{equation}
+而${\sum_{\bf {{\bf k}}'}}'(\eta_ {{\bf k}',q}^{2,3}\!-\!\eta_ {{\bf k}',q}^{3,2})={\sum_{\bf {{\bf k}}}}'(\eta_ {{\bf k},q}^{2,3}\!-\!\eta_ {{\bf k},q}^{3,2})$，故有：
+ \begin{equation}
+     \begin{aligned}
+ &{\sum_{{\bf k} }}'\!\frac{1}{\!E_{{\bf q}}\!-\!\epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2},2}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2},3} -
+ \!\frac{\alpha_{1,2}^2}{\!E_{{\bf q}}\!-\!\epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2},1}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2},3}}
+ [k_x^2\!+\!\frac{q_x^2}{4}\!
+ +\!\frac {k_x^2q_x^2}{(\!E_{{\bf q}}\!-\!\epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2},1}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2},3} )(E_{{\bf q}}\!-\!\epsilon_ {{\bf k}\!+\! \frac{{\bf q}}{2},2}\!-\!\epsilon_{\!-\!{\bf k}\!+\! \frac{{\bf q}}{2},3})/\alpha_{1,2}^2\!-\!k_x^2 \!-\! q_x^2\!/\!4}\!] }\\&=\!\frac{\mathcal{V}}{2U_{2\!,3}}
+\end{aligned}
+    \end{equation}
+将$\epsilon_ {{\bf k},1}=\frac{\hbar^2k^2}{2m}+h,\epsilon_ {{\bf k},2}=\frac{\hbar^2k^2}{2m},\epsilon_ {{\bf k},3}=\frac{\hbar^2k^2}{2m}-h$ 代入，并令$\frac{\hbar^2}{m}=1$
+\begin{equation}
+     \begin{aligned}
+ {\sum_{{\bf k} }}'\frac{1}{\!E_{{\bf q}}\!-\!k^2 \!-\!\frac{q^2}{4}\!+\!h-
+ \!\frac{\alpha_{1,2}^2}{\!E_{{\bf q}}\!-\!k^2 \!-\!q^2\!/\!4}
+ [k_x^2\!+\!\frac{q_x^2}{4}\!
+ +\!\frac {k_x^2q_x^2}{(\!E_{{\bf q}}\!-\!k^2 \!-\!q^2\!/\!4 )(E_{{\bf q}}\!-\!k^2 \!-\!q^2\!/\!4+h)/\alpha_{1,2}^2\!-\!k_x^2 \!-\! q_x^2\!/\!4}] }=\frac{\mathcal{V}}{2U_{2,3}}
+\end{aligned}
+    \end{equation}
+
+ 将对${\bf k}$的半空间求和化为对${\bf k}$的全空间积分，因为被求和式对${\bf k}$关于原点对称 （即：若设该式为$f({\bf k})$，则$f({\bf k})=f(-{\bf k})$），所以有：
+ \begin{equation}
+ \begin{aligned}
+ {\sum_{\bf {k} }}'= \frac{1}{2}{\sum_{\bf {k} }} \rightarrow \frac{1}{2}\frac{V}{(2\pi)^3}\int d{\bf k}
+ \end{aligned}
+ \end{equation}
+  并进行如下重整化，
+ \begin{equation}
+ \begin{aligned}
+ \frac{1}{U_{2,3}}=\frac{1}{4\pi a_s^{2,3}}-\frac{1}{(2\pi)^3}\int\frac{d{\bf k}} {k^2}
+ \end{aligned}
+ \end{equation}
+ 其中$a_s^{2,3}$为分量2与分量3之间的相互作用对应的s-波散射长度。得到：
+ \begin{equation}
+     \begin{aligned}
+  \int\!d {\bf k}\!\bigg\{\!\frac{1}{\!E_{{\bf q}}\!-\!k^2 \!-\!\frac{q^2}{4}\!+\!h-
+ \!\frac{\alpha_{1,2}^2}{\!E_{{\bf q}}\!-\!k^2 \!-\!q^2\!/\!4}
+ [k_x^2\!+\!\frac{q_x^2}{4}\!
+ +\!\frac {k_x^2q_x^2}{(\!E_{{\bf q}}\!-\!k^2 \!-\!q^2\!/\!4 )(E_{{\bf q}}\!-\!k^2 \!-\!q^2\!/\!4+h)/\alpha_{1,2}^2\!-\!k_x^2 \!-\! q_x^2\!/\!4}] } \!+\!\frac{1} {k^2} \bigg\}\!=\!\frac{(2\pi)^3}{4\pi a_s^{2,3}}
+\end{aligned}
+    \end{equation}
+
+设${\bf q}$沿x方向，即$ {\bf q} = q_x \hat{x}= q  \hat{x} $。因为被积分式具有以$x$轴为旋转轴的旋转对称性，我们采用柱坐标积分。即$ \int\!d {\bf k}=2\pi \int_{-\infty}^{+\infty} d k_x \int_{0}^{+\infty}  d k_{yz} $, 其中$ k_{yz}$ 是${\bf k}$ 在 yz 平面的投影长度。为书写简便，将$k_x$ 写为$x$，$ k_{yz}$ 写为$r $。 最终我们得到该系统中存在的唯一一个两体束缚态，其两体束缚能$E_q$ 与s-波散射长度$a_s$ 的关系如下:
+    \begin{equation}
+     \begin{aligned}
+ &\int_{\!-\!\infty}^{\!+\!\infty}\!\!\int_{0}^{\!+\!\infty}\!\!\bigg\{\!\frac{r}{E_q\!-\!x^2\!-\!r^2\!
+ -\!\frac{q^2}{4}\!+\!h\!-\!\frac{\alpha_{1,2}^2}{\!E_q\!-\!x^2\!-\!r^2\!-\!q^2\!/\!4}[x^2\!
+ +\!\frac{q^2}{4}\! +\!\frac{x^2q^2}{(E_q\!-\!x^2-\!r^2\!\!-\!q^2\!/\!4 \!)(E_q\!-\!x^2\!-\!r^2\!-\!
+ q^2\!/\!4\!+\!h)\!/\alpha_{1\!,2}^2\!-\!x^2 \!-\! q^2\!/\!4 } ]\!}\\&+\! \frac{r}{x^2\!+\! r^2\!}\bigg\}drdx=\frac{\pi}{a_s^{2,3}}\label{Eas}
+     \end{aligned}
+    \end{equation}
+
+     \subsubsection{\CJKfamily{hei}两体束缚能阈值$E_c$}
+下计算质心系波矢为0（${\bf q}=0$）时，$E_0$的阈值$E_c$，即${\bf q}=0$时两体束缚能所能达到的最大值。
+
+此时，$E_0$与$a_s$有
+ \begin{equation}
+     \begin{aligned}
+ &\int_{- \infty}^{+ \infty} dx \int_{0}^{+ \infty} dr \bigg\{\frac{r}{E_0 - x^2 - r^2
+  + h - \frac{\alpha_{1,2}^2 x^2 }{E_0 - x^2 - r^2 }}  +  \frac{r}{x^2 +  r^2}\bigg\}=\frac{\pi}{a_s^{2,3}}
+     \end{aligned}
+    \end{equation}
+我们发现，第一个分式分母取0时该等式无意义，故只需找出允许此分母取0的最小的$E_0$即可。要注意到的是，$x $ 与$r $ 的积分范围分别是$(-\infty,+\infty)$、$(0,+\infty)$，也就是说，对于一个$E_0$的值，只要在此积分范围内存在任意一组$x,r$ 使分母为0，则该$E_0$无法达到。分母取0，即
+  \begin{equation}
+     \begin{aligned}
+E_0 - x^2 - r^2 + h - \frac{\alpha_{1,2}^2 x^2 }{E_0 - x^2 - r^2 }=0
+     \end{aligned}
+    \end{equation}
+ 等式的两个解
+       \begin{equation}
+     \begin{aligned}
+ \\E_0&=\frac{2x^2-h\pm\sqrt{h^2+4\alpha_{1,2}^2x^2} }{2}+r^{2}
+      \end{aligned}
+    \end{equation}
+为求E最小值，$\pm$取-号，此时
+  \begin{equation}
+     \begin{aligned}
+E_0=\frac{{(\sqrt{h^2+4\alpha_{1,2}^2x^2}-\alpha_{1,2}^2)^2}-(h+\alpha_{1,2}^2)^2}{4\alpha_{1,2}^2}+r^{2}
+     \end{aligned}
+    \end{equation}
+当$0\leq h\leq\alpha_{1,2}^2$时,~ $\sqrt{h^2+4\alpha_{1,2}^2x^2}-\alpha_{1,2}^2=0,r=0$时$E_0$取最小值，$E_{c} = -(h+\alpha_{1,2}^2)^2/4\alpha_{1,2}^2$；当$h>\alpha_{1,2}^2$时,~ $x=0,r=0$时$E_0$取最小值，$E_{c} =-h $。综上，有
+  \begin{equation}
+     \begin{aligned}
+E_c= \left\{ \begin{array}{cccccc}
+-\frac{(h+\alpha_{1,2}^2)^2}{4\alpha_{1,2}^2}, &0\leq h\leq\alpha_{1,2}^2\\
+-h,&  h>\alpha_{1,2}^2
+\end{array} \right.
+     \end{aligned}
+    \end{equation}
+
+     \subsection{\CJKfamily{hei}最深的两体束缚态}
+         \subsubsection{\CJKfamily{hei}质心动量取值}
+     我们固定$1/a_s$改变质心动量，对式  (\ref{Eas})进行数值计算，求$E_0-E_c$的最小值（具体的实现见附录程序1），以寻找可达到的最深的束缚态 。$E_0-E_c$的最小值及对应的$q$的取值 与$1/a_s$ 的关系在图  ~\ref{q}中展示出来。
+
+
+     图\ref{q}(a)(c)为$E_0-E_c$的最小值与$1/a_s$的关系，图\ref{q}(b)(d)为使$E_0-E_c$取最小值的$q$与$1/a_s$ 的关系。图\ref{q}(a)(b) 为不同的磁场（$\alpha_{1,2}=1,h=0.5,1,2$），图\ref{q}(c)(d)为不同的耦合常数（$\alpha_{1,2}= 0.5,1,2,h=1$）。由图可以得到以下结果：$1/a_s<0$区域（即共振的BCS边）可以得到两体束缚态，束缚态深度收到每条$E_0-E_c\sim 1/a_s$ 曲线的最左端对应的是$q=0$，在$h$ 较小或$\alpha_{1,2}$ 较大时，最深束缚态对应的$q$逐渐增大，然后在某一点骤降为0，此后一直为0，而$h$ 足够大、$\alpha_{1,2}$足够小时，最深束缚态对应的$q$一直为0。
+    \begin{figure}[H]\centering
+\includegraphics[width=0.92\textwidth]{Eas.eps}
+ \bocaption{\wuhao  最深的束缚态及对应的$q$}\label{q}
+\end{figure}
+
+
+
+         \subsubsection{\CJKfamily{hei} 磁场取值}
+         我们对图 ~\ref{q}所示的$E_0-E_c\sim 1/a_s$曲线进行进一步地探讨。固定耦合常数$\alpha_{1,2}$，改变磁场$h$，以曲线的最左端为准，寻找最左边的曲线（即两曲线相交时，取左端在左边的曲线，因为左端$1/a_s$最小，此时$q=0$），即为对应最深的两体束缚态的曲线，将其所取的磁场$h$ 定义为$h_l$。我们发现$h_l$ 与$\alpha_{1,2}$存在如下关系（如图~\ref{h}所示）：
+           \begin{equation}
+     \begin{aligned}
+ h_l=\alpha_{1,2}^2
+      \end{aligned}
+    \end{equation}
+   \begin{figure}[H]\centering
+\includegraphics[width=0.4\textwidth]{h1.eps}
+ \bocaption{\wuhao  最深的束缚态对应的$h$与$\alpha_{1,2}$关系}\label{h}
+\end{figure}
+ \subsection{\CJKfamily{hei}色散关系}
+ 无相互作用时，哈密顿量的矩阵写为
+ \begin{equation}
+H_k=
+\left( \begin{array}{cccccc}
+ \epsilon_{k,1}&\alpha_{1,2}k_x &0\\
+  \alpha_{1,2}k_x &\epsilon_{k,2}&0 \\
+  0&0 &\epsilon_{k,3}
+\end{array} \right)
+\end{equation}
+其中对角元表示自由粒子的各分量的能量本征值，非对角元代表SOC所引起的能量跃迁。将$\epsilon_ {{\bf k},1},\epsilon_ {{\bf k},2},\epsilon_ {{\bf k},3}$的值代入，令$\frac{\hbar^2}{m}=1$，并设波矢$\bf k$ 方向为x 轴正方向，有
+ \begin{equation}
+H_k=\left( \begin{array}{cccccc}
+\frac{k_x^2}{2}+h&\alpha_{1,2}k_x &0\\
+  \alpha_{1,2}k_x & \frac{k_x^2}{2} &0 \\
+  0&0 &  \frac{k_x^2}{2}-h
+\end{array} \right)
+\end{equation}
+本征方程$|H_k-E_k|=0$，即
+ \begin{equation}
+  \begin{aligned}
+\left| \begin{array}{cccccc}
+\frac{k_x^2}{2}+h-E_k&\alpha_{1,2}k_x &0\\
+  \alpha_{1,2}k_x &\frac{k_x^2}{2}-E_k &0 \\
+  0&0 & \frac{k_x^2}{2}-h-E_k
+\end{array} \right|=&0\\ \bigg(\frac{k_x^2}{2} -h-E_k\bigg)\bigg[\big(\frac{k_x^2}{2}+h-E_k\big)\big(\frac{k_x^2}{2}-E_k\big)-\alpha_{1,2}^2k_x^2\bigg]=&0
+      \end{aligned}
+\end{equation}
+ 本征方程的三个解即为无相互作用时的色散关系：
+       \begin{equation}
+     \begin{aligned}
+E_1&=\frac{k_x^2+h+\sqrt{4\alpha_{1,2}^2k_x^2+h^2}}{2}
+\\E_2&=\frac{k_x^2}{2}-h
+\\E_3&=\frac{k_x^2+h-\sqrt{4\alpha_{1,2}^2k_x^2+h^2}}{2}
+      \end{aligned}
+    \end{equation}
+
+图~\ref{q} 对应的色散关系展示在图   ~\ref{ss}  中，其中图  ~\ref{ss} (a)-(c)对应图 ~\ref{q} (a)、(b)，图 ~\ref{ss} (d)-(f)对应图  ~\ref{q} (c)、(d)。(程序见附录)。由图 ~\ref{ss}可见，随着h的增大和$\alpha$的减小，$E_3$曲线的极小值逐渐由两个变为一个。下求h的临界值$h_c$，高于此临界值时，$E_3$曲线只有一个极小值。
+       \begin{equation}
+     \begin{aligned}
+&\frac{\partial E_3}{\partial k_x}= k_x-\frac{2\alpha_{1,2}^2k_x}{\sqrt{4\alpha_{1,2}^2k_x^2+h^2}}
+\\ &\frac{\partial^2 E_3}{\partial k_x^2}=1-\frac{2\alpha_{1,2}^2h^2}{(4\alpha_{1,2}^2k_x^2+h^2)^{3/2}}
+\\& \frac{\partial^2 E_3}{\partial k_x^2}\bigg|_{k_x=0}=1-\frac{2\alpha_{1,2}^2}{h}
+      \end{aligned}
+    \end{equation}
+令$E_3$在$k_x=0$附近关于$k_x$的二次导$\frac{\partial^2 E_3}{\partial k_x^2}\big|_{k_x=0}=0$，即得出$h_c=2\alpha_{1,2}^2$。此时色散关系曲线在$k_x=0$呈水平，这意味着此处态密度很大，我们对此进行简单证明。
+
+$h=h_c$时态密度
+    \begin{equation}
+     \begin{aligned}
+g\propto k_x^2\frac{\partial k_x}{\partial E_3}=\frac{k_x}{1-\frac{\alpha_{1,2}}{\sqrt{k_x^2+\alpha_{1,2}^2}}}
+=\frac{ \alpha_{1,2}\sqrt{k_x^2+\alpha_{1,2}^2}+k_x^2+\alpha_{1,2}^2}{k_x}
+      \end{aligned}
+    \end{equation}
+故有$g|_{k_x\to 0}\to\infty$，即态密度趋于无穷大。
+\begin{figure}[H]\centering
+\includegraphics[width=0.38\textwidth]{Ekx1.eps}
+\includegraphics[width=0.38\textwidth]{Ekx2.eps}
+ \bocaption{\wuhao 图~\ref{q}对应的色散关系}\label{ss}
+\end{figure}
+
+%这意味着态密度的上升。
+
+
+{\center \section{\CJKfamily{hei}结果讨论}}
+
+ 在三维费米系统中，由于存在泡利不相容原理，没有SOC时，BCS区域低能态密度很小，无法形成两体束缚态。三维情况下， 无相互作用、具有SOC和外加磁场的三分量费米子的色散关系曲线显示：当磁场满足$h=2\alpha_{1,2}^2$ 时，低能区域（$k_x=0$ 附近）的色散关系曲线呈水平，能容纳更多的态，低能态密度较大。而有相互作用时，此系统在BCS 区域存在两体束缚态。这证实了SOC与磁场极大地提高了低能态密度，从而有利于两体束缚态的形成。
+%我们固定磁场和耦合常数，寻找最深的束缚态对应的质心动量$q$，发现$E-E_c\sim 1/a_s$曲线左端总对应$q=0$。 当磁场$h=\alpha_{1,2}^2$时达到最深的束缚态。
+
+而关于最深的两体束缚态的讨论显示：对于固定的磁场、耦合常数和变化的质心动量，BCS区域的最左端总对应质心动量为0；对于固定的耦合常数和为0的质心动量,磁场$h=\alpha_{1,2}^2$ 时达到最深的束缚态。这为在实验中获得最深的束缚态提供了参考。
+
+%由于存在泡利不相容原理，在没有SOC的系统中，在BCS区域低能态密度很小。这使得费米系统在BCS区域的转变温度很低。由于SOC极大的提高了低能的态密度，这使得系统在BCS区域的转变温度得到了极大的提高，
+
+
+需要强调的是，我们研究的是无杂质的具有SOC和外加磁场的自旋三分量费米子系统，它不同于之前将杂质原子加入到自旋为1/2 的费米子所形成的体系\upcite{yiwei}。在此之前，尚未有此系统中两体束缚态方面的研究。而本文发现此系统在BCS区域可以形成两体束缚态，这是一个有趣的物理现象。
+
+
+{\center \section{\CJKfamily{hei}结论及展望}}
+在具有相互作用的三分量费米子的两体束缚态问题中，SOC与外加磁场的同时存在确实可以导致态密度上升，辅助两体束缚态，从而有利于超导配对。且对于固定的耦合常数$\alpha$，磁场$h=\alpha_{1,2}^2$时达到最深的束缚态。
+{\xiaosiydw
+
+尽管本文对此系统的讨论非常有限，但我们不难从中感受到这个系统中存在许多有趣的行为。接下来我们将在以下方向进行更深入的探讨：将三分量费米子的两体问题推广到多体问题，并探究其是否有利于超导配对。如果有利于超导配对，那形成的是传统超导还是新奇超导。
+{\sihao ~\\~\\~\\\CJKfamily{hei}\bf  作者签名：}%\underline{\Huge~~~~~~~~~~~~~~}
+~\\~\\~\\~\\~\\~\\~\\~ ~\\~\\~\\~\\~ ~\\~\\~\\~\\ ~\\~\\~
+ }
+
+
+
+\begin{thebibliography}{0}
+\addcontentsline{toc}{section}{\CJKfamily{hei}\bf参考文献}
+\bibitem{spia}Y.-J. Lin, R. L. Compton, A. R. Perry, W. D. Phillips, J. V. Porto, and I. B. Spielman. Bose-Einstein Condensate in a Uniform Light-Induced Vector Potential[J]. Phys. Rev. Lett. 102, 130401 (30 March 2009).
+
+\bibitem{spib} Y. J. Lin, R. L. Compton, K. Jimnez-Garca, J. V. Porto, and I. B. Spielman. Synthetic magnetic fields for ultracold neutral atoms[J]. Nature 462, 628-632 (3 December 2009).
+
+\bibitem{spic}Y. J. Lin, R. L. Compton, K. Jimnez-Garca, W. D. Phillips, J. V. Porto, I. B. Spielman,
+Nature Physics, 7, 531, (2011).
+
+\bibitem{spid}Y.-J. Lin,K. Jiménez-García, and I. B. Spielman. Spin-orbit-coupled Bose-Einstein condensates[J].Nature 471, 83–86 (03 March 2011).
+
+\bibitem{HuiZhai}HuiZhai. Spin-Orbit Coupled Quantum Gases[J]. Int. J. Mod. Phys. B 26, 1230001 (2012).
+
+\bibitem{d} Pengjun Wang, Zeng-Qiang Yu, Zhengkun Fu, Jiao Miao, Lianghui Huang, Shijie Chai, Hui Zhai, and Jing Zhang. Spin-Orbit Coupled Degenerate Fermi Gases[J]. Phys. Rev. Lett. 109, 095301 (27 August 2012).
+
+\bibitem{e}Lawrence W. Cheuk, Ariel T. Sommer, Zoran Hadzibabic, Tarik Yefsah, Waseem S. Bakr, and Martin W. Zwierlein.  Spin-Injection Spectroscopy of a Spin-Orbit Coupled Fermi Gas[J]. Phys. Rev. Lett. 109, 095302 (27 August 2012).
+
+\bibitem{yd}Jayantha P. Vyasanakere, and Vijay B. Shenoy. Bound states of two spin-$\frac{1}{2}$
+    fermions in a synthetic non-Abelian gauge field[J]. Phys. Rev. B 83, 094515 (2011).
+
+\bibitem{yiwei}Lihong Zhou, Xiaoling Cui, and Wei Yi. Three-Component Ultracold Fermi Gases with Spin-Orbit Coupling[J]. Phys. Rev. Lett. 112, 195301 (2014).
+\end{thebibliography}
+\newpage
+\setlength{\parskip}{0.225\baselineskip}
+\begin{center}
+{\ershi \CJKfamily{hei}\bf 附录}\\\end{center}
+
+\addcontentsline{toc}{section}{\CJKfamily{hei}\bf附录}
+{\noindent\sihao  \CJKfamily{hei}\bf 程序}
+
+{ \CJKfamily{hei}\bf 1~最深束缚态对应q}
+
+{\bf m文件minfinq.m：}
+\\function [qmin, funcmin]=minfinq(h,al,En,g,qn)
+\\\%其中h为磁场，al为$\alpha_{1,2}$，En为在En附近求E的解，g为$1/a_s$,qn 为在qn附近找q使E最小
+
+[qmin,funcmin]=fminsearch(@(q)myfunc(q,al,h,En,g),qn);\%在qn附近找q使E最小
+\\end\\~
+\\function[funcres]=myfunc(q,al,h,En,g)
+
+funcres=fzero(@(E)myfu(E,al,g,h,q),En);\%在En附近求解方程
+\\end\\~
+\\function[myfu]=myfu(E,al,g,h,q)
+
+qx=q;
+
+lhs=quad2d(@(x,r)r./(E-(x.\^{}2+r.\^{}2+q.\^{}2./4-h)-al.\^{}2.*((x.\^{}2+qx.\^{}2./4)./(E-q.\^{}2./4-
+\par r.\^{}2-x.\^{}2)+x.\^{}2.*qx.\^{}2./((E-q.\^{}2./4-r.\^{}2-x.\^{}2).\^{}2.*((E-q.\^{}2./4-r.\^{}2-x.\^{}2+h)./(al.\^{}2)-
+\par(x.\^{}2+qx.\^{}2./4)./(E-q.\^{}2./4-r.\^{}2-x.\^{}2)))))+r./(x.\^{}2+r.\^{}2),0,5000,0,5000);
+
+rhs=pi*g/2;
+
+myfu=lhs-rhs;\% 定义要求解的方程
+\\end
+
+{\bf调用方式：}
+
+[qmin,funcmin]=minfinq(h,al,a,g,b)；
+
+[g,funcmin,xmin]
+
+输出结果第一列为$1/a_s$，第二列为能量最小值，第三列为对应的$q$。\\~
+
+{\CJKfamily{hei}\bf~2~最左边曲线对应磁场}
+
+{\bf m文件minfinh.m：}
+\\function [hmin,gmin]=minfinh(al,hn) \%其中al为$\alpha$，hn为在hn附近找磁场$h$ 使$E$最小
+
+[hmin,gmin]=fminsearch(@(h)myfu(al,h),hn);\%在hn附近找磁场$h$ 使$E$最小
+\\end
+\\function[g]=myfu(al,h)
+
+if h$<$al\^{}2
+
+  {}{}E=-(h+al\^{}2)\^{}2/(4*al\^{}2)-2*al\^{}2*10\^{}(-14);
+
+else
+
+ {}{}E=-h-2*al\^{}2*10\^{}(-14);
+
+end\%E取$E_c$减一个小量
+
+f=@(x,r)r./(E - x.\^{}2 - r.\^{}2+ h -al\^{}2* x.\^{}2./(E - x.\^{}2 - r.\^{}2 ) ) + r./(x.\^{}2 + r.\^{}2);
+
+z=integral2(f,0,10000,0,10000) ;
+
+g=2*z/pi;
+\\end
+
+
+{\bf调用方式：}
+ \\for i=1:1:16;
+
+[ b(i,2) ,b(i,3)]= minfinh(0.2*(i-1),0.04*(i-1)\^{}2) ;
+
+b(i,1)=0.2*(i-1);
+\\end
+
+b
+
+输出结果第一列为$\alpha$，第二列为$h$，第三列为$1/a_s$。\\{}
+
+
+{\CJKfamily{hei}\bf{}3{}色散关系}
+
+{\bf m文件Ekx.m：}
+\\function[c]=Ekx(al,h)\%al为$\alpha_{1,2}$,h为磁场
+
+k=-4.5:0.3:4.5;\%k为$k_x$
+
+c(:,1)=k(:);
+
+c(:,2)=(k(:).\^{}2+h+(4.*k(:).\^{}2.*al\^{}2+h.\^{}2).\^{}0.5)./{}2;\%$E_1$
+
+c(:,3)=k(:).\^{}2./{}2-h;\%$E_2$
+
+c(:,4)=(k(:).\^{}2+h-(4.*k(:).\^{}2.*al.\^{}2+h.\^{}2).\^{}0.5)./{}2;\%$E_3$
+\\end
+
+{\bf调用方式：}
+
+Ekx(al,h)
+
+输出结果第一列为$k_x$，第二列为$E_1$，第三列为$E_2$，第四列为$E_3$。
+\newpage
+}
+
+
+ \end{CJK*}
+\end{document}
+
+
+ \begin{figure}[H]\centering
+\includegraphics[width=0.45\textwidth]{4a.eps}
+\includegraphics[width=0.45\textwidth]{4b.eps}
+ \bocaption{}
+\end{figure}
+
+
+2009年，美国国家标准局（NIST）由Spielman领导的实验小组首次在冷原子系统中实现了模拟规范场[PRL 102, 130401; Nature 462, 628]，随后又在玻色系统中实现了模拟自旋轨道耦合（spin-orbit coupling, SOC）[Nature 471, 83]。2012 年，我国山西大学由张靖领导的实验小组[PRL 109, 095301]和美国麻省理工学院Zwierlein领导的实验小组[PRL 109, 095302]先后在费米气体中实现了SOC，为研究具有自旋轨道耦合的费米体系开辟了新的方向。
+
+
+
+
+
+
+
+
+
