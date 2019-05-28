@@ -261,7 +261,7 @@ H_{\text{eff}} = -\tilde{J} \sum_{\substack{\langle i,j\rangle \\ \sigma = \upar
 \begin{align}
 U\sim l\hbar\omega
 \end{align}
-$l$ 为一非零整数。这时上一节的高频展开不能直接应用，但并不是不能用\footnote{不能用的情况是体系找不到一个合适的小参数来做微扰展开，即找不到一种有效模型的写法使 $\omega$ 相比于所有能量尺度都是很大的。但这里，$\omega$ 与 $U$ 近共振时，实际上可以通过坐标系的转动使得写出来的有效模型所有能量尺度都远小于 $\omega$ ，除了之前说的 $J$ 外，此时的有效相互作用 $\tilde{U}$ 也比 $\omega$ 小很多。这种变换实际上类似于光学中的旋波近似，对哈密顿量做合适的幺正变换使得高能物理和低能物理有效解藕，那么用来刻画基态的有效模型只需要保留低能自空间就可以了。这里也是一样。}，需要我们先做一个幺正变换，将模型转动到以合适的能量尺度刻画的坐标系中来看。具体来说，对(\ref{eq:ht1}) 式中的哈密顿量做如下幺正变换。
+$l$ 为一非零整数。这时上一节的高频展开不能直接应用，但并不是不能用\footnote{不能用的情况是体系找不到一个合适的小参数来做微扰展开，即找不到一种有效模型的写法使 $\omega$ 相比于所有能量尺度都是很大的。但这里，$\omega$ 与 $U$ 近共振时，实际上可以通过坐标系的转动使得写出来的有效模型所有能量尺度都远小于 $\omega$ ，除了之前说的 $J$ 外，此时的有效相互作用 $\tilde{U}$ 也比 $\omega$ 小很多。这种变换实际上类似于光学中的旋波近似，对哈密顿量做合适的幺正变换使得高能物理和低能物理有效解藕，那么用来刻画基态的有效模型只需要保留低能子空间就可以了。这里也是一样。}，需要我们先做一个幺正变换，将模型转动到以合适的能量尺度刻画的坐标系中来看。具体来说，对(\ref{eq:ht1}) 式中的哈密顿量做如下幺正变换。
 \begin{align}
 \hat{R}_l(t) = \exp(\ii\sum_jl\omega t\hat{n}_{j\uparrow}\hat{n}_{j\downarrow})
 \end{align}
@@ -333,7 +333,7 @@ $\bar{\sigma}$ 表示 $\sigma$ 的补集，而
 $\eta_{ij}$ 的定义为，
 对于 $(i_x,i_y)=(j_x\pm1,j_y)$ 或是 $(i_x,i_y)=(j_x,j_y\pm 1)$ 的情况有 $\eta_{ij}=\pm 1$。
 
-在如上的有效哈密顿量中，关联隧穿效应显式地体现出来。当调节驱动频率$\omega$ 和驱动振幅 $A$ 使得 $J_0\neq J_1$ 时，最近邻跃迁的过程将显式地依赖于最近邻的一对格点是双占据（$J_0$）还是单占据（$J_1$）。参考图 \ref{fig:floq:corrtunn} (b) 。对该体系的详细研究还可参考作者与张鹏飞同学\footnote{一只小猪}和翟荟教授的文章\inlinecite{floqhubb}。
+在如上的有效哈密顿量中，关联隧穿效应显式地体现出来。当调节驱动频率$\omega$ 和驱动振幅 $A$ 使得 $J_0\neq J_1$ 时，最近邻跃迁的过程将显式地依赖于最近邻的一对格点是双占据（$J_0$）还是单占据（$J_1$）。参考图 \ref{fig:floq:corrtunn} (b) 。下面对该体系进行详细讨论。具体还可参考作者与张鹏飞同学\footnote{一只小猪}和翟荟教授的文章\inlinecite{floqhubb}。
 
 
 
@@ -348,9 +348,9 @@ $\eta_{ij}$ 的定义为，
 \hat{c}_{i\sigma}^{\dagger}\hat{c}_{j\sigma} \nonumber\\
 & \quad + \tilde{U}\sum_{i}\hat{n}_{i\uparrow}\hat{n}_{i\downarrow}
 \end{align}
-其中第一项为具有关联隧穿效应的动能项，第二项为 Hubbard 相互作用项。式中 $J_0$ 为常数，而 $J_1$ 对于 $\eta_{ij}$ 具有隐含的依赖。事实上，容易验证，当 $l$ 为偶数时，由于贝塞尔偶数阶函数为偶函数，即 $B_l$ 为偶函数，从而此时 $J_1$ 对 $\eta_{ij}$ 依赖是平庸的，在这种情况下 $J_1$ 退化为常数。另一个需要注意到的事实是，当 $l$ 为偶数时
+其中第一项为具有关联隧穿效应的动能项，第二项为 Hubbard 相互作用项。式中 $J_0$ 为常数，而 $J_1$ 对于 $\eta_{ij}$ 具有隐含的依赖。事实上，容易验证，当 $l$ 为偶数时，由于贝塞尔偶数阶函数为偶函数，即 $B_l$ 为偶函数，从而此时 $J_1$ 对 $\eta_{ij}$ 依赖是平庸的，在这种情况下 $J_1$ 退化为常数。另一个需要注意到的事实是，当 $l$ 为偶数时，模型具有SO(4)对称性
 \footnote{该SO(4)对称性由两个SU(2)对称性构成，自旋SU(2)和电荷SU(2)，参见第 \ref{sec:so4} 小节。 当 $l$ 为奇数时，容易验证，体系还具有自旋SU(2)对称性，但不再具有电荷自旋SU(2)对称性。}
-，模型具有SO(4)对称性（参考第 \ref{sec:so4} 小节），且对于半填充的系统具有粒子空穴对称性。因此，在下面我们着重讨论 $l$ 为偶数的情况。半填充时，模型写作
+（参考第 \ref{sec:so4} 小节），且对于半填充的系统具有粒子空穴对称性。因此，在下面我们着重讨论 $l$ 为偶数的情况。半填充时，模型写作
 \begin{align}
 \hat{H}_{\text{eff}} &= - \sum_{\langle i,j\rangle, \sigma} 
 \left(J_0[(1-\hat{n}_{i\bar\sigma})(1-\hat{n}_{j\bar\sigma}) + \hat{n}_{i\bar\sigma}\hat{n}_{j\bar\sigma}]
@@ -427,7 +427,7 @@ L=&\sum_{i,\sigma} i\bar \psi_{i\sigma}\partial_t\psi_{i\sigma}+\sum_{\langle i,
     + \eta_s \left[s-\frac{(\hat{n}_{A\uparrow}-\hat{n}_{A\downarrow}) - (\hat{n}_{B\uparrow}-\hat{n}_{B\downarrow})}{2}\right] \notag \\
     & \  \  + \frac{\tilde{U}N}{2}(n_{A\uparrow}n_{A\downarrow} + n_{B\uparrow}n_{B\downarrow}) 
 \end{align}
-其中 $\hat{c}_{i\sigma}^A$($\hat{c}_{i\sigma}^B$) 是第 $i$ 个元胞属于 $A(B)$ 子格的自旋为 $\sigma$ 的费米子湮灭算符。$\hat{n}_{\mu\sigma} = \frac{1}{N/2}\sum_{i\in\mu}\hat{n}_{i\sigma}$, $\mu = A$ or $B$ 而 $n_{\mu\sigma} = \langle\hat{n}_{\mu\sigma}\rangle$。$\eta_c$ 和 $\eta_s$ 分别是 CDW 和 SDW 的拉格朗日乘子，同样也是最小化得到基态能量的变分序参量之一。
+其中 $\hat{c}_{i\sigma}^A$($\hat{c}_{i\sigma}^B$) 是第 $i$ 个元胞属于 $A(B)$ 子格的自旋为 $\sigma$ 的费米子湮灭算符。$\hat{n}_{\mu\sigma} = \frac{1}{N/2}\sum_{i\in\mu}\hat{n}_{i\sigma}$, $\mu = A$ or $B$ 而 $n_{\mu\sigma} = \langle\hat{n}_{\mu\sigma}\rangle$。$\eta_c$ 和 $\eta_s$ 分别是 CDW 和 SDW 的拉格朗日乘子，同样也是最小化得到基态能量的变分参量之一。
 
 将以上平均场哈密顿量变换到动量空间，写作
 \begin{align}\label{eq:Hmfk}
